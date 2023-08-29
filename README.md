@@ -8,10 +8,10 @@ Kaynak kodlar genel olarak 3 bölümden oluşur.
 * **100_temel-seviye-cpp:** Temel C++ konularını içermektedir.
 * **200_cpp_class_object:** c++ nesne yönelimli programlama kavramlarını içerir.
 * **300_cpp_STL:** C++ Standart Template Library (STL) konularını içerir
-* **400_cpp_advanced_topics:** İleri seviye C++ konuları
+* **400_cpp_ileri-konular:** İleri seviye C++ konuları
 
 Bunların dışında; 
-* **500_cpp_examples:** farklı kaynaklardan öğrencilerin kullanımı için paylaşılan tüm kodları içerir.
+* **500_cpp_ornekler:** farklı kaynaklardan öğrencilerin kullanımı için paylaşılan tüm kodları içerir.
 
 # Ders İçeriği
 ## Temel C++ Konuları
