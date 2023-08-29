@@ -5,13 +5,13 @@ Ders içeriği aşağıda verilen mantıksal sırada anlatılmaktadır. Konularl
 Her kaynak dosyaların isimlendirmesi şu şekildedir: **XX.Y-abcd.cpp** , burada **XX**(konunun işleneceği haftayı), **Y**(konunun o haftadaki konu sırasını), ve **abcd**(kaynak dosyanın içeriğini) ifade etmektedir.
 
 Kaynak kodlar genel olarak 3 bölümden oluşur. 
-* **1_cpp_fundamentals:** Temel C++ konularını içermektedir.
-* **2_cpp_classes_and_objects:** c++ nesne yönelimli programlama kavramlarını içerir.
-* **3_cpp_STL:** C++ Standart Template Library (STL) konularını içerir
-* **4_cpp_advanced_topics:** İleri seviye C++ konuları
+* **100_temel-seviye-cpp:** Temel C++ konularını içermektedir.
+* **200_cpp_class_object:** c++ nesne yönelimli programlama kavramlarını içerir.
+* **300_cpp_STL:** C++ Standart Template Library (STL) konularını içerir
+* **400_cpp_advanced_topics:** İleri seviye C++ konuları
 
 Bunların dışında; 
-* **5_cpp_examples:** farklı kaynaklardan öğrencilerin kullanımı için paylaşılan tüm kodları içerir.
+* **500_cpp_examples:** farklı kaynaklardan öğrencilerin kullanımı için paylaşılan tüm kodları içerir.
 
 # Ders İçeriği
 ## Temel C++ Konuları
