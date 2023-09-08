@@ -13,6 +13,12 @@ Kaynak kodlar genel olarak 3 bölümden oluşur.
 Bunların dışında; 
 * **500_cpp_ornekler:** farklı kaynaklardan öğrencilerin kullanımı için paylaşılan tüm kodları içerir.
 
+## Haftalara Göre Ders Planları (Müfredat)
+Her gün değişen ve gelişen bilişim dünyasında KTÜ Bilgisayar Mühendisliğindeki "Nesne Yönelimli Programlama" isimli derste anlatılan C++ diline ilişkin ders notları, yazılan kodlar, verilen örnekler ve müfredat kısmi değişikliklere uğramaktadır.
+* [2023](2023-guz-ders-plan.md) - __Aktif Dönem__
+* [2019](2019-guz-ders-plan.md) - [Kaynak kodlar (Repl.it)](https://repl.it/@ZaferYavuz1)
+* [2018](2018-guz-ders-plan.md)
+
 # Ders İçeriği
 ## Temel C++ Konuları
 * Giriş - Temel Konular
@@ -127,9 +133,4 @@ Bu sitelerden bir ve/veya birkaçından seviye atlamak (c++ dili için) serbest 
 * http://www.cplusplus.com/
 * https://seyler.eksisozluk.com/kendi-basina-c-programlama-dili-ogrenmek-isteyenlere-tavsiyeler
 
-## Haftalara Göre Ders Planları (Müfredat)
-Her gün değişen ve gelişen bilişim dünyasında KTÜ Bilgisayar Mühendisliğindeki "Nesne Yönelimli Programlama" isimli derste anlatılan C++ diline ilişkin ders notları, yazılan kodlar, verilen örnekler ve müfredat kısmi değişikliklere uğramaktadır.
 
-* [2023](2023-guz-ders-plan.md)
-* [2019](2019-guz-ders-plan.md) - [Kaynak kodlar (Repl.it)](https://repl.it/@ZaferYavuz1)
-* [2018](2018-guz-ders-plan.md)
