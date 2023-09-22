@@ -30,10 +30,19 @@ int main() {
   değişken isimleri anahtar kelimeler ile aynı olamaz.
 
   naming convention: camelCase, PascalCase, snake_case, kebab-case
-  camelCase: ilk kelime küçük harf, sonraki kelimeler büyük harfle başlar, örneğin: camelCase, camelCaseVariable
-  PascalCase: ilk kelime büyük harf, sonraki kelimeler büyük harfle başlar, örneğin: PascalCase, PascalCaseVariable
-  snake_case, under_score: kelimeler alt çizgi ile ayrılır, örneğin: snake_case, snake_case_variable,
-  kebab-case: kelimeler tire ile ayrılır, örneğin: kebab-case, kebab-case-variable, C++ desteklemez, daha çok web programlama dillerinde (CSS) kullanılır
+    camelCase: 
+      ilk kelime küçük harf, sonraki kelimeler büyük harfle başlar, 
+      örneğin: camelCase, camelCaseVariable
+    PascalCase: 
+      ilk kelime büyük harf, sonraki kelimeler büyük harfle başlar, 
+      örneğin: PascalCase, PascalCaseVariable
+    snake_case, under_score: 
+      kelimeler alt çizgi ile ayrılır, 
+      örneğin: snake_case, snake_case_variable,
+    kebab-case: 
+      kelimeler tire ile ayrılır, 
+      örneğin: kebab-case, kebab-case-variable, 
+      C++ desteklemez, daha çok web programlama dillerinde (CSS) kullanılır
   */
 
 }

@@ -3,8 +3,8 @@ using namespace std;        // std namespace kullanılıyor.
 
 // main() fonksiyonu programın başladığı yerdir
 int main() {
-   cout << "Merhaba Dünya";   // ekrana "Merhaba Dünya" yazar
-   return 0;                // program sonlandırılır
+   cout << "Merhaba Dünya";     // ekrana "Merhaba Dünya" yazar
+   return 0;                    // program sonlandırılır
    "Bir diğer yorum yazma biçimi";
    "Ancak bu şekilde yorum yazmak program boyutunu arttırır";
    // tek satırlı yorum, // işaretinden sonra yazılan o satırdaki her şey yorum olur
