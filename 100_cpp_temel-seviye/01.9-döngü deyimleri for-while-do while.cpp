@@ -232,3 +232,26 @@ cout << "Programda bir hata oluştu.\n";
 //-------------------------------------------------------
   return 0;
 }
+
+//--------------------------------------------------------
+/*
+1. Hafta - Neler Öğrendik?
+- C++ programlama dilinin temel özelliklerini öğrendik
+- C ve C++ programlama dillerinin farklarını öğrendik
+- C++ programlama dilindeki veri tiplerini öğrendik
+- C++ programlama dilindeki değişkenleri öğrendik
+- C++ programlama dilindeki sabitleri öğrendik
+- C++ programlama dilindeki operatörleri öğrendik
+- C++ programlama dilindeki if-else ifadelerini öğrendik
+- C++ programlama dilindeki switch-case ifadelerini öğrendik
+- C++ programlama dilindeki döngü deyimlerini öğrendik
+
+2. Hafta - Neler Öğreneceğiz?
+- basit formatlı giriş-çıkış işlemlerini öğreneceğiz
+- fonksiyonları öğreneceğiz
+- dizileri öğreneceğiz
+- örnek programlar yazacağız
+
+Özlü Söz: 
+"Bir şeyi yapamayacağınızı düşünüyorsanız, yapamazsınız. Bir şeyi yapabileceğinizi düşünüyorsanız, yapabilirsiniz. Bu iki düşünce de doğrudur." (Henry Ford)
+*/
