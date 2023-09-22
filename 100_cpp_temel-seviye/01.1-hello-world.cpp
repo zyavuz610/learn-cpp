@@ -7,81 +7,70 @@ int main() {
 }
 
 /*
-Similarities between C and C++ are:
+C ve C++ arasındaki benzerlikler nelerdir?
+- Her iki dilin de benzer bir sözdizimi vardır.
+- Her iki dilin de kod yapısı aynıdır.
+- Her iki dilin de derlemesi benzerdir. "gcc" derleyicisi C ve C++ için kullanılabilir.
+  gcc hello.c -o hello
+- Her iki dilin de temel sözdizimi aynıdır. C'nin neredeyse tüm operatörleri ve anahtar kelimeleri C++'da da mevcuttur ve aynı işi yapar.
+- C++'ın C'den biraz daha geniş bir grameri vardır, ancak temel grammer aynıdır.
+- Her iki dilin de temel bellek modeli donanıma çok yakındır. Yani C ve C++'ın bellek modeli donanıma çok yakındır.
+- Her iki dilde de yığın, yığın, dosya kapsamı ve statik değişkenlerin aynı kavramları vardır.
 
-Both the languages have a similar syntax.
-Code structure of both the languages are same.
-The compilation of both the languages is similar.
-They share the same basic syntax. Nearly all of C’s operators and keywords are also present in C++ and do the same thing.
-C++ has a slightly extended grammar than C, but the basic grammer is the same.
-Basic memory model of both is very close to the hardware.
-Same notions of stack, heap, file-scope and static variables are present in both the languages.
-
-C	vs C++
+C ve C++ arasındaki farklar nelerdir? C	vs C++
 =======================================
-C was developed by Dennis Ritchie between the year 1969 and 1973 at AT&T Bell Labs.	
-C++ was developed by Bjarne Stroustrup in 1979.
+- C 1969 yılında Dennis Ritchie TARAFINDAN AT&T Bell Labs'de geliştirilmeye başlandı. 1973 yılında C'nin ilk sürümü yayınlandı. "A System Programming Language" olarak adlandırıldı. Bir çok özelliğini daha önce kullanılan B programlama dilinden almıştır. Bu nedenle adına C verilmiştir.
+- C++ dili ise Bjarne Stroustrup tarafından 1979 yılında Bell Lab'ta geliştirildi. İlk başlarda dilin adı "C with Objects" olarak anılıyordu. 1983 yılında C++ olarak adlandırılmaya başlandı.
+- Dennis Ritchie 2011 yılında öldü. Bjarne Stroustrup hala hayattadır.
 =======================================
-C does no support polymorphism, encapsulation, and inheritance which means that C does not support object oriented programming.	
-C++ supports polymorphism, encapsulation, and inheritance because it is an object oriented programming language.
+- C dili polymorphism, encapsulation, inheritance gibi özellikleri desteklemez. Bu nedenle C nesne yönelimli programlamayı desteklemez.
+- C++ nesne yönelimli programlama dili olduğu için polymorphism, encapsulation, inheritance gibi özellikleri destekler.
 =======================================
-C is a subset of C++.	
-C++ is a superset of C.
+- C, C++'ın alt kümesidir.
+- C++ C'nin üst kümesidir.
 =======================================
-C contains 32 keywords.	
-C++ contains 52 keywords.
+- C dili 32 anahtar kelime içerir.
+- C++ dili 52 anahtar kelime içerir.
 =======================================
-For the development of code, C supports procedural programming.	
-C++ is known as hybrid language because C++ supports both procedural and object oriented programming paradigms.
+- C dili fonksiyonlarla çalışır. C'de fonksiyonlar ayrı ayrı çalışır. Procedurel bir dildir. Veri ve fonksiyonlar ayrıdır.
+- C++ dili nesne yönelimli programlama dili olduğu için veri ve fonksiyonlar bir arada çalışır. Ancak C gibi procedural bir dil olarak da kullanılabilir. Bu yüzden C++ hibrit bir dildir.
 =======================================
-Data and functions are separated in C because it is a procedural programming language.	
-Data and functions are encapsulated together in form of an object in C++.
+- Veri ve fonksiyonlar C'de ayrıdır. Çünkü C procedural bir programlama dilidir.
+- Veri ve fonksiyonlar C++'da bir nesne şeklinde bir arada kapsüllenir.
 =======================================
-C does not support information hiding.	
-Data is hidden by the Encapsulation to ensure that data structures and operators are used as intended.
+- C dili information hiding'i desteklemez. Information hiding veri gizleme demektir. Veri yapılarının ve operatörlerin amaçlandığı gibi kullanılmasını sağlamak için Encapsulation ile veri gizlenir. Information hiding veri gizleme demektir.
+- C++ dili information hiding'i destekler.
 =======================================
-Built-in data types is supported in C.	
-Built-in & user-defined data types is supported in C++. (e.g.string)
-  C-style string || std::string
+- C dilinde builtin data types desteklenir.
+- C++ dilinde builtin ve user-defined data types desteklenir (örn:string).
 =======================================
-C is a function driven language because C is a procedural programming language.	
-C++ is an object driven language because it is an object oriented programming.
+- C dili function driven bir dildir. Çünkü C procedural bir programlama dilidir. Bir çok işlem fonksiyonlarla yapılır. Ekrana çıktı için printf() fonksiyonu kullanılır. - (ana bileşen:fonksiyon)
+- C++ dili object driven bir dildir. Çünkü C++ nesne yönelimli programlama dildir. Bir çok işlem nesnelerle yapılır. Ekrana çıktı için cout nesnesi kullanılır. - (ana bileşen, nesne)
 =======================================
-Function and operator overloading is not supported in C.	
-Function and operator overloading is supported by C++.
+- C dili operator overloading'i desteklemez. C++ dili operator overloading'i destekler. Operator overloading operatör aşırı yüklenmesi demektir. Bir operatörün birden fazla anlamı olabilir. Örneğin; + operatörü sayıları toplamak için kullanılır. Ama aynı operatör stringleri birleştirmek için de kullanılabilir.
 =======================================
-C is a function-driven language. (ana bileşen:fonksiyon)
-C++ is an object-driven language (ana bileşen, nesne)
+- C dilinde fonksiyonlar struct içinde tanımlanamaz.
+- C++ dilinde fonksiyonlar struct (class) içinde tanımlanabilir.
 =======================================
-Functions in C are not defined inside structures.	
-Functions can be used inside a structure in C++.
+- C dilinde namespace özelliği yoktur. C++ dilinde namespace özelliği vardır. Namespace isim alanı demektir. Namespace özelliği isim çakışmalarını önler.
 =======================================
-Namespace features are not present inside the C.	
-Namespace is used by C++, which avoid name collisions.
+- C dilinde header kullanımı #include <stdio.h> şeklindedir.
+- C++ dilinde header kullanımı #include <iostream> şeklindedir.
 =======================================
-Header file used by C is stdio.h.	
-Header file used by C++ is iostream.h.
+- C dilinde pointer aritmetiği vardır. Referans değişkenleri yoktur.
+- C++ dilinde pointer aritmetiği vardır. Referans değişkenleri vardır.
 =======================================
-Reference variables are not supported by C.	
-Reference variables are supported by C++.
+- C dilinde virtual ve friend fonksiyonlar yoktur. C++ dilinde virtual ve friend fonksiyonlar vardır. Virtual fonksiyonlar çok biçimlilik (polymorphism) için kullanılır. Friend fonksiyonlar ise veri gizleme (information hiding) için kullanılır.
 =======================================
-Virtual and friend functions are not supported by C.	
-Virtual and friend functions are supported by C++.
+- C dili miras (inheritance) özelliğini desteklemez. C++ dili miras (inheritance) özelliğini destekler.
 =======================================
-C does not support inheritance.	
-C++ supports inheritance.
+- C dili veri yerine prosedür odaklıdır. C++ dili veri odaklıdır.
 =======================================
-Instead of focusing on data, C focuses on method or process.	
-C++ focuses on data instead of focusing on method or procedure.
+- Dinaik bellek yönetimi için C dilinde malloc() ve calloc() fonksiyonları kullanılır. Bellekten alan silinirken free() fonksiyonu kullanılır.
+- Dinamik bellek yönetimi için C++ dilinde new ve delete operatörleri kullanılır.
 =======================================
-C provides malloc() and calloc() functions for dynamic memory allocation, and free() for memory de-allocation.	
-C++ provides new operator for memory allocation and delete operator for memory de-allocation.
+- Exception handling (istisna durum yönetimi) C dilinde desteklenmez. C++ dilinde exception handling (istisna durum yönetimi) desteklenir.
 =======================================
-Direct support for exception handling is not supported by C.	
-Exception handling is supported by C++.
-=======================================
-scanf() and printf() functions are used for input/output in C.	
-cin and cout are used for input/output in C++.
 
 Ref: https://www.geeksforgeeks.org/difference-between-c-and-c/
 */
