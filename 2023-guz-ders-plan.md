@@ -3,10 +3,16 @@
 ## Haftalara Göre Ders İçerikleri
 * Hafta-1
   * Tanışma, dersin amacı, dersin içeriği, dersin işleyişi, dersin ödevleri, dersin sınavları
-  * Değişken tanımlama, sabitler, operatörler, karar ifadeleri, tekrarlı ifadeler
+  * Değişken tanımlama, sabitler, operatörler, karar ifadeleri, tekrarlı ifadeler (döngüler)
+  * Örnek Uygulamalar (haftalık ödev verilebilecek konular)
+    * 1910 yılında 100 birim kazanan bir işletme her yıl %2 kazanç atışı ile 1940 yılında ne kadar kazanç sahibi olur?
+    * Verilen bir çift sayının iki asal sayının toplamı şeklinde ifade edilmesi
 * Hafta-2
   * Fonksiyonlar, fonksiyon çağırma yöntemleri, fonksiyondan değer geri döndürme
   * Formatlı girdi çıktı işlemleri, setw, setprecision, fixed, endl
+  * Örnek Uygulamalar (haftalık ödev verilebilecek konular)
+    * 2, 10, 16 tabanından birinde verilen bir sayının başka bir tabana dönüşümü (fonksiyonla yapınız)
+    * ADC algoritmasının fonksiyonlar ile çözülmesi ve ara aşamaların tablo şeklinde gösterilmesi ([kaynak])(https://github.com/zyavuz610/labs_inKTU/blob/master/1_computer_org_lab/adc/analog_digital_converter(ADC).ipynb)
 * Hafta-3
   * string (karakter dizisi), string işlemleri
   * diziler: tek boyutlu (vector), iki boyutlu (matris), 3 ve daha fazla boyutlu (tensor)
