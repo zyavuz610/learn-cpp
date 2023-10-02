@@ -1,3 +1,22 @@
+/*
+    temel linux komutları
+    ---------------------
+    - pwd: bulunulan dizini gösterir
+    - ls: bulunulan dizindeki dosyaları listeler
+    - cd: dizin değiştirir
+    - mkdir: dizin oluşturur
+    - rm: dosya siler
+
+    c++ derleme komutları
+    ---------------------
+    - g++ -o hello hello.cpp: hello.cpp dosyasını hello adıyla derler
+    - ./hello: derlenmiş dosyayı çalıştırır
+    - g++ -o hello hello.cpp && ./hello: derleme ve çalıştırma işlemini birlikte yapar
+    - g++ -o hello hello.cpp && ./hello && rm hello: derleme, çalıştırma ve silme işlemini birlikte yapar
+    ---------------------
+    g++ yerine gcc veya clang++ de kullanılabilir
+*/
+//---------------------------------------------------------------------------------------------
 #include <iostream>         // header dosyası, giriş çıkış işlemleri için temel fonksiyonları içerir
 using namespace std;        // std namespace kullanılıyor.   
 
