@@ -17,6 +17,16 @@
     g++ yerine gcc veya clang++ de kullanılabilir
 */
 //---------------------------------------------------------------------------------------------
+// 01.2-hello world
+// c++ dilinde ilk program
+//      c++ dilinde yorumlar
+//      c++ dilinde ifade sonlandırma
+//      c++ dilinde blok
+//      c++ dilinde farklı kod yazma biçimleri
+//      c++ dilinde identifiers (tanımlayıcılar), değişken, fonksiyon, class, module ... isimleri
+//      c++ dilinde keywords
+//      c++ dilinde whitespace
+//---------------------------------------------------------------------------------------------
 #include <iostream>         // header dosyası, giriş çıkış işlemleri için temel fonksiyonları içerir
 using namespace std;        // std namespace kullanılıyor.   
 
