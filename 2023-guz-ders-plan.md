@@ -3,6 +3,7 @@
 ## Haftalara Göre Ders İçerikleri
 * Hafta-1
   * Tanışma, dersin amacı, dersin içeriği, dersin işleyişi, dersin ödevleri, dersin sınavları
+    * 
   * Değişken tanımlama, sabitler, operatörler, karar ifadeleri, tekrarlı ifadeler (döngüler)
   * Örnek Uygulamalar (haftalık ödev verilebilecek konular)
     * 1910 yılında 100 birim kazanan bir işletme her yıl %2 kazanç atışı ile 1940 yılında ne kadar kazanç sahibi olur?
