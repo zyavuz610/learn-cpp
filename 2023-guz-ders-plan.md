@@ -3,7 +3,6 @@
 ## Haftalara Göre Ders İçerikleri
 * Hafta-1
   * Tanışma, dersin amacı, dersin içeriği, dersin işleyişi, dersin ödevleri, dersin sınavları
-    * 
   * Değişken tanımlama, sabitler, operatörler, karar ifadeleri, tekrarlı ifadeler (döngüler)
   * Örnek Uygulamalar (haftalık ödev verilebilecek konular)
     * 1910 yılında 100 birim kazanan bir işletme her yıl %2 kazanç atışı ile 1940 yılında ne kadar kazanç sahibi olur?
@@ -56,3 +55,14 @@
   * telafi haftası, ödev kontrolleri
   * STL (Standard Template Library) örnekleri, pair, vector, list, map, set, stack, queue, iterator
   * STL algorithms, STL containers
+
+--- 
+
+## Kayıtlar (Logs)
+* H01/1
+  * tanışma
+  * C++ ile C Karşılaştırma
+  * ilk program, komut satırından derleme, çalıştırma
+  * tavsiye edilen izleme listesi
+    * [C++ 100 - C++ ile Programlama ve Yol Haritası](https://www.youtube.com/watch?v=2GFTynfGG90&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=1)
+    * [C++ 101 - Kurulum (Replit.com) ve İlk Program (Hello World)](https://www.youtube.com/watch?v=DniXkYikXTY&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=2)
