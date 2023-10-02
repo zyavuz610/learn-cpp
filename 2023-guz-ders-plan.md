@@ -59,10 +59,33 @@
 --- 
 
 ## Kayıtlar (Logs)
+* 1 - Pazartesi, 9-11
+* 2 - Cuma, 8-10
+
+[Sınıf İçi Kodlar](https://replit.com/@ZaferYavuz1/cpp-100a)
+
+---
+
 * H01/1
-  * tanışma
+  * tanışma, ders hakkında bilgi
   * C++ ile C Karşılaştırma
-  * ilk program, komut satırından derleme, çalıştırma
-  * tavsiye edilen izleme listesi
+  * **tavsiye edilen izleme listesi**
     * [C++ 100 - C++ ile Programlama ve Yol Haritası](https://www.youtube.com/watch?v=2GFTynfGG90&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=1)
     * [C++ 101 - Kurulum (Replit.com) ve İlk Program (Hello World)](https://www.youtube.com/watch?v=DniXkYikXTY&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=2)
+* H01/2
+  * c++ dilinde ilk program (ekrana çıktı alma)
+  * yorumlar, ifade sonlandırma, blok kavramı, farklı kod yazma biçimleri, 
+  * identifiers (tanımlayıcılar), değişken, fonksiyon, class, module ... isimleri
+  * c++ dilinde keywords, whitespace
+  * ilk program, komut satırından derleme, çalıştırma
+  * veri türleri, değişkenler ve değişken tanımlama
+  * lokal ve global değişkenler
+  * Sabitler, litteral sabitler
+  * operatörler (aritmetik, karşılaştırma, lojik, atama)
+  * karar deyimleri (if, else, switch-case)
+  * döngü ifadeleri (for, while, do-while)
+  * **tavsiye edilen izleme listesi**
+    * ilan edilecek
+  * sınıf içi ödevler
+    * Türkiye nüfusunun bu yıl 85 milyon olduğunu dusunelim. Her yıl nüfusu %1.05 büyürse hangi yılda 100 milyonu geçeriz, 1 puan
+    * 500 den küçük 7 veya 9 un katı olan sayıların toplamını ekrana uygun bir mesajla yazınız, 500 sayısını değiştirebileceğim, 1 puan. toplam sayının kaç haneli olduğunu bulmak, +1 puan
