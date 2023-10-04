@@ -101,6 +101,11 @@
     * [C++ 115 - Döngüler 2 | while döngüsü](https://www.youtube.com/watch?v=xI0IUhVwlHE&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=16)
     * [C++ 116 - Döngüler 3 | do-while döngüsü | for, while, do-while döngüleri karşılaştırma ve özet](https://www.youtube.com/watch?v=zZ3pOIQZfhQ&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=17)
     * [C++ 117 - Döngü Örnekleri 1 | 1-100 arası tek ve çift sayılar](https://www.youtube.com/watch?v=4P5WthNPjp0&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=18)
+    * [C++ 118 - Döngü Örnekleri 2 | 1-n arası sayıları toplama | artırma , azaltma ve aritmetik atama](https://www.youtube.com/watch?v=nclJZGLw2bk&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=19)
+    * [C++ 119 - Döngü Örnekleri 3 | Hesap Makinesi Örneği (Toplama)](https://www.youtube.com/watch?v=PSOrKoUq-Gs&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=20)
+    * [C++ 120 - Döngüler 4 | break ve continue deyimleri | Hesap Makinesi (Toplama) Örneği](https://www.youtube.com/watch?v=L5PxGoTqAz4&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=21)
+    * [C++ 121 - Döngü Örnekleri 4 | Hesap Makinesi (4 işlem)](https://www.youtube.com/watch?v=PYbjjoafv8w&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=22)
+    * [C++ 122 - Döngü Örnekleri 5 | Maximum, Minimum Bulma Problemi](https://www.youtube.com/watch?v=99sreSHbP2k&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=23)
   * **sınıf içi ödevler**
     * Türkiye nüfusunun bu yıl 85 milyon olduğunu dusunelim. Her yıl nüfusu %1.05 büyürse hangi yılda 100 milyonu geçeriz, 1 puan
     * 500 den küçük 7 veya 9 un katı olan sayıların toplamını ekrana uygun bir mesajla yazınız, 500 sayısını değiştirebileceğim, 1 puan. toplam sayının kaç haneli olduğunu bulmak, +1 puan
