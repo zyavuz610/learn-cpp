@@ -89,6 +89,6 @@
     * [C++ 103 - Yorum (Comment) Ekleme](https://www.youtube.com/watch?v=qxVvfoXBJ2I&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=4)
     * [C++ 104 - Değişkenler ve Değişken İsimlendirme Kuralları (Variables)](https://www.youtube.com/watch?v=6E_Z-8gW-7s&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=5)
     * [C++ 105 - Aritmetik Operatörler 1 | Toplama ve Çıkarma](https://www.youtube.com/watch?v=7mkoK2cUjI4&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=6)
-  * sınıf içi ödevler
+  * **sınıf içi ödevler**
     * Türkiye nüfusunun bu yıl 85 milyon olduğunu dusunelim. Her yıl nüfusu %1.05 büyürse hangi yılda 100 milyonu geçeriz, 1 puan
     * 500 den küçük 7 veya 9 un katı olan sayıların toplamını ekrana uygun bir mesajla yazınız, 500 sayısını değiştirebileceğim, 1 puan. toplam sayının kaç haneli olduğunu bulmak, +1 puan
