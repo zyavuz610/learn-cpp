@@ -89,6 +89,18 @@
     * [C++ 103 - Yorum (Comment) Ekleme](https://www.youtube.com/watch?v=qxVvfoXBJ2I&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=4)
     * [C++ 104 - Değişkenler ve Değişken İsimlendirme Kuralları (Variables)](https://www.youtube.com/watch?v=6E_Z-8gW-7s&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=5)
     * [C++ 105 - Aritmetik Operatörler 1 | Toplama ve Çıkarma](https://www.youtube.com/watch?v=7mkoK2cUjI4&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=6)
+    * [C++ 106 - Aritmetik Operatörler 2 | Çarpma, Bölme ve Mod (Kalan Bulma) İşlemleri](https://www.youtube.com/watch?v=RVpL0dPoQjM&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=7)
+    * [C++ 107 - Veri Tipleri ve Boyutları](https://www.youtube.com/watch?v=jLNKzNrTn2A&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=8)
+    * [C++ 108 - Veri Tipleri Kullanımı | bool, char, short int, long double, sonsuz ve tanımsız (inf, nan)](https://www.youtube.com/watch?v=ykaI9gw3zQM&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=9)
+    * [C++ 109 - Kullanıcıdan Girdi Almak | cin | getline ()](https://www.youtube.com/watch?v=D1V_kRhzhGE&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=10)
+    * [C++ 110 - Koşullu İfadelere Giriş | if](https://www.youtube.com/watch?v=rg8bCswVlnQ&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=11)
+    * [C++ 111 - Karşılaştırma Operatörleri | eşitlik | eşit değil | küçük | büyük | küçük veya büyük eşit](https://www.youtube.com/watch?v=4Lp0j1Pl1e0&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=12)
+    * [C++ 112 - Koşul İfadeleri 2 | if | else if | else, Harf Notu Hesaplama](https://www.youtube.com/watch?v=vmVHvQr_aVc&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=13)
+    * [C++ 113 - Döngüler : Tekrarlı Yapılar | for | while | do while](https://www.youtube.com/watch?v=tF8Tg1EiHeU&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=14)
+    * [C++ 114 - Döngüler 1 | for döngüsü örneği](https://www.youtube.com/watch?v=nGCcRHy4Evg&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=15)
+    * [C++ 115 - Döngüler 2 | while döngüsü](https://www.youtube.com/watch?v=xI0IUhVwlHE&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=16)
+    * [C++ 116 - Döngüler 3 | do-while döngüsü | for, while, do-while döngüleri karşılaştırma ve özet](https://www.youtube.com/watch?v=zZ3pOIQZfhQ&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=17)
+    * [C++ 117 - Döngü Örnekleri 1 | 1-100 arası tek ve çift sayılar](https://www.youtube.com/watch?v=4P5WthNPjp0&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=18)
   * **sınıf içi ödevler**
     * Türkiye nüfusunun bu yıl 85 milyon olduğunu dusunelim. Her yıl nüfusu %1.05 büyürse hangi yılda 100 milyonu geçeriz, 1 puan
     * 500 den küçük 7 veya 9 un katı olan sayıların toplamını ekrana uygun bir mesajla yazınız, 500 sayısını değiştirebileceğim, 1 puan. toplam sayının kaç haneli olduğunu bulmak, +1 puan
