@@ -3,6 +3,57 @@
 using namespace std;
 
 int main() {
+//-------------------------------------------------------
+
+  char ad[50];
+  cout << "Adınız : ";
+  cin >> ad;   // cin.get(ad); fonksiyonu da aynı işi yapar
+  cout << "Merhaba " << ad << endl;
+
+//-------------------------------------------------------
+// birden çok değişkeni aynı anda giriş yapmak için
+// cin >> a >> b >> c;
+// string değişkenler için
+// getline(cin,ad); // boşluklar dahil alır
+// cin>>ad;         // boşluklardan sonra alınmaz
+//-------------------------------------------------------
+/*
+örnek: ortalama hesaplama
+  int a,b,c;
+  cout<<"3 sayı giriniz: ";
+  cin>>a>>b>>c;
+  cout<<"Ortalama: "<<(a+b+c)/3<<endl;
+*/
+//-------------------------------------------------------
+/*
+örnek2: öğrenci adı ve notları girilerek ortalama hesaplama
+  string ad;
+  int a,b,c;
+  cout<<"Adınız: ";
+  cin>>ad;
+  cout<<"3 not giriniz: ";
+  cin>>a>>b>>c;
+  cout<<"Ortalama: "<<(a+b+c)/3<<endl;
+
+  ya da aşağıdaki gibi de yapılabilir
+  cout<<"Adınız ve 3 notunuzu giriniz: ";
+  cin>>ad>>a>>b>>c;
+*/
+//-------------------------------------------------------
+/*
+// örnek3: while döngüsü ile sonsuz giriş yaparak ortalama hesaplama
+  string ad;
+  float a,b,c;
+  while(1){
+    cout<<"Öğrenci adı ve 3 not giriniz: ";
+    cin>>ad;
+    if(ad == "q") break;
+    cin>>a>>b>>c;
+    cout<<ad<<endl;
+    cout<<"Ortalama: "<<(a+b+c)/3<<endl;
+  }
+*/
+//-------------------------------------------------------
 /*
     <iostream>
       bu kütüphanede standart giriş çıkış fonksiyonları tanımlıdır
@@ -14,13 +65,6 @@ int main() {
       bu kütüphanede dosya üzerinde işlem yapan fonksiyonlar ve türler tanımlıdır,
       fstream, ifstream, ofstream ...
 */
-//-------------------------------------------------------
-
-  char ad[50];
-  cout << "Adınız : ";
-  cin >> ad;   // cin.get(ad); fonksiyonu da aynı işi yapar
-  cout << "Merhaba " << ad << endl;
-
 //------------------------------------------------------
 // setw(n) formatlı yazdırma fonksiyonu, n karakterlik alan ayırır
 // #include <iomanip> eklenmeli
@@ -67,31 +111,6 @@ int main() {
   */
 
 //--------------------------------------------------------
-/*    
-  cin>>a>>b>>c;  // birden çok değişken almak
-  
-*/
-//----------------------------------------------------------
-/*
-ayrıca bakınız (cin, cout nesnelerinin üye fonksiyonları)
-    cin.get(a);  = cin>>a;
-    --------------------------------------
-    cin.ignore(intExp,chExp);   //  intExp sayıda karakter boyunca chExp karakterini görmezden gelir
-    
-    Örnek:
-        int a,b;
-    Suppose the input is:
-        25 67 89 43 72
-        12 78 34
-    Consider the statements:
-        cin>>a;
-        cin.ignore(100,'\n');
-        cin>>b;
-    The first statement cin>>a; stores 25 in a.
-    The second statement, cin.ignore(100,'\n'); discards all of the remaining numbers in the first line.
-    The third statement cin>>b; stores 12 (from the next line) in b.
-//   --------------------------------------------------
-*/    
   return 0;
 }
 

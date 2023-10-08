@@ -64,7 +64,7 @@ using namespace std;
       . 3 türlü paramtre geçme (fonksiyon çağırma) yöntemi vardır
           1. call by Value
           2. call by Pointer
-          3. call by reference (sadece c++)
+          3. call by reference (sadece c++), ilerleyen derslerde göreceğiz
 */
 
 // fonksiyon tanımı, CALL BY VALUE
