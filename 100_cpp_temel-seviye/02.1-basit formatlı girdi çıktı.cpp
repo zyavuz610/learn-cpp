@@ -94,3 +94,14 @@ ayrıca bakınız (cin, cout nesnelerinin üye fonksiyonları)
 */    
   return 0;
 }
+
+/*
+örnek programlar
+- ortalama hesaplama, sonsuz döngü ile
+- girilen yılın artık yıl olup olmadığını bulma, yüzyılını da hesaba kat
+- girilen sayının asal olup olmadığını bulma
+- girilen sayının faktöriyelini bulma
+- girilen sayının karesini bulma
+--------------------------------------------------------
+bu programlar ayrıca fonksiyonlar bölümünde de çözülebilir
+*/
