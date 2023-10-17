@@ -48,5 +48,21 @@ int main () {
     // fonksiyon çağrıldığında değerler nasıl geçiyor? şekil ile anlatalım
 */
 //-----------------------------------------------------------------------
+// fonksiyonlara geri dönüş değeri olarak referans ayarlanabilir
+// bu durumda fonksiyonun geri dönüş değeri referans olmalıdır
+/*
+örnek:
+int & f(...){
+  ...
+}
+
+int main(){
+  int a=5;
+  int &b = f(a);
+  ...
+}
+*/
+
+//-----------------------------------------------------------------------
    return 0;
 }

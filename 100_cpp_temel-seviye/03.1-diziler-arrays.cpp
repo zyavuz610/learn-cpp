@@ -51,6 +51,7 @@ double OrtalamaBul2(int dizi[5], int boyut) {
    return ort;
 }
 
+// pointer bölümünde anlatılacak
 double OrtalamaBul3(int *dizi, int boyut) {
   int i, top = 0;       
   double ort;         
@@ -59,21 +60,6 @@ double OrtalamaBul3(int *dizi, int boyut) {
    }
    ort = double(top) / boyut;
    return ort;
-}
-//-------------------------------------------------------------
-// FONKSİYONLARIN DİZİ GERİ DÖNDÜRMESİ için kullanılacak fonk.
-// rasgele sayılar üretilecek ve dizi olarak geri döndürülecek
-int * SayiUret(int n) {
-   //static int  r[10];   // adresi geri döndürülecek dizi static olarak tanımlanmalıdır
-   static int *r = new int[n];
-   // tohum setle
-   srand( (unsigned)time( NULL ) );
-   
-   for (int i = 0; i < n; ++i) {
-      r[i] = rand();
-      //cout << r[i] << endl;
-   }
-   return r;
 }
 //-------------------------------------------------------------
 int main() {
@@ -136,105 +122,22 @@ int main() {
   // çıkarma kodlayın
   // matisin izini (trace) bulun (köşegen üzerindeki elemanların toplamı) (kare matris için)
   // matrisin alt ve üst üçgen bölgelerini ekrana yazın (kare matris için)
+
 //---------------------------------------------------------------
+// matrislerin fonksiyonlara parametre olarak verilmesi
 /*
-	Dizi ve Pointer ilişkisi
-		. dizi ismi	ilk elemanı gösteren bir pointer dir
-		. int a[10]; tanımı yapıldığında "&a[0] = a" olur
+
+#define sutunSayisi 10
+void fonksiyon(int matris[][sutunSayisi], int satirSayisi) {
+  // Matrisin değerini değiştirebiliriz
+  for (int i = 0; i < satirSayisi; i++) {
+    for (int j = 0; j < sutunSayisi; j++) {
+      matris[i][j] = i * j;
+    }
+  }
+}
+
+
 */
-/*	
-  int SUTUN1=6,SUTUN2=7;
-	double r[]={3.0,2.5,10.0,-2.3,9.8};	// 5 elemanlı dizi
-	double *p;
-	p = r;		// pointer diziyi gösteriyor
-		
-	cout<<setw(SUTUN1)<<"Sıra"<<setw(SUTUN2)<<"Deger"<<endl;
-	for(int i=0;i<5;i++){
-		cout<<setw(SUTUN1)<<i<<setw(SUTUN2)<<*(p+i)<<endl;
-	}
- */ 
-//--------------------------------------------------------------
-/*
-    FONKSİYONLARA DİZİLERİN PARAMETRE OLARAK GÖNDERİLMESİ
-      . 3 farklı gönderim şekli mevcut
-
-      1. pointer olarak: burada fonksiyonda formal parametre olarak pointer tanımlanır
-        void f(int *p) {
-          ...
-        }
-
-      2. boyutu belli dizi şeklinde:
-        void f(int dizi[10]) {
-          ...
-        }  
-
-      3. boyutu belirsiz dizi şeklinde (pointer gibi)
-        void f(int dizi[]) {
-          ...
-        }
-
-//  MATRİSLER İÇİN DURUM
-
-      1. pointer olarak: burada fonksiyonda formal parametre olarak pointer tanımlanır
-        void f(int **p) {
-          ...
-        }
-
-        çağırmadan önce şu yapılmalı (dinamik olarak yer ayrılmalı)
-        int **a1;
-        a1 = new int *[10];
-        for(int i = 0; i <10; i++)
-          a1[i] = new int[10];
-        f(a1);
-
-      2. boyutu belli dizi şeklinde:
-        void f(int a[][10]) {
-            // ...
-        } 
-
-      3. her bir satırıjn başlangıç adresini tutan pointer dizisi şeklinde
-        void f(int *dizi[10]) {
-          ...
-        }
-
-        çağırmadan önce şu yapılmalı (dinamik olarak yer ayrılmalı)
-        int *a1[10];
-        for(int i = 0; i <10; i++)
-          a1[i] = new int[10];
-        f(a1);
-      
-*/
-/*
-   int a[5] = {1000, 2, 3, 17, 50};
-   double o;
-
-   // dizinin fonksiyona parametre olarak verilmesi
-   //o = OrtalamaBul( a, 5 ) ;
-   //o = OrtalamaBul2( a, 5 ) ;
-   o = OrtalamaBul3( a, 5 ) ;
- 
-   // output the returned value 
-   cout << "Ortalama: " << o << endl;
-*/
-//--------------------------------------------------------------
-/*
-  FONKSİYONLARIN DİZİ GERİ DÖNDÜRMESİ
-	. normal şartlarda bir fonksiyonun sadece 1 adet geri dönüş değeri olur.
-	. ancak dizi şeklinde birden çok değer geri döndürülebilir
-	. bunun için geri dönüş değeri pointer olacak şekilde fonksiyon tanımlanmalıdır
-		int * f(...){
-			...
-		}
-*/
-/*
-   int *p,n=20;
-   p = SayiUret(n);
-   
-   for ( int i = 0; i < n; i++ ) {
-      cout << "*(p + " << i << ") : "<< *(p + i) << endl;
-   }
-*/
-
-//--------------------------------------------------------------
   return 0;
 }
