@@ -97,7 +97,7 @@ int main() {
   // En küçük, en büyük elemanı, ortalama bulunuz
   // Ortalamadan küçük elemanları, ortalamadan büyük elemanları bulunuz
   // 2. max, ve 2. min elemanı bulunuz
-  // dizinin matematikteki formülüne göre standar sapmasını bulunuz
+  // dizinin matematikteki formülüne göre standart sapmasını bulunuz
 
 //---------------------------------------------------------------
 //  Çok Boyutlu Dizi
