@@ -13,6 +13,13 @@ using namespace std;
 			char isim[6] = {'Z', 'a', 'f', 'e', 'r', '\0'}; // ya da
 			char isim[] = "Zafer";
 
+  bu derste aşağıdaki konuları göreceğiz
+  - string tanımlama
+  - string fonksiyonları
+  - string ile karakter dizisi arasındaki farklar
+  - string ile karakter dizisi arasındaki dönüşümler
+  - string ile ilgili örnekler
+
 */
 //-------------------------------------------------------------
 int main() {

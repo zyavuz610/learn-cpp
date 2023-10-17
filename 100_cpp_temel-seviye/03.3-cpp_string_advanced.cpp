@@ -29,12 +29,12 @@ int main() {
   cout<<"Size : "<<str.size()<<endl;
   cout<<"length : "<<str.length()<<endl;    // aynı
   cout<<"capacity : "<<str.capacity()<<endl;  // bellekte ayrılan yer
-  str.reserve(50); // yeni yer ayrılması istenir, ayrılan yer daha fala olabilir
+  str.reserve(50); // yeni yer ayrılması istenir, ayrılan yer daha fazla olabilir
   cout<<"new capacity : "<<str.capacity()<<endl;  // bellekte ayrılan yer
   cout<<"Max size : "<<str.max_size()<<endl;  // ulaşılabilecek maximum boyut
 
   str.shrink_to_fit();
-  cout<<"new new capacity : "<<str.capacity()<<endl;
+  cout<<"new capacity : "<<str.capacity()<<endl;
 
   str.clear();
   cout<<str<<endl;
