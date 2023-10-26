@@ -1,7 +1,10 @@
 #include <iostream>
 using namespace std;
 /*
-   bu dosyada
+   bu dosyada anlatılacak konular:
+    referanslar, tanımı, kullanımı, özellikleri
+    referans ile pointer arasındaki farklar:
+    referans ile fonksiyon çağrıları ve geri dönüş değerleri
 */
 
 void takas_cbr(int &a,int &b){

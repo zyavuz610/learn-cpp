@@ -3,13 +3,13 @@ namespace anahtar kelimesi ile tanımlanır.
 namespace namespace_name {
    // code declarations
 }
---------------------------------------------------------
+//--------------------------------------------------------
 :: operatörü ile alt elemanlara erişilebilir
 name::code;  // code could be variable or function.
---------------------------------------------------------
-örnek:
 */
+//--------------------------------------------------------
 /*
+//örnek:
 #include <iostream>
 //using namespace std;
 // first name space
@@ -38,7 +38,8 @@ int main () {
 çıktı:
 Inside first_space
 Inside second_space
----------------------------------------------------------
+
+//---------------------------------------------------------
 using namespace ile seçeceğimiz ad alanıında çalışabiliriz.
 */
 /*

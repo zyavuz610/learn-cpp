@@ -2,6 +2,15 @@
 
 using namespace std;
 
+/*
+  bu dosyada anlatılacak konular:
+    fonksiyonlara dizi gönderimi
+    fonksiyonlara matris gönderimi
+    fonksiyonlardan dizi geri döndürme
+    fonksiyonlara değişkenlerin const olarak gönderilmesi
+    fonksiyonların geri dönüş değerlerinin const olması
+*/
+
 //-------------------------------------------------------------
 // FONKSİYONLARIN DİZİ GERİ DÖNDÜRMESİ için kullanılacak fonk.
 // rasgele sayılar üretilecek ve dizi olarak geri döndürülecek
@@ -128,7 +137,93 @@ x: 10
 
 */
 //--------------------------------------------------------------
+/*
+#include <iostream>
 
+// Bir fonksiyon tanımlayalım ve geri dönüş değerini const olarak işaretleyelim.
+const int sabitTopla(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int sayi1 = 5;
+    int sayi2 = 3;
+
+    // Fonksiyonun dönüş değeri bir const int olduğu için aşağıdaki atama hata verecektir.
+    // sayi1 = sabitTopla(sayi1, sayi2); // Hata!
+
+    // Ancak aşağıdaki gibi bir kullanım geçerli olacaktır.
+    const int sonuc = sabitTopla(sayi1, sayi2);
+
+    std::cout << "Toplam: " << sonuc << std::endl;
+
+    return 0;
+}
+
+*/
+//--------------------------------------------------------------
+/*
+DİP NOT
+  const pointer kullanımı
+  
+  const int* ptr; // ptr, sabit olan bir int değerini gösterir. ptr değişebilir ancak gösterdiği değer değişemez.
+
+  #include <iostream>
+
+int main() {
+    int x = 10;
+    int y = 20;
+
+    // Bir int* const işaretçi tanımlayalım ve x'in adresini işaret etsin.
+    const int* ptr = &x;
+
+    std::cout << "x: " << x << std::endl;
+    std::cout << "y: " << y << std::endl;
+
+    // İşaretçi ile değeri okuyabiliriz.
+    std::cout << "Değer ptr ile okundu: " << *ptr << std::endl;
+
+    // Ancak işaretçi ile değeri değiştiremeyiz.
+    // *ptr = 42; // Hata! Değer değiştirilemez.
+
+    // İşaretçiyi başka bir değişkene yönlendirebiliriz.
+    ptr = &y; // Geçerli, ptr şimdi y'nin adresini işaret eder.
+
+    std::cout << "Yeni değer ptr ile okundu: " << *ptr << std::endl;
+
+    return 0;
+}
+
+
+//************************************************************************************************
+  int* const ptr; // ptr, değişebilen bir int değerini gösterir. ptr değişemez ancak gösterdiği değer değişebilir.
+
+  #include <iostream>
+
+int main() {
+    int x = 10;
+    int y = 20;
+
+    // Bir const int* işaretçi tanımlayalım ve x'in adresini işaret etsin.
+    int* const ptr = &x;
+
+    std::cout << "x: " << x << std::endl;
+    std::cout << "y: " << y << std::endl;
+
+    // İşaretçi ile değeri okuyabiliriz ve değiştirebiliriz.
+    std::cout << "Değer ptr ile okundu: " << *ptr << std::endl;
+    
+    *ptr = 42; // Değer değiştirilebilir, x artık 42'ye eşittir.
+
+    std::cout << "x: " << x << std::endl;
+
+    // İşaretçiyi başka bir adrese yönlendiremeyiz.
+    // ptr = &y; // Hata! İşaretçi sabit, başka bir adresi işaret edemez.
+
+    return 0;
+}
+
+*/
 //--------------------------------------------------------------
   return 0;
 }
