@@ -158,6 +158,5 @@ int main(void) {
 				- public	> private
 				- protected > private
 				- private	> asla erişilemez
-		- protected
-		- private
+
 */

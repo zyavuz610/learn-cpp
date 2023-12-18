@@ -75,13 +75,13 @@ int main() {
 //---------------------------------------------------
 // yukarıdaki for döngüsünün bir başka yazılış biçimi
 /*
-  int n;
-  cout<<"N:";
-  cin>>n;
-  for(int i=0,t,top=0;i<n;top+=t,cout<<"Toplam: "<<top<<endl,i++){
-    cout<<"["<<i+1<<"]:";
-    cin>>t;
-  }
+int n;
+cout<<"N:";
+cin>>n;
+for(int i=0,t,top=0;i<n;top+=t,cout<<"Toplam: "<<top<<endl,i++){
+  cout<<"["<<i+1<<"]:";
+  cin>>t;
+}
 */  
 //--------------------------------------------------
 /*
@@ -157,19 +157,19 @@ int main() {
       2. switch-case ifadelerinde içinde bulunduğu case durumunu sonlandırır.
 */
 /*
-  int i;
-  for(i=0;i<10;i++){
-    if(i==6) break;
-    cout<<i<<endl;
-    //if(i==6) break;
-  }
+int i;
+for(i=0;i<10;i++){
+  if(i==6) break;
+  cout<<i<<endl;
+  //if(i==6) break;
+}
 */
 //--------------------------------------------------------
 //  continue
 /*
-    döngü gözdesinin geri kalanı çalıştırılmadan bir sonraki döngü adımına geçilir, döngü şartı kontrol edilir
-      . for döngüsü için: continue deyiminden sonraki kodlar atlanarak arttırma kısmı çalıştırıldıktan sonra şart kontrol edilir, doğruysa döngüye devam edilir
-      . while, do-while için: continue deyiminden sonraki kodlar atlanarak direk şart kontrol edilir, doğruysa döngüye devam edilir
+döngü gözdesinin geri kalanı çalıştırılmadan bir sonraki döngü adımına geçilir, döngü şartı kontrol edilir
+  . for döngüsü için: continue deyiminden sonraki kodlar atlanarak arttırma kısmı çalıştırıldıktan sonra şart kontrol edilir, doğruysa döngüye devam edilir
+  . while, do-while için: continue deyiminden sonraki kodlar atlanarak direk şart kontrol edilir, doğruysa döngüye devam edilir
 */
 /*
   int i;

@@ -140,7 +140,7 @@ x: 10
 /*
 #include <iostream>
 
-// Bir fonksiyon tanımlayalım ve geri dönüş değerini const olarak işaretleyelim.
+// Bir fonksiyon tanımlayalım ve geri dönüş değerini const olarak işaretleyelim. Bu durumda bu geri dönüş değperi değiştirilemez. Ya da const bir değişkene atama yapılmalıdır.
 const int sabitTopla(int a, int b) {
     return a + b;
 }

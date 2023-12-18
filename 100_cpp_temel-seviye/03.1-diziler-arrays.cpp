@@ -70,7 +70,7 @@ int main() {
 	int n,SUTUN1=6,SUTUN2=7;
   cout<<"N:";
 	cin>>n;
-	int sayi[n];
+	int sayi[100];
 	for(int i=0;i<n;i++){
 		cout<<i<<". sayi : ";
 		cin>>sayi[i];
