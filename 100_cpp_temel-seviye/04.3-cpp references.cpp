@@ -1,11 +1,31 @@
 #include <iostream>
 using namespace std;
+/*
+   bu dosyada anlatılacak konular:
+    referanslar, tanımı, kullanımı, özellikleri
+    referans ile pointer arasındaki farklar:
+    referans ile fonksiyon çağrıları ve geri dönüş değerleri
+*/
 
 void takas_cbr(int &a,int &b){
   int temp;
   temp = a;
   a = b;
   b = temp;
+}
+
+void takas_cbv(int a,int b){
+  int temp;
+  temp = a;
+  a = b;
+  b = temp;
+}
+
+void takas_cbp(int *a,int *b){
+  int temp;
+  temp = *a;
+  *a = *b;
+  *b = temp;
 }
 int main () {
 /*
@@ -43,7 +63,9 @@ int main () {
 /*
     int a=5,b=6;
     cout<<"Takastan Önce (a,b)=("<<a<<","<<b<<")"<<endl;
-    takas_cbr(a,b);     // doğrudan fonksiyonu call by value gibi çağırıyoruz.
+    takas_cbr(a,b);     // call by reference
+    takas_cbv(a,b);     // call by value
+    takas_cbp(&a,&b);     // call by pointer
     cout<<"Takastan Sonra (a,b)=("<<a<<","<<b<<")"<<endl;
     // fonksiyon çağrıldığında değerler nasıl geçiyor? şekil ile anlatalım
 */

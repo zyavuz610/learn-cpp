@@ -37,11 +37,11 @@ int main() {
  /*  
 
    // float, double
-   float x=1.11;         // double x=-1.0;
-   cout << "Reel Sayı İçeriği    : " << x << endl;
-   cout << "float bellek boyutu  : " << sizeof(float) << endl;
-   cout << "double bellek boyutu : " << sizeof(double) << endl;
-   cout << "İkili Gösterim: "<<bitset<32>(x)<<endl;
+   short int i;           // signed, unsigned farkı
+   short unsigned int j;  
+   j = 50000;
+   i = j;  // i=65536-50000
+   cout << i << " " << j;
 */
 
 

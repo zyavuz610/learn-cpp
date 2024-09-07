@@ -5,11 +5,12 @@ using namespace std;
 int main() {
 
 //---------------------------------------------  
-/*  stream:   bir kaynaktan hedefe doğru giden karakter dizisi
-    istream:  giriş cihazından bilgisayara doğru akan karakter dizisi
-    ostream:  bilgisayardan dış cihaza (ekran, dosya vs..) doğru akan karakter dizisi
+/*  
+stream:   bir kaynaktan hedefe doğru giden karakter dizisi
+istream:  giriş cihazından bilgisayara doğru akan karakter dizisi
+ostream:  bilgisayardan dış cihaza (ekran, dosya vs..) doğru akan karakter dizisi
 
-    <iostream>  : istream ve ostream türünden sınıfları içeren header
+<iostream>  : istream ve ostream türünden sınıfları içeren header
 
   istream cin;    şeritten okur kafayı ilerletir
 	ostream cout;   çıktıyı yazar, kafayı ilerletir
@@ -113,7 +114,8 @@ cout<<fixed;           // ondalık kısımda duyarlılık alır
 */
 //------------------------------------------------------------
 
-/** setw(n);    
+/** 
+ *  setw(n);    
     bir sonra gelen ifadeyi n sütunda yazacak şekilde ayarlar, 
     default olarak sağa dayalıdır, 
     cout<<left ile sola cout<<right ile sağa ayarlanabilir
@@ -150,11 +152,11 @@ cout<<fixed;           // ondalık kısımda duyarlılık alır
 	cout<<setw(5)<<x<<setw(7)<<y
 	    <<setw(8)<<"Warm"<<endl;			//Line 4
 
-	cout.fill('*');					//Line 5
+	cout.fill('*');					
 	cout<<setw(5)<<x<<setw(7)<<y
-	    <<setw(8)<<"Warm"<<endl;			//Line 6	
+	    <<setw(8)<<"Warm"<<endl;			
       cout<<setw(5)<<x<<setw(7)<<setfill('#')	
-	    <<y<<setw(8)<<"Warm"<<endl;		//Line 7
+	    <<y<<setw(8)<<"Warm"<<endl;		
 
 	cout<<setw(5)<<setfill('@')<<x
 	    <<setw(7)<<setfill('#')<<y

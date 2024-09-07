@@ -1,10 +1,12 @@
 #include <iostream>
-#include <bitset>
 using namespace std;
 
 int main() {
 
-
+/*
+bu dosyada anlatılacak konular:
+  enum tanımı ve kullanımı
+*/
    
 
    // - bazı değişkenler sadece belli değerleri alabilir             
