@@ -54,32 +54,15 @@
 
 --- 
 
-## Kayıtlar (Logs)
-* 1 - Pazartesi, 9-11
-* 2 - Cuma, 8-10
+## Ders Programı 
+* 1 - Perşembe, 13-15: PCLab
+* 2 - Cuma, 13-15: D2, kendi bilgisayarlarınızı getirmenizi bekliyoruz.
 
-[Sınıf İçi Kodlar](https://replit.com/@ZaferYavuz1/cpp-100a)
+[Sınıf İçi Kodlar](https://replit.com/@zaferyavuz3/learn-cpp)
 
 ---
 
-* H01/1
-  * tanışma, ders hakkında bilgi
-  * C++ ile C Karşılaştırma
-  * **tavsiye edilen izleme listesi**
-    * [C++ 100 - C++ ile Programlama ve Yol Haritası](https://www.youtube.com/watch?v=2GFTynfGG90&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=1)
-    * [C++ 101 - Kurulum (Replit.com) ve İlk Program (Hello World)](https://www.youtube.com/watch?v=DniXkYikXTY&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=2)
-* H01/2
-  * c++ dilinde ilk program (ekrana çıktı alma)
-  * yorumlar, ifade sonlandırma, blok kavramı, farklı kod yazma biçimleri, 
-  * identifiers (tanımlayıcılar), değişken, fonksiyon, class, module ... isimleri
-  * c++ dilinde keywords, whitespace
-  * ilk program, komut satırından derleme, çalıştırma
-  * veri türleri, değişkenler ve değişken tanımlama
-  * lokal ve global değişkenler
-  * Sabitler, litteral sabitler
-  * operatörler (aritmetik, karşılaştırma, lojik, atama)
-  * karar deyimleri (if, else, switch-case)
-  * döngü ifadeleri (for, while, do-while)
+* **Daha Önceki Ders Kayıtları**
   * **tavsiye edilen izleme listesi**
     * [C++ 102 - Ekrana çıktı alma | cout | yeni satır | birden çok ifadenin ekrana yazılması](https://www.youtube.com/watch?v=aeoW4LDX2GM&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=3)
     * [C++ 103 - Yorum (Comment) Ekleme](https://www.youtube.com/watch?v=qxVvfoXBJ2I&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=4)
@@ -102,6 +85,8 @@
     * [C++ 120 - Döngüler 4 | break ve continue deyimleri | Hesap Makinesi (Toplama) Örneği](https://www.youtube.com/watch?v=L5PxGoTqAz4&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=21)
     * [C++ 121 - Döngü Örnekleri 4 | Hesap Makinesi (4 işlem)](https://www.youtube.com/watch?v=PYbjjoafv8w&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=22)
     * [C++ 122 - Döngü Örnekleri 5 | Maximum, Minimum Bulma Problemi](https://www.youtube.com/watch?v=99sreSHbP2k&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=23)
-  * **sınıf içi ödevler**
-    * Türkiye nüfusunun bu yıl 85 milyon olduğunu dusunelim. Her yıl nüfusu %1.05 büyürse hangi yılda 100 milyonu geçeriz, 1 puan
+  * **sınıf içi 2 haftalık ödevler**
+    * ödevler sadece kod göndermekle kabul edilmeyecektir. ödevlerin sınıf içinde sunumu yapılacak, sunum esnasında istenen değişiklikleri yapabilecek düzeyde olmanız beklenmektedir.
+    * ödev kontrolleri son hafta yapılacaktır.
+    * Türkiye nüfusunun bu yıl 85 milyon olduğunu dusunelim. Her yıl nüfusu %1.05 büyürse hangi yılda 100 milyonu geçeriz, +1 puan
     * 500 den küçük 7 veya 9 un katı olan sayıların toplamını ekrana uygun bir mesajla yazınız, 500 sayısını değiştirebileceğim, 1 puan. toplam sayının kaç haneli olduğunu bulmak, +1 puan
