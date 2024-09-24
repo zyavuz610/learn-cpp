@@ -4,20 +4,20 @@
 * Hafta-1
   * Tanışma, dersin işleyişi
   * Değişkenler, sabitler, operatörler, karar ifadeleri, döngüler
+  * string (karakter dizisi), string işlemleri
 * Hafta-2
+  * diziler: tek boyutlu (vector), iki boyutlu (matris), 3 ve daha fazla boyutlu (tensor)
   * Fonksiyonlar, fonksiyon çağırma yöntemleri, fonksiyondan değer geri döndürme
-  * Formatlı girdi çıktı işlemleri, setw, setprecision, fixed, endl
   * Örnek Uygulamalar (haftalık ödev verilebilecek konular)
     * 2, 10, 16 tabanından birinde verilen bir sayının başka bir tabana dönüşümü (fonksiyonla yapınız)
 * Hafta-3
-  * string (karakter dizisi), string işlemleri
-  * diziler: tek boyutlu (vector), iki boyutlu (matris), 3 ve daha fazla boyutlu (tensor)
+  * Formatlı girdi çıktı işlemleri, setw, setprecision, fixed, endl
   * cin, cout (advanced)
 * Hafta-4
   * pointer, reference, dizi pointer ilişkisi
   * enum, namespaces, :: (scope operator)
-* Hafta-5
   * dosya işlemleri, sıralı erişim, rasgele erişim
+* Hafta-5
   * struct, composition, multi-level composition, union
 * Hafta-6
   * class ve object, class üyeleri (değişkenler<özellik>, fonksiyonlar<davranış>)
