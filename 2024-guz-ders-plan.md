@@ -64,6 +64,8 @@
 
 * **Daha Önceki Ders Kayıtları**
   * **tavsiye edilen izleme listesi**
+    * [C++ 100 - C++ ile Programlama ve Yol Haritası](https://www.youtube.com/watch?v=2GFTynfGG90&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=1)
+    * [C++ 101 - Kurulum (Replit.com) ve İlk Program (Hello World)](https://www.youtube.com/watch?v=DniXkYikXTY&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=2)
     * [C++ 102 - Ekrana çıktı alma | cout | yeni satır | birden çok ifadenin ekrana yazılması](https://www.youtube.com/watch?v=aeoW4LDX2GM&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=3)
     * [C++ 103 - Yorum (Comment) Ekleme](https://www.youtube.com/watch?v=qxVvfoXBJ2I&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=4)
     * [C++ 104 - Değişkenler ve Değişken İsimlendirme Kuralları (Variables)](https://www.youtube.com/watch?v=6E_Z-8gW-7s&list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9&index=5)
