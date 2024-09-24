@@ -9,7 +9,6 @@
   * Formatlı girdi çıktı işlemleri, setw, setprecision, fixed, endl
   * Örnek Uygulamalar (haftalık ödev verilebilecek konular)
     * 2, 10, 16 tabanından birinde verilen bir sayının başka bir tabana dönüşümü (fonksiyonla yapınız)
-    * ADC algoritmasının fonksiyonlar ile çözülmesi ve ara aşamaların tablo şeklinde gösterilmesi ([kaynak])(https://github.com/zyavuz610/labs_inKTU/blob/master/1_computer_org_lab/adc/analog_digital_converter(ADC).ipynb)
 * Hafta-3
   * string (karakter dizisi), string işlemleri
   * diziler: tek boyutlu (vector), iki boyutlu (matris), 3 ve daha fazla boyutlu (tensor)
