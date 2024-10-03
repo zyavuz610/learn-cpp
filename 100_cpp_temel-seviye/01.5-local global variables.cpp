@@ -56,3 +56,8 @@ int topla(int x,int y){
       return x+y; 
     }
 */
+//------------------------------------------------------------------------------------------------------------------------
+/*
+soru:
+aynı değişken isminde hem global hem de local değişken olursa bunları nasıl ayrıt ederiz?
+*/
