@@ -37,7 +37,7 @@ using namespace std;
           a=topla(5,6);         // fonksiyon çağırma
           ...
         }
-        // fonksiyon tanımı
+        // fonksiyon tanımı, definition
         int topla(int a,int b){
           ...
         }
@@ -59,7 +59,7 @@ using namespace std;
           - bu şekilde tanımlanan parametreler "formal değişken" olarak adlandırılırlar
           - fonksiyon içerisinde lokal değişken gibi davranırlar
           - fonksiyon çalışması bitince ömürleri sona erer.
-          - değerleri fonksiyon çağrılırken belirlenir
+          - değerleri fonksiyon çağrılırken belirlenir (argüman)
         
       . 3 türlü paramtre geçme (fonksiyon çağırma) yöntemi vardır
           1. call by Value
