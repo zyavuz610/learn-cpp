@@ -26,10 +26,10 @@ int main() {
   cout << "Değişken Yeni İçeriği:";
   cout << sayi2;
   /*Değişken İsimlendirme Kuralları
-      ingilizcedeki alfanumerik karakterler kullanılabilir. a-z,A-Z,0-9
-      _ kullanılabilir
-      değişken isminin ilk karakteri sayı olamaz
-      c++ için özel anlam ifade eden kelimeler değişken ismi olamaz (int, float, if, else, return, for, while)
+      * ingilizcedeki alfanumerik karakterler kullanılabilir. a-z,A-Z,0-9
+      * _ kullanılabilir, diğer özel karakterler kullanlamaz.
+      * değişken isminin ilk karakteri sayı olamaz
+      * c++ için özel anlam ifade eden kelimeler (keywords) değişken ismi olamaz (int, float, if, else, return, for, while)
 
 Örnek:
  sayi1, OK
