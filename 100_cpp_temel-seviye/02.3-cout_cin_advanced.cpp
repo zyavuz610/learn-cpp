@@ -23,7 +23,9 @@ ostream:  bilgisayardan dış cihaza (ekran, dosya vs..) doğru akan karakter di
    whitespace(beyaz boşluk): boşluk, tab, yeni satır('\n') gibi ayırıcı karakterleri
 
    cin>>ch;		girişten "AB" girildiğinde		ch='A', 'B' bir sonraki giriş için tutulur
-
+*/
+//------------------------------------------------
+/*
    double z;
    cin>>z;		
    giriş: 39		sonuç: z=39.0
