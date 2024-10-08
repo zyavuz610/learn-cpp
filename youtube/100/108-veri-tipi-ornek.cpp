@@ -34,12 +34,12 @@ int main() {
 
   // inf ve nan
   double posinf = 5.0 / 0.0 ; // pozitif sonsuz
-  cout << posinf << '\n';
+  cout << posinf << '\n';  // inf
 
   double neginf = -5.0 / 0.0 ; // negatif sonsuz
-  cout << neginf << '\n';
+  cout << neginf << '\n'; // -inf
 
   double nan1 = 0.0 / 0.0 ; // not a number (tanımsız)
-  cout << nan1 << '\n';
+  cout << nan1 << '\n'; // nan
 
   }
