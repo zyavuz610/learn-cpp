@@ -1,5 +1,5 @@
 #include <iostream>
-#include <iomanip>
+#include <iomanip>  // gerekli header
 using namespace std;
 
 int main() {
@@ -174,7 +174,22 @@ cout<<fixed;           // ondalık kısımda duyarlılık alır
   cout<<setprecision(4)<<y<<endl;  // 23.00 yazar
 */
 //------------------------------------------------------------
+/*
+// showpoint
+    double num1 = 10.0;
+    double num2 = 15.123;
+    
+    // showpoint olmadan
+    std::cout << "showpoint olmadan:\n";
+    std::cout << num1 << "\n";  // Sadece tam sayı kısmını gösterir (10)
+    std::cout << num2 << "\n";  // Ondalık kısmını gösterir (15.123)
 
+    // showpoint ile
+    std::cout << "\nshowpoint ile:\n";
+    std::cout << std::showpoint << num1 << "\n";  // Ondalık nokta zorlanır (10.0000)
+    std::cout << std::showpoint << num2 << "\n";  // Ondalık nokta zaten var (15.123)
+*/
+//------------------------------------------------------------
 /** 
  *  setw(n);    
     bir sonra gelen ifadeyi n sütunda yazacak şekilde ayarlar, 
