@@ -1,5 +1,11 @@
 /*
 24 adet * yaz, başına rehber sayılar yaz
+
+yanyana 24 adet yıldız
+
+123456789012345678901234
+************************
+
 */
 #include <iostream>
 using namespace std;
