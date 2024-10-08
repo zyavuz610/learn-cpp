@@ -150,5 +150,39 @@ int main() {
     cout<<"Sonuç 2 = "<<topla2(a)<<endl;
 
 //---------------------------------------------------------------
+/*
+// global, local değişkenler
+*/
+//---------------------------------------------------------------
+/*
+// static değişkenler
+//    fonksiyon içerisinde tanımlanan değişkenler fonksiyon çalıştığı sürece yaşarlar
+//    fonksiyon çalışması bittiğinde bellekten silinirler
+//    eğer bir değişkenin değeri fonksiyon çalışması bitse bile korunmasını istiyorsak
+//    static anahtar kelimesi kullanılır
+//    static değişkenler programın çalışma süresince bellekte kalır
+//    static değişkenlerin ilk değerleri 0'dır
+//    static değişkenler sadece bir defa tanımlanır, fonksiyon her çağrıldığında tekrar tanımlanmaz
+//    static değişkenlerin tanımlanması ve ilk değer ataması aynı satırda yapılır
+//    static değişkenlerin tanımlanması fonksiyonun dışında yapılır
+// örnek:
+    void test(){
+      static int a=0;
+      a++;
+      cout<<a<<endl;
+    }
+    int main(){
+      test();
+      test();
+      test();
+      test();
+    }
+// çıktı:
+// 1
+// 2
+// 3
+// 4
+*/
+//---------------------------------------------------------------
   return 0;
 }
