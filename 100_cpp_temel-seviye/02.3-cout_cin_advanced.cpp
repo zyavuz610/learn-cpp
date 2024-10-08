@@ -26,9 +26,17 @@ ostream:  bilgisayardan dış cihaza (ekran, dosya vs..) doğru akan karakter di
 */
 //------------------------------------------------
 /*
+// kullanıcıdan giriş almak
    double z;
    cin>>z;		
    giriş: 39		sonuç: z=39.0
+*/
+//------------------------------------------------
+/*
+// birden fazla giriş almak
+   int x,y;
+   cin>>x>>y;
+   giriş: 25 67		sonuç: x=25, y=67
 */
 //---------------------------------------------
 /*
@@ -52,7 +60,7 @@ ostream:  bilgisayardan dış cihaza (ekran, dosya vs..) doğru akan karakter di
   // 25 67 89 43 72
   // 12 78 34
 
-  // Consider the statements:
+  // Örnek:
 
   cin>>a;
   cin.ignore(5,'\n');
@@ -64,8 +72,59 @@ ostream:  bilgisayardan dış cihaza (ekran, dosya vs..) doğru akan karakter di
   // The second statement, cin.ignore(100,'\n'); discards all of the remaining numbers in the first line.
   // The third statement cin>>b; stores 12 (from the next line) in b.
 */
-
+//------------------------------------------------
+/*
+// The peek and the putback Functions
+  // cin.peek();  sıradaki karakteri okur, ama kafayı ilerletmez
+  // cin.putback(ch);  ch karakterini geri koyar, kafayı ilerletmez
+*/
+  char ch1,ch2,ch3;
+  int num;
+  cin>>ch1;
+  ch2 = cin.peek();
+  //cin>>ch2;
+  cin>>num;
+  cout<<ch1<<" "<<ch2<<" "<<num<<endl;
+  //cin.putback(ch2);
+  cin>>ch2;
+  cout<<ch1<<" "<<ch2<<" "<<num<<endl;
 //-------------------------------------------------------------------
+//Functions peek and putback
+/*
+	char ch;
+
+	cout<<"Line 1: Enter a string: ";		//Line 1
+	cin.get(ch);					//Line 2
+	cout<<endl;						//Line 3
+	cout<<"Line 4: After first cin.get(ch); "
+	    <<"ch = "<<ch<<endl;			//Line 4
+cin.get(ch);					//Line 5
+	cout<<"Line 6: After second cin.get(ch); " 
+	    <<"ch = "<<ch<<endl;			//Line 6
+
+	cin.putback(ch);					//Line 7
+	cin.get(ch);					//Line 8
+	cout<<"Line 9: After putback and then " 
+	    <<"cin.get(ch); ch = "<<ch<<endl;	//Line 9
+	
+	ch = cin.peek();					//Line 10
+	cout<<"Line 11: After cin.peek(); ch = "
+	    <<ch<<endl;					//Line 11
+	cin.get(ch);					//Line 12
+	cout<<"Line 13: After cin.get(ch); ch = "
+	    <<ch<<endl;					//Line 13
+*/
+/*
+Sample Run: In this sample run, the user input is in red.
+Line 1: Enter a string: abcd
+Line 4: After first cin.get(ch); ch = a
+Line 6: After second cin.get(ch); ch = b
+Line 9: After putback and then cin.get(ch); ch = b
+Line 11: After cin.peek(); ch = c
+Line 13: After cin.get(ch); ch = c
+
+*/
+//---------------------------------------------------------------
 
   // getline(cin,str);
 /****
