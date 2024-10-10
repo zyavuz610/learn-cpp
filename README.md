@@ -27,7 +27,7 @@ Her gün değişen ve gelişen bilişim dünyasında KTÜ Bilgisayar Mühendisli
   * Veri Türleri (int, float, char, ...)
   * Değişken Tanımlama
   * static değişkenler
-  * Yerel, gloabl, formal değişkenler
+  * Yerel, global, formal değişkenler
   * Sabitler (constants (const), litterals, #define ...)
   * Operatörler ve Öncelikleri
 * Karar İfadeleri
