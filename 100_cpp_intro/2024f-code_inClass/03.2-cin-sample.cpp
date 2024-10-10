@@ -1,9 +1,10 @@
 #include <iostream>
 using namespace std;
 int main(){
-    string ad;
+    string ad, soyad;
     cout<<"Profil Adiniz:";
-    cin>>ad;
+    //cin>>ad>>soyad;
+    getline(cin,ad);
     while(true){
         char ch; int a;
         cout<<"Karakter (cikmak icin 0): ";
