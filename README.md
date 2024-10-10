@@ -46,7 +46,7 @@ Her gün değişen ve gelişen bilişim dünyasında KTÜ Bilgisayar Mühendisli
 * Giriş-Çıkış
   * Standart girdi-çıktı
     * cin, cout
-    * Basit formatlı girdi-çıktı
+    * Basit formatlı girdi-çıktı, setw, setprecision
     * İleri düzey girdi çıktı
   * Dosya İşlemleri
     * Dosya okuma, yazma (fstream,ifstream, ofstream)
