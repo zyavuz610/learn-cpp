@@ -17,8 +17,8 @@ int main(){
         cout<< ((i+1)%10);
     }
     cout<<endl;
-    cout<<setw(8)<<"abc";
-    cout<<setw(8)<<d;
-    cout<<setw(8)<<d;
+    cout<<setw(8)<<left<<"abc";
+    cout<<setw(8)<<left<<d;
+    cout<<setw(8)<<fixed<<setprecision(3)<<right<<d;
     return 0;
 }
