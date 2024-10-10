@@ -11,7 +11,7 @@ Kaynak kodlar genel olarak 4 bölümden oluşur.
 * **400_cpp_advanced:** İleri seviye C++ konuları
 
 Bunların dışında; 
-* **500_cpp_ornekler:** farklı kaynaklardan öğrencilerin kullanımı için paylaşılan tüm kodları içerir.
+* **500_cpp_samples:** farklı kaynaklardan öğrencilerin kullanımı için paylaşılan tüm kodları içerir.
 
 ## Haftalara Göre Ders Planları (Müfredat)
 Her gün değişen ve gelişen bilişim dünyasında KTÜ Bilgisayar Mühendisliğindeki "Nesne Yönelimli Programlama" isimli derste anlatılan C++ diline ilişkin ders notları, yazılan kodlar, verilen örnekler ve müfredat kısmi değişikliklere uğramaktadır.
