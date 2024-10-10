@@ -4,7 +4,7 @@ Ders içeriği aşağıda verilen mantıksal sırada anlatılmaktadır. Konularl
 
 Her kaynak dosyaların isimlendirmesi şu şekildedir: **XX.Y-abcd.cpp** , burada **XX**(konunun işleneceği haftayı), **Y**(konunun o haftadaki konu sırasını), ve **abcd**(kaynak dosyanın içeriğini) ifade etmektedir.
 
-Kaynak kodlar genel olarak 3 bölümden oluşur. 
+Kaynak kodlar genel olarak 4 bölümden oluşur. 
 * **100_cpp_intro:** Temel C++ konularını içermektedir.
 * **200_cpp_class_object:** c++ nesne yönelimli programlama kavramlarını içerir.
 * **300_cpp_STL:** C++ Standart Template Library (STL) konularını içerir
