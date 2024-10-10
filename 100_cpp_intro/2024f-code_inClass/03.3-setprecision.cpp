@@ -19,6 +19,6 @@ int main(){
     cout<<endl;
     cout<<setw(8)<<left<<"abc";
     cout<<setw(8)<<left<<d;
-    cout<<setw(8)<<fixed<<setprecision(3)<<right<<d;
+    cout<<setw(12)<<fixed<<setprecision(3)<<right<<scientific<<d;
     return 0;
 }
