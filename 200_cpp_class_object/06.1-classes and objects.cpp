@@ -62,8 +62,7 @@ int main() {
 }
 //---------------------------------------------------------------------
 /*  bir başka örnek (öğrenci sınıfı da verilebilir)
-class clockType
-{
+class clockType {
 public:
     void setTime(int, int, int);
     void getTime(int&, int&, int&);
