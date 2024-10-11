@@ -4,18 +4,19 @@ Ders içeriği aşağıda verilen mantıksal sırada anlatılmaktadır. Konularl
 
 Her kaynak dosyaların isimlendirmesi şu şekildedir: **XX.Y-abcd.cpp** , burada **XX**(konunun işleneceği haftayı), **Y**(konunun o haftadaki konu sırasını), ve **abcd**(kaynak dosyanın içeriğini) ifade etmektedir.
 
-Kaynak kodlar genel olarak 3 bölümden oluşur. 
-* **100_temel-seviye-cpp:** Temel C++ konularını içermektedir.
+Kaynak kodlar genel olarak 4 bölümden oluşur. 
+* **100_cpp_intro:** Temel C++ konularını içermektedir.
 * **200_cpp_class_object:** c++ nesne yönelimli programlama kavramlarını içerir.
 * **300_cpp_STL:** C++ Standart Template Library (STL) konularını içerir
-* **400_cpp_ileri-konular:** İleri seviye C++ konuları
+* **400_cpp_advanced:** İleri seviye C++ konuları
 
 Bunların dışında; 
-* **500_cpp_ornekler:** farklı kaynaklardan öğrencilerin kullanımı için paylaşılan tüm kodları içerir.
+* **500_cpp_samples:** farklı kaynaklardan öğrencilerin kullanımı için paylaşılan tüm kodları içerir.
 
 ## Haftalara Göre Ders Planları (Müfredat)
 Her gün değişen ve gelişen bilişim dünyasında KTÜ Bilgisayar Mühendisliğindeki "Nesne Yönelimli Programlama" isimli derste anlatılan C++ diline ilişkin ders notları, yazılan kodlar, verilen örnekler ve müfredat kısmi değişikliklere uğramaktadır.
-* [2023](2023-guz-ders-plan.md) - __Aktif Dönem__
+* [2024](2024-guz-ders-plan.md) - __Aktif Dönem__
+* [2023](2023-guz-ders-plan.md)
 * [2019](2019-guz-ders-plan.md) - [Kaynak kodlar (Repl.it)](https://repl.it/@ZaferYavuz1)
 * [2018](2018-guz-ders-plan.md)
 
@@ -26,7 +27,7 @@ Her gün değişen ve gelişen bilişim dünyasında KTÜ Bilgisayar Mühendisli
   * Veri Türleri (int, float, char, ...)
   * Değişken Tanımlama
   * static değişkenler
-  * Yerel, gloabl, formal değişkenler
+  * Yerel, global, formal değişkenler
   * Sabitler (constants (const), litterals, #define ...)
   * Operatörler ve Öncelikleri
 * Karar İfadeleri
@@ -45,7 +46,7 @@ Her gün değişen ve gelişen bilişim dünyasında KTÜ Bilgisayar Mühendisli
 * Giriş-Çıkış
   * Standart girdi-çıktı
     * cin, cout
-    * Basit formatlı girdi-çıktı
+    * Basit formatlı girdi-çıktı, setw, setprecision
     * İleri düzey girdi çıktı
   * Dosya İşlemleri
     * Dosya okuma, yazma (fstream,ifstream, ofstream)

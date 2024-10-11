@@ -151,3 +151,10 @@ switch(secim){
 
   return 0;
 }
+
+//--------------------------------------------------------------------------------------------
+
+/*
+soru: if-else ile switch-case ifadeleri arasında ne fark vardır? bunları birbirleri yerine kullanabilir miyiz?
+
+*/

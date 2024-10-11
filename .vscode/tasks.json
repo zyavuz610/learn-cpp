@@ -1,0 +1,48 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc.exe etkin dosyayı derle",
+            "command": "C:\\Dev-Cpp\\bin\\gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Hata Ayıklayıcısı tarafından oluşturulan görev."
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe etkin dosyayı derle",
+            "command": "C:\\Dev-Cpp\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "Hata Ayıklayıcısı tarafından oluşturulan görev."
+        }
+    ],
+    "version": "2.0.0"
+}

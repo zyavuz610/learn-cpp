@@ -255,3 +255,9 @@ cout << "Programda bir hata oluştu.\n";
 Özlü Söz: 
 "Bir şeyi yapamayacağınızı düşünüyorsanız, yapamazsınız. Bir şeyi yapabileceğinizi düşünüyorsanız, yapabilirsiniz. Bu iki düşünce de doğrudur." (Henry Ford)
 */
+
+//--------------------------------------------------------------------------------------------------------
+
+/*
+soru: for ve while döngüsü arasında ne fark vardır, for döngüsü ile yazılan bir kodu while döngüsüne nasıl çevirirsiniz? tersini de düşünün.
+*/
