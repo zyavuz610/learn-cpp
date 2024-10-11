@@ -21,9 +21,17 @@ using namespace std;
 			sayi[0] = 10;				// ilk eleman 10 olarak ayarlanıyot
 			char s[] = {'B','i','l','g','i','s','a','y','a','r'};
 
+      int dizi[5] = {0};  // Tüm elemanlar 0 olur
+      int dizi[5] = {1, 2, 3, 4, 5};  // 5 elemanlı bir dizi, her eleman tanımlı
+      int dizi[5] = {1, 2};  // İlk iki eleman 1 ve 2, geri kalanlar 0
+      int dizi[] = {1, 2, 3, 4, 5};  // Boyut otomatik olarak 5 olur
+
+
+
       konu olarak bilinmesi gerekeneler
       - dizi oluşum, ilk değer verme
       - elemanlara erişim, işlem yapmak (okuma yazma)
+      - dikkat et (hatırla!)
         - string için toplu erişim
         - diğer dizilerde tek tek erişim.
 			
