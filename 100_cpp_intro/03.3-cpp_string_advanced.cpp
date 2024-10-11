@@ -14,13 +14,15 @@ int main() {
 */
 //-----------------------------------------------
 /*
-// 10'arlı sayıları matris şeklinde yazıyoruz
-  for(int x=0;x<5;x++){
-    for(int i=0;i<10;i++){
-      cout<<i;
-    }
-  }
-  cout<<endl;
+// str.size(); kapasite, uzunluk, max_size
+// str.length(); uzunluk
+// str.capacity(); kapasite
+// str.max_size(); ulaşılabilen maksimum boyut
+// str.reserve(); yeni yer ayrılması istenir, ayrılan yer daha fazla olabilir
+// str.shrink_to_fit(); kapasiteyi uzunluğa eşitler
+// str.clear(); stringi temizler
+// str.empty(); boş mu değil mi
+// str.resize(); boyutu değiştirir
   
   //string str = "Nesne Yönelimli Programlama";
   string str("Nesne Yönelimli Programlama");
@@ -63,9 +65,12 @@ int main() {
   cout<<"Size : "<<str.size()<<endl;
 */
 
+//-------------------------------------------------------
 // geriye kalan string türünün fonksiyonlarını teker teker inceleyelim
 
 // data, copy, find, substr, compare, operator+=, operator[], at, back, front, append, push_back, assign, insert,erase,replace, swap(hem üye fonksiyon, hem de 2 string alan fonksiyon),pop_back,operator+,relational operators, operator>>, operator<<, getline
+
+// str.data(); stringin ilk elemanının adresini döndürür
 
 /*
   Örnek Projeler

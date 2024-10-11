@@ -42,37 +42,14 @@ using namespace std;
       
 */
 //-------------------------------------------------------------
-// fonksiyonlara parametre olarak dizilerin verilmesi için kullanılacak fonk. lar
-double OrtalamaBul(int dizi[], int boyut) {
-  int i, top = 0;       
-  double ort;         
-  for (i = 0; i < boyut; i++) {
-      top += dizi[i];
-   }
-   ort = double(top) / boyut;
-   return ort;
-}
-
-double OrtalamaBul2(int dizi[5], int boyut) {
-  int i, top = 0;       
-  double ort;         
-  for (i = 0; i < boyut; i++) {
-      top += dizi[i];
-   }
-   ort = double(top) / boyut;
-   return ort;
-}
-
-// pointer bölümünde anlatılacak
-double OrtalamaBul3(int *dizi, int boyut) {
-  int i, top = 0;       
-  double ort;         
-  for (i = 0; i < boyut; i++) {
-      top += *(dizi+i);
-   }
-   ort = double(top) / boyut;
-   return ort;
-}
+/*
+// örnek: 
+// sonsuz while döngüsü oluşturunuz, kullanıcıdan 10 elemanlı bir diziye elemanları girmesini isteyiniz, q girerse çıkış yapınız
+// kullanıcıdan ad, soyad, arasınav, final notlarını alınız
+// bu değerleleri bir diziye atınız, dizi indisleri id olarak düşünülebilir
+// ekrana tablo şeklinde id, ad, soyad, arasınav, final, ortalama, harf notu, geçti/kaldı yazdırınız.
+// setw(), setprecision(), fixed, setfill() fonksiyonlarını kullanınız
+*/
 //-------------------------------------------------------------
 int main() {
 
@@ -135,21 +112,5 @@ int main() {
   // matisin izini (trace) bulun (köşegen üzerindeki elemanların toplamı) (kare matris için)
   // matrisin alt ve üst üçgen bölgelerini ekrana yazın (kare matris için)
 
-//---------------------------------------------------------------
-// matrislerin fonksiyonlara parametre olarak verilmesi
-/*
-
-#define sutunSayisi 10
-void fonksiyon(int matris[][sutunSayisi], int satirSayisi) {
-  // Matrisin değerini değiştirebiliriz
-  for (int i = 0; i < satirSayisi; i++) {
-    for (int j = 0; j < sutunSayisi; j++) {
-      matris[i][j] = i * j;
-    }
-  }
-}
-
-
-*/
   return 0;
 }
