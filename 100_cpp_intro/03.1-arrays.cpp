@@ -14,6 +14,10 @@ using namespace std;
 		int sayi[100];	// 100 elemanlı int tipinde ve sayi isminde dizi
 		double r[10];
 		char s[100];	
+
+    int n = 5;
+    double dizi[n];  // C++ 11 standartlarına göre bu tanımlama yapılamaz
+    cout << "C++ version: " << __cplusplus << endl;
 		...
 		
 		. DİZİLERE İLK DEĞER VERME
