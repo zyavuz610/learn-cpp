@@ -51,6 +51,14 @@ using namespace std;
 // setw(), setprecision(), fixed, setfill() fonksiyonlarını kullanınız
 */
 //-------------------------------------------------------------
+/*
+illegal dizi işlemleri
+ int x[5] = {1,2,3,4,5};
+ int y[5] = {6,7,8,9,10};
+ x = y;  // bu işlem yapılamaz
+ cin>>x;  // bu işlem yapılamaz
+ if(x==y)  // bu işlem yapılamaz
+*/
 int main() {
 
 //----------------------------------------------------------

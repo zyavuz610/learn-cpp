@@ -68,9 +68,30 @@ int main() {
 //-------------------------------------------------------
 // geriye kalan string türünün fonksiyonlarını teker teker inceleyelim
 
-// data, copy, find, substr, compare, operator+=, operator[], at, back, front, append, push_back, assign, insert,erase,replace, swap(hem üye fonksiyon, hem de 2 string alan fonksiyon),pop_back,operator+,relational operators, operator>>, operator<<, getline
+// data, copy, find, substr, compare, operator+=, operator[], at, back, front, append, push_back, assign, insert,erase,replace, swap(hem üye fonksiyon, hem de 2 string alan fonksiyon),pop_back,operator+,relational operators, getline
 
-// str.data(); stringin ilk elemanının adresini döndürür
+// str.data(); stringin ilk elemanının adresini döndürür, sonuna \0 ekler, bazı versiyonlarda \0 eklemeyebilir
+// str.copy(); stringin bir kısmını başka bir stringe kopyalar
+    // char buffer[8];  // 7 karakter + '\0' için alan
+    // size_t copied = str.copy(buffer, 7, 0);  // İlk 7 karakteri kopyala, başlangıç 0
+// str.find(); stringin içinde bir karakter arar, bulursa indisini döndürür, bulamazsa string::npos döndürür
+  // found = str.find("Yönelimli",0);
+// str.substr(start,len); stringin bir kısmını alır, başlangıç indisini ve uzunluğunu alır
+// str.compare(str2); iki stringi karşılaştırır, 0 ise eşit, -1 ise ilk string küçük, 1 ise ilk string büyük
+// operatorler: +, +=, [], (karşılaştırma operatörleri)
+// str.at(); stringin bir elemanına erişir, hata kontrolü yapar
+// str.back(); stringin son elemanına erişir
+// str.front(); stringin ilk elemanına erişir
+// str.append(str2); stringin sonuna ekleme yapar
+// str.push_back(char); stringin sonuna karakter ekler
+// str.assign(str2); stringi başka bir string ile değiştirir
+// str.insert(pos,str2); stringin belirtilen indise string2 yi ekler, diğer karakterler kayar
+// str.erase(pos,len); stringin belirtilen indisten itibaren len kadar karakteri siler, diğer karakterler kayar
+// str.replace(pos,len,str2); stringin belirtilen indisten itibaren len kadar karakteri siler ve yerine str2 yi ekler
+// str.swap(str2); iki stringin içeriğini değiştirir
+// str.pop_back(); stringin son karakterini siler, geriye karakteri döndürür
+
+
 
 /*
   Örnek Projeler
