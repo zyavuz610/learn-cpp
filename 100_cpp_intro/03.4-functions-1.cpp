@@ -40,6 +40,7 @@ using namespace std;
         // fonksiyon tanımı, definition
         int topla(int a,int b){
           ...
+          // fonksiyon gövdesi (ne iş yaptığını ifade eden kodlar)
         }
 
 
