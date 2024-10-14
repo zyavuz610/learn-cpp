@@ -12,6 +12,7 @@ Kaynak kodlar genel olarak 4 bölümden oluşur.
 
 Bunların dışında; 
 * **500_cpp_samples:** farklı kaynaklardan öğrencilerin kullanımı için paylaşılan tüm kodları içerir.
+* **600_docs**: farklı belgeler içerir.
 
 ## Haftalara Göre Ders Planları (Müfredat)
 Her gün değişen ve gelişen bilişim dünyasında KTÜ Bilgisayar Mühendisliğindeki "Nesne Yönelimli Programlama" isimli derste anlatılan C++ diline ilişkin ders notları, yazılan kodlar, verilen örnekler ve müfredat kısmi değişikliklere uğramaktadır.
