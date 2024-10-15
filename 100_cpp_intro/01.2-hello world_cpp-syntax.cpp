@@ -1,4 +1,10 @@
 /*
+ * Yazar: zyavuz610
+ * Oluşturma Tarihi: 2024-10-15
+ * Değiştirme Tarihi: 2024-10-15
+ */
+
+/*
     temel linux komutları
     ---------------------
     - pwd: bulunulan dizini gösterir
@@ -101,3 +107,4 @@ int main() {
     - yazılan bir kodu silmeden görmezden gelinmesi için kullanılabilir.
     - DEBUG işlemlerinde çok yararlı bir yapıdır.
 */
+
