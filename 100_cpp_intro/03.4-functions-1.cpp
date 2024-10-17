@@ -11,7 +11,9 @@ using namespace std;
       . Bir fonksiyon bildirim (declaration) ve tanım (definition) olmak üzere iki kısımdan oluşur
         bildirim (declaration)
           - fonksiyon ismi:
-              kullanıcı tanımlı, değişken isimlendirme kurallarına göre tanımlanır, mutlaka bir fonksiyonun ismi belirtilmelidir
+              kullan
+              
+              ıcı tanımlı, değişken isimlendirme kurallarına göre tanımlanır, mutlaka bir fonksiyonun ismi belirtilmelidir
           - geri dönüş tipi:
               veri tiplerinden biri olmalıdır, geri dönüş değeri yoksa "void" kullanılmalıdır
           - paramtreler ve tipleri, sayısı ve tipleri belirtilir, birden çok parametre virgül ile ayrılır, paramtresi olmayan fonksiyonlar olabilir
