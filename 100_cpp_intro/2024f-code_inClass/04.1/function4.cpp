@@ -4,6 +4,7 @@ using namespace std;
 // void myfunc(void);
 // void myfunc(int,int);
 
+// parametreler için default değerler alması ve çağrılması
 int myfunc(int a=1,int b=2){
     int toplam = a+b;
     return toplam;
