@@ -4,6 +4,7 @@ using namespace std;
 // void myfunc(void);
 // void myfunc(int,int);
 
+// fonksiyon geridönüş değeri
 int myfunc(int a,int b){
     int toplam = a+b;
     return toplam;
