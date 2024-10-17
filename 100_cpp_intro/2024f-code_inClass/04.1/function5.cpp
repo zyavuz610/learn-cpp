@@ -4,6 +4,7 @@ using namespace std;
 // void myfunc(void);
 // void myfunc(int,int);
 
+// fonksyon parametrelerinin const olması
 int myfunc(const int a=1,const int b=2){
     //.....
     //a = 20; b=30;
