@@ -4,6 +4,7 @@ using namespace std;
 // void myfunc(void);
 // void myfunc(int,int);
 
+// fonksiyon parametreleri
 void myfunc(int a,int b){
     int toplam = a+b;
     cout<<a<<" + "<<b<<" = "<<toplam<<endl;
