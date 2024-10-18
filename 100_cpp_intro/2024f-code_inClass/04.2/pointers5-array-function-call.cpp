@@ -26,5 +26,7 @@ int main(){
     cout<<a<<":"<<len(a)<<endl;
     upper(a);
     cout<<a<<":"<<len(a)<<endl;
+    int a2[] = {10,20,30,40,50};
+    cout<<"Toplam:"<<sum(a2,3)<<endl;
     return 0;
 }
