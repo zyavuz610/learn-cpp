@@ -13,6 +13,14 @@ int sum(int *a,int n){
     }
     return s;
 }
+int find(int *a, int n,int e){
+    for(int i=0;i<n;i++){
+        if(a[i] == e){
+            return i;
+        }
+    }
+    return -1;
+}
 void upper(char *a){
     while(*a != '\0'){
         if(*a >= 'a' && *a <= 'z')
@@ -28,5 +36,6 @@ int main(){
     cout<<a<<":"<<len(a)<<endl;
     int a2[] = {10,20,30,40,50};
     cout<<"Toplam:"<<sum(a2,2)<<endl;
+    cout<<"Eleman Yeri:"<<find(a2,5,420)<<endl;
     return 0;
 }
