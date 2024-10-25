@@ -13,5 +13,6 @@ int main(){
         if (str == "q") break;
         dosya<<str<<endl;
     }
+    dosya.close();
     return 0;
 }
