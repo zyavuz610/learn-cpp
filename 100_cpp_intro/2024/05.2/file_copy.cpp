@@ -6,11 +6,10 @@ int main(){
     ofstream dosyaOut;
     ifstream dosyaIn;
     string str;
-    dosyaOut.open("out.txt",ios::app);
+    dosyaOut.open("out.txt",ios::out);
     dosyaIn.open("input.txt",ios::in);
-    while(true){
+    while(!dosyaIn.eof()){
         getline(dosyaIn,str);
-        if (str == "q") break;
         dosyaOut<<str<<endl;
     }
     dosyaOut.close();

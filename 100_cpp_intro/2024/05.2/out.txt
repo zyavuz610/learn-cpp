@@ -4,3 +4,7 @@ Merhaba KTÜ!
 zafer
 yavuz 123
 abc def ghi
+q
+12 34
+sonuc
+
