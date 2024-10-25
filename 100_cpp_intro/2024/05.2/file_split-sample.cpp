@@ -7,7 +7,7 @@ int main(){
     ifstream dosyaIn;
     string str,str2;
     int starti=0,stopi;
-    dosyaOut.open("out.txt",ios::out);
+    dosyaOut.open("output3.txt",ios::out);
     dosyaIn.open("input3.txt",ios::in);
     while(!dosyaIn.eof()){
         getline(dosyaIn,str);
