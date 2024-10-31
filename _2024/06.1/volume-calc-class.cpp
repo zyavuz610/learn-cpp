@@ -12,10 +12,17 @@ class Kutu {
             return volume;
         }
         void printData(){
-            cout<<"Hacim:"<<volume;
+            cout<<"("<<en<<",";
+            cout<<boy<<","<<yuk<<") ==> ";
+            cout<<volume<<endl;
         }
-    private:
+        void all_in_one(){
+            getValues();
+            VolumeCalculation();
+            printData();
+        }
         double en;
+    private:
         double boy;
         double yuk;
         double volume;
@@ -23,9 +30,12 @@ class Kutu {
 
 int main(){
     Kutu k1,k2;
-    k1.getValues();
+    //k1.getValues();
     //k2.getValues();
-    k1.VolumeCalculation();
-    k1.printData();
+    //k1.VolumeCalculation();
+    //k1.printData();
+    k1.all_in_one();
+    k2.all_in_one();
+    k1.en = 20;
     return 0;
 }
