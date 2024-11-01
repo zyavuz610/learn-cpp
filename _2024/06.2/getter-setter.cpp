@@ -37,12 +37,10 @@ class Kutu {
 
 int main(){
     Kutu k1,k2;
-    //k1.getValues();
-    //k2.getValues();
-    //k1.VolumeCalculation();
-    //k1.printData();
-    k1.all_in_one();
-    k2.all_in_one();
-    k1.en = 20;
+    k1.set_en(10);   // k1.en = 10;  HATA!
+    k1.set_boy(20);
+    k1.set_yuk(35);
+    k1.VolumeCalculation();
+    cout<<"Hacim:"<<k1.get_volume()<<endl;
     return 0;
 }
