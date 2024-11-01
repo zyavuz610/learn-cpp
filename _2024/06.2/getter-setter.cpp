@@ -21,6 +21,13 @@ class Kutu {
             VolumeCalculation();
             printData();
         }
+        void set_en(double en_) { en = en_;}
+        void set_boy(double boy_) { boy = boy_;}
+        void set_yuk(double yuk_) { yuk = yuk_;}
+        double get_en() {return en;}
+        double get_boy() {return boy;}
+        double get_yuk() {return yuk;}
+        double get_volume() {return volume;}
     private:
         double en;
         double boy;
