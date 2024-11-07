@@ -30,7 +30,7 @@ int main(){
     k5 = new Kutu(0.5);
     cout<<"------------------------"<<endl;
     Kutu k6[3] = {Kutu(), Kutu(02), Kutu(1,2,3)};
-    Kutu k7(2,3,4);
+    Kutu k7(2);
     new Kutu(4,5,6);
     return 0;
 }
@@ -49,7 +49,7 @@ Kutu::Kutu(double x){
     en = boy = yuk = x;
     volume = en*boy*yuk;
 }
-Kutu::Kutu(double en_,double boy_,double yuk_){
+Kutu::Kutu(double en_,double boy_,double yuk_=1){
     en = en_;
     boy = boy_;
     yuk = yuk_;
