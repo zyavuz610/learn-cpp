@@ -5,6 +5,7 @@ class Kutu {
     public:
         Kutu(); // ctor, yapıcı
         Kutu(double x); // ctor, tüm boyutları aynı değere ata
+        Kutu(double,double,double);
         void getValues();
         double VolumeCalculation();
         void printData();
@@ -28,7 +29,9 @@ int main(){
     k3 = new Kutu();
     k5 = new Kutu(0.5);
     cout<<"------------------------"<<endl;
-    Kutu k6[3] = {Kutu(), Kutu(02), Kutu()};
+    Kutu k6[3] = {Kutu(), Kutu(02), Kutu(1,2,3)};
+    Kutu k7(2,3,4);
+    new Kutu(4,5,6);
     return 0;
 }
 
@@ -45,6 +48,13 @@ Kutu::Kutu(double x){
     cout<<"ctor2 calistirildi"<<endl;
     en = boy = yuk = x;
     volume = en*boy*yuk;
+}
+Kutu::Kutu(double en_,double boy_,double yuk_){
+    en = en_;
+    boy = boy_;
+    yuk = yuk_;
+    volume = en*boy*yuk;
+    cout<<"ctor3 calistirildi..."<<endl;
 }
 void Kutu::getValues(){
     cout<<"3 deger giriniz:";
