@@ -27,6 +27,8 @@ int main(){
     Kutu k1,k2[2],*k3,k4(1.5),*k5;
     k3 = new Kutu();
     k5 = new Kutu(0.5);
+    cout<<"------------------------"<<endl;
+    Kutu k6[3] = {Kutu(), Kutu(02), Kutu()};
     return 0;
 }
 
