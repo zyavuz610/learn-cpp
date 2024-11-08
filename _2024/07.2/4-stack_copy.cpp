@@ -89,6 +89,7 @@ int main(){
     s3 = s1;
     s3.pop();
     s3.push(40);
+    s3.push(50);
     cout<<"s3----------------"<<endl;
     s3.print();
     cout<<"s1----------------"<<endl;
