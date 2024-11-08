@@ -8,3 +8,48 @@ pop fonksiyonu yığının en üstündeki elemanı döner ve yığından çıkar
 ...
 
 */
+
+#include <iostream>
+#define MAX_SIZE 100
+using namespace std;
+
+class Stack {
+    private:
+        int arr[MAX_SIZE];
+        int top;
+    public:
+        Stack(){
+            top=-1;
+            cout<<"ctor calisti"<<endl;
+        }
+        void push(int elm){
+            arr[++top] = elm;
+        }
+        int pop(){
+            return arr[top--];
+        }
+        int peek(){ 
+            return arr[top];
+        }
+        bool isEmpty(){
+            return (top==-1);
+        }
+        bool isFull(){
+            return (top==MAX_SIZE-1);
+        }
+        void print(){
+            if (isEmpty()){
+                cout<<"stack bos"<<endl;
+                return;
+            }
+            for(int i=0;i<=top;i++){
+                cout<<arr[i]<<", ";
+            }
+            cout<<"\n";
+        }
+};
+
+int main(){
+    Stack s1;
+    return 0;
+}

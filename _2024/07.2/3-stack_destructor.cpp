@@ -11,3 +11,69 @@ pop fonksiyonu yığının en üstündeki elemanı döner ve yığından çıkar
 yıkıcı fonksiyonu kullanarak yığın class ını temizleyelim. delete ile dinamik bellek alanını temizleyelim.
 
 */
+#include <iostream>
+#define MAX_SIZE 100
+using namespace std;
+
+class Stack {
+    private:
+        int* arr;
+        int top;
+        int capacity;
+    public:
+        Stack(){
+            top=-1;
+            capacity = MAX_SIZE;
+            arr = new int[capacity];
+            cout<<"ctor calisti"<<endl;
+        }
+        Stack(int cap_){
+            top=-1;
+            capacity = cap_;
+            arr = new int[capacity];
+            cout<<"ctor2 calisti"<<endl;
+        }
+        void push(int elm){
+            if(!isFull()){
+                arr[++top] = elm;
+            }
+        }
+        int pop(){
+            if(!isEmpty()){
+                return arr[top--];
+            }
+        }
+        int peek(){ 
+            if(!isEmpty()){
+                return arr[top];
+            }
+        }
+        bool isEmpty(){
+            return (top==-1);
+        }
+        bool isFull(){
+            return (top==capacity-1);
+        }
+        void print(){
+            if (isEmpty()){
+                cout<<"stack bos"<<endl;
+                return;
+            }
+            for(int i=0;i<=top;i++){
+                cout<<arr[i]<<", ";
+            }
+            cout<<"\n";
+        }
+        ~Stack(){
+            cout<<"dstor calisti"<<endl;
+        }
+};
+
+int main(){
+    {
+        Stack s3;
+    }
+    Stack s1(20),s2;
+    cout<<"----------------"<<endl;
+    return 0;
+}
