@@ -1,4 +1,4 @@
-#ifndef STACK_H
+#ifndef STACK_H // include komutu ile birden fazla include edilmesini engeller
 #define STACK_H
 
 class Stack {

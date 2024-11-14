@@ -3,23 +3,23 @@ using namespace std;
 
 class Counter{
 private:
-    int counter;
+    int counter; // encapsulation ve data hiding (abstraction)
 public:
-    Counter(){
+    Counter(){ // default constructor
         this->counter = 0;
     }
-    Counter(int counter_){
+    Counter(int counter_){ // parametreli constructor
         this->counter = counter_;
     }
-    void setCounter(int counter){
+    void setCounter(int counter){ // setter
         this->counter = counter;
     }
-    void increment(){this->counter++;}
-    int getCounter(){return this->counter;}
-    friend void printCounter(Counter c);
+    void increment(){this->counter++;} 
+    int getCounter(){return this->counter;} // getter
+    friend void printCounter(Counter c); // friend function, private data'ya erişebilir
 };
 
-void printCounter(Counter c){
+void printCounter(Counter c){ // friend function, Counter sınıfının private data'sına erişebilir
     cout<<"Counter is "<<c.getCounter()<<endl;
     cout<<"Counter is "<<c.counter<<endl;
 }
