@@ -4,7 +4,7 @@
 using namespace std;
 
 int main(){
-    Stack s1(20),s2;
+    Stack s1,s2;
     s1.push(10);
     s1.push(20);
     s1.push(30);

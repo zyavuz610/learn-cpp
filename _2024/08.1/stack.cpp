@@ -1,7 +1,7 @@
 #include "stack.h"
-//#include <iostream>
+#include <iostream>
 #define MAX_SIZE 100
-//using namespace std;
+using namespace std;
 
 Stack::Stack(){
     top=-1;
@@ -55,14 +55,13 @@ bool Stack::isFull(){
 }
 void Stack::print(){
     if (isEmpty()){
-        //cout<<"stack bos"<<endl;
+        cout<<"stack bos"<<endl;
         return;
     }
     for(int i=0;i<=top;i++){
-        //cout<<arr[i]<<", ";
-        ;
+        cout<<arr[i]<<", ";
     }
-    //cout<<"\n";
+    cout<<"\n";
 }
 Stack::~Stack(){
     //cout<<"dstor calisti"<<endl;
