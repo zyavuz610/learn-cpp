@@ -1,3 +1,6 @@
+#ifndef STACK_H
+#define STACK_H
+
 class Stack {
     private:
         int* arr;
@@ -15,3 +18,5 @@ class Stack {
         void print();
         ~Stack();
 };
+
+#endif // STACK_H
