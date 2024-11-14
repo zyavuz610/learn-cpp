@@ -21,8 +21,7 @@ inline int Max(int x, int y) {
 }
 
 //---------------------------------------------------------
-class operation 
-{ 
+class Operation { 
     int a,b,add,sub,mul; 
     float div; 
 public: 
@@ -32,34 +31,29 @@ public:
     void product(); 
     void division(); 
 }; 
-inline void operation :: get() 
-{ 
+inline void Operation :: get() { 
     cout << "Enter first value:"; 
     cin >> a; 
     cout << "Enter second value:"; 
     cin >> b; 
 } 
   
-inline void operation :: sum() 
-{ 
+inline void Operation :: sum() { 
     add = a+b; 
     cout << "Addition of two numbers: " << a+b << "\n"; 
 } 
   
-inline void operation :: difference() 
-{ 
+inline void Operation :: difference() { 
     sub = a-b; 
     cout << "Difference of two numbers: " << a-b << "\n"; 
 } 
   
-inline void operation :: product() 
-{ 
+inline void Operation :: product() { 
     mul = a*b; 
     cout << "Product of two numbers: " << a*b << "\n"; 
 } 
   
-inline void operation ::division() 
-{ 
+inline void Operation ::division() { 
     div=a/b; 
     cout<<"Division of two numbers: "<<a/b<<"\n" ; 
 } 
@@ -74,7 +68,7 @@ int main() {
    //-----------------------------------------------------------
 /*   
   cout << "Program using inline function\n"; 
-    operation s; 
+    Operation s; 
     s.get(); 
     s.sum(); 
     s.difference(); 
