@@ -1,20 +1,20 @@
 #include "stack.h"
-#include <iostream>
+//#include <iostream>
 #define MAX_SIZE 100
-using namespace std;
+//using namespace std;
 
 Stack::Stack(){
     top=-1;
     capacity = MAX_SIZE;
     arr = new int[capacity];
-    cout<<"ctor calisti"<<endl;
+    //cout<<"ctor calisti"<<endl;
 }
 
 Stack::Stack(int cap_){
     top=-1;
     capacity = cap_;
     arr = new int[capacity];
-    cout<<"ctor2 calisti"<<endl;
+    //cout<<"ctor2 calisti"<<endl;
 }
 
 Stack::Stack(const Stack &other){
@@ -24,7 +24,7 @@ Stack::Stack(const Stack &other){
     for(int i=0;i<=top;i++){
         arr[i] = other.arr[i];
     }
-    cout<<"copy ctor calisti"<<endl;
+    //cout<<"copy ctor calisti"<<endl;
 }
 
 void Stack::push(int elm){
@@ -55,14 +55,16 @@ bool Stack::isFull(){
 }
 void Stack::print(){
     if (isEmpty()){
-        cout<<"stack bos"<<endl;
+        //cout<<"stack bos"<<endl;
         return;
     }
     for(int i=0;i<=top;i++){
-        cout<<arr[i]<<", ";
+        //cout<<arr[i]<<", ";
+        ;
     }
-    cout<<"\n";
+    //cout<<"\n";
 }
 Stack::~Stack(){
-    cout<<"dstor calisti"<<endl;
+    //cout<<"dstor calisti"<<endl;
+    ;
 }

@@ -1,6 +1,6 @@
 #include <iostream>
 #include "stack.h"
-#define MAX_SIZE 100
+//#define MAX_SIZE 100
 using namespace std;
 
 int main(){
