@@ -10,7 +10,7 @@ int main() {
    cout << "Boolean bellek boyutu : " << sizeof(bool) << endl;
    cout << "İkili Gösterim: "<<bitset<8>(dolu)<<endl;
 
-
+//---------------------------------------------------
 /*
    // char
    char ch='A'; // ch='b', ch=70
@@ -18,6 +18,7 @@ int main() {
    cout << "char bellek boyutu    : " << sizeof(char) << endl;
   cout << "İkili Gösterim: "<<bitset<8>(ch)<<endl;
 */
+//---------------------------------------------------
 /*
    // int
    int n=-500;
@@ -26,14 +27,15 @@ int main() {
    cout << "short int bellek boyutu : " << sizeof(short int) << endl;
    cout << "long int bellek boyutu : " << sizeof(long int) << endl;
 */
-   
+//---------------------------------------------------   
 /*
    short int i;           // signed, unsigned farkı
    short unsigned int j;  
    j = 50000;
    i = j;  // i=65536-50000
    cout << i << " " << j;
-*/   
+*/  
+//--------------------------------------------------- 
  /*  
 
    // float, double
@@ -43,11 +45,11 @@ int main() {
    i = j;  // i=65536-50000
    cout << i << " " << j;
 */
-
+//---------------------------------------------------
 
    return 0;
 }
-
+//********************************************************************************************************************
 /*
         ******** Temel Veri Tipleri ***************
         bool            Boolean: doğru ya da yanlış
