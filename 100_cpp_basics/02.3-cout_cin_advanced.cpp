@@ -37,25 +37,22 @@ int main() {
 /*
   // cin.ignore(intExp,chExp);    intExp sayıda karakter ya da chExp karakteri görene kadar girilen karakterleri görmezden gelir, hangi şart ilk önce sağlanırsa
   int a,b;
-  //Suppose the input is:
+  // girişten aşağıdaki sayılar giridiğini düşünelim
   // 25 67 89 43 72
   // 12 78 34
 
   // Örnek:
 
   cin>>a;
-  cin.ignore(5,'\n');
+  cin.ignore(100,'\n'); // 100 karakteri ya da '\n' karakterini görene kadar okuma yapmaz
   cin>>b;
 
-  cout<<"a="<<a<<endl;
-  cout<<"b="<<b<<endl;
-  // The first statement cin>>a; stores 25 in a. 
-  // The second statement, cin.ignore(100,'\n'); discards all of the remaining numbers in the first line.
-  // The third statement cin>>b; stores 12 (from the next line) in b.
+  cout<<"a="<<a<<endl; // a=25 olur
+  cout<<"b="<<b<<endl; // b=12 olur
 */
 //------------------------------------------------
 /*
-// The peek and the putback Functions
+// The peek and the putback fonksiyonları
   // cin.peek();  sıradaki karakteri okur, ama kafayı ilerletmez
   // cin.putback(ch);  ch karakterini geri koyar, kafayı ilerletmez
 */
@@ -95,6 +92,7 @@ cin.get(ch);					//Line 5
 	cout<<"Line 13: After cin.get(ch); ch = "
 	    <<ch<<endl;					//Line 13
 */
+//---------------------------------------------------------------
 /*
 Sample Run: In this sample run, the user input is in red.
 Line 1: Enter a string: abcd

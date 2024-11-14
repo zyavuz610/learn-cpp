@@ -3,7 +3,8 @@ using namespace std;
 /*
     protected: private gibi işlem görür
       tek fark, miras ile yeni bir sınıf türetildiğinde protected değişkenlere türemiş sınıftan erişilebilir, private değişkenlere erişilemez
-
+   miras kalıtımı ile türetilen sınıfın protected değişkenlerine erişim izni vardır.
+   bu konu daha çok miras konusunda işlenecektir.
 */
 
 

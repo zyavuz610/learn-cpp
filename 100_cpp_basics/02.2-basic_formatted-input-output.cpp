@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
 //-------------------------------------------------------
-
+// cin ile veri girişi (string türü için)
   char ad[50];
   cout << "Adınız : ";
   cin >> ad;   // cin.get(ad); fonksiyonu da aynı işi yapar
@@ -19,9 +19,9 @@ int main() {
 //-------------------------------------------------------
 /*
 örnek: ortalama hesaplama
-  int a,b,c;
+  int a,b,c; 
   cout<<"3 sayı giriniz: ";
-  cin>>a>>b>>c;
+  cin>>a>>b>>c;  // 3 adet tam sayı değişkeni
   cout<<"Ortalama: "<<(a+b+c)/3<<endl;
 */
 //-------------------------------------------------------
@@ -68,19 +68,20 @@ int main() {
 //------------------------------------------------------
 // setw(n) formatlı yazdırma fonksiyonu, n karakterlik alan ayırır
 // #include <iomanip> eklenmeli
-// setprecison - hane sayısını belirler, noktadan sonra kaç hane yazılacağını belirler
-// fixed - ondalık sayıları kesirli olarak gösterilmesini sağlar
+// setprecison() : ondalık sayılar için kaç hane yazılacağını belirler, fixed ile birlikte kullanılır
+// fixed : ondalık sayıları sabit hale getirir, setprecision ile birlikte kullanılır
 //  aktif hale getirmek için
-//    cout<<fixed<<setprecision(2)<<ort<<endl;
+//    cout<<fixed<<setprecision(2)<<ort<<endl; // 2 hane ondalık
 //  pasif hale getirmek için
 //    cout<<std::noshowpoint<<ort<<endl; veya std::defaultfloat kullanılır
 /*
+// örnek: 10 öğrencinin adı, arasınav, final notları ve ortalama hesaplama
   cout<<setw(15)<<"Ad";
   cout<<setw(15)<<"Arasınav";
   cout<<setw(15)<<"Final";
   cout<<setw(15)<<"Ortalama";
   cout<<endl;
-  int a=25,f=55;            // rasgele başlangıç değerleri
+  int a=25,f=55;            // rasgele başlangıç değerleri atanabilir
   double a_d,f_d,ort;
   for(int i=0;i<10;i++){
     a=(a*f*f+53)%100;          // 0-100 arası bir not elde et
@@ -97,6 +98,9 @@ int main() {
 */
 //--------------------------------------------------------------    
 /*
+// başka bir örnek: showpoint, noshowpoint, setprecision
+// showpoint: ondalık sayıları yazdırırken nokta koyar
+// noshowpoint: ondalık sayıları noktasız yazdırır
   double a = 30;
   double b = 10000.0;
   double pi = 3.1416;
@@ -115,7 +119,7 @@ int main() {
 }
 
 /*
-örnek programlar
+örnek programlar, ödevler
 - ortalama hesaplama, sonsuz döngü ile
 - girilen yılın artık yıl olup olmadığını bulma, yüzyılını da hesaba kat
 - girilen sayının asal olup olmadığını bulma
