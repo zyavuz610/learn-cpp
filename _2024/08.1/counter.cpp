@@ -25,12 +25,12 @@ void printCounter(Counter c){
 }
 
 void menu(){
-    cout<<"------------------------";
+    cout<<"------------------------"<<endl;
     cout<<"1. Kredi icin sira al"<<endl;
     cout<<"2. Fatura icin sira al"<<endl;
     cout<<"3. Kredi sira durumu"<<endl;
     cout<<"4. Fatura sira durumu"<<endl;
-    cout<<"cikmak icin 0";
+    cout<<"cikmak icin 0"<<endl;
     cout<<"Secim: ";
 }
 
@@ -49,6 +49,7 @@ int main(){
                 break;
             case 2:
                 fatura.increment();
+                break;
             case 3:
                 printCounter(kredi);
                 break;
