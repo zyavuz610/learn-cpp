@@ -29,6 +29,8 @@ int main() {
   değişken isimleri özel karakterler içeremez.
   değişken isimleri anahtar kelimeler ile aynı olamaz.
 
+//---------------------------
+
   naming convention: camelCase, PascalCase, snake_case, kebab-case
     camelCase: 
       ilk kelime küçük harf, sonraki kelimeler büyük harfle başlar, 
