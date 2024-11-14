@@ -30,14 +30,36 @@ void menu(){
     cout<<"2. Fatura icin sira al"<<endl;
     cout<<"3. Kredi sira durumu"<<endl;
     cout<<"4. Fatura sira durumu"<<endl;
+    cout<<"cikmak icin 0";
     cout<<"Secim: ";
 }
 
 int main(){
     Counter fatura(100),kredi(400);
-    while(true){
-        
+    int secim,durum=1;
+    while(durum){
+        menu();
+        cin>>secim;
+        switch(secim){
+            case 0:
+                durum = 0;
+                break;
+            case 1:
+                kredi.increment();
+                break;
+            case 2:
+                fatura.increment();
+            case 3:
+                printCounter(kredi);
+                break;
+            case 4:
+                printCounter(fatura);
+                break;
+            default:
+                durum = 0;
+                break;
+        }
     }
-    menu();
+    cout<<"Bye.."<<endl;
     return 0;
 }
