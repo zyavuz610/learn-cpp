@@ -15,13 +15,16 @@ using namespace std;
 
 */
 
-
 inline int Max(int x, int y) {
    return (x > y)? x : y;
 }
 
 //---------------------------------------------------------
+<<<<<<< Updated upstream
 class Operation { 
+=======
+class operation { 
+>>>>>>> Stashed changes
     int a,b,add,sub,mul; 
     float div; 
 public: 
