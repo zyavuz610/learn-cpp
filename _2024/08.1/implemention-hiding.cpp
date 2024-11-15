@@ -3,6 +3,14 @@
 //#define MAX_SIZE 100
 using namespace std;
 
+/*
+derleme:
+g++ implementation-hiding.cpp stack.cpp -o prog.exe
+
+çalıştırma:
+./prog.exe
+*/
+
 int main(){
     Stack s1,s2;
     s1.push(10);
