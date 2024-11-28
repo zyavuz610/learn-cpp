@@ -25,7 +25,23 @@ class Time{
             if(this->sec<10) cout<<"0";
             cout<<this->sec<<"\n";
         }
+        void add(const Time& rhs){
+            this->sec += rhs.sec;
+            if(this->sec>60){
+                this->min += 1;
+                this->sec %= 60;
+            }
 
+            this->min += rhs.min;
+            if (this->min > 60) {
+                this->hour += 1;
+                this->min %= 60;
+            }
+            this->hour += rhs.hour;
+            if(this->hour >= 24){
+                this->hour %= 24;
+            }            
+        }
 };
 
 int main(){
@@ -34,5 +50,7 @@ int main(){
     t2.print();
     t3.print();
     t4.print();
+    t.add(t3);
+    t.print();
     return 0;
 }
