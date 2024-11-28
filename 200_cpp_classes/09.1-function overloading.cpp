@@ -1,7 +1,7 @@
 /*
  Fonksiyon Aşırı Yükleme
   * bir fonksiyona birden çok görev yükleme işlemine aşırı yükleme denir.
-  * fokn. isimleri aynı, parametreler farklı
+  * fokn. isimleri aynı, parametreler veya geri dönüş değerleri farklı
   * hangi fonksiyonun çağrılacağı parametrelerden belli olmaktadır.
 */
 
