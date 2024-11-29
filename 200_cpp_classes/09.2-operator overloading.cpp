@@ -11,7 +11,7 @@
       * alan farkı vb..
    * operator anahtar kelimesi kullanılır
    * şu operatorler aşırı yüklenemz
-      .   .*   ::   ?:   sizeof
+      .   ::   ?:   sizeof
    * şu operatörler aşırı yüklenebilir
    * +, -, ++, *, /, <<, (), [], vd...
 //------------------------------------------------------------   
@@ -49,7 +49,7 @@ class Box {
       }
       
       // Overload + operator to add two Box objects.
-      // Box3 = Box1 + Box2
+      // Box3 = (Box1 + Box2); // Box1.operator+(Box2)
       Box operator+(const Box& b) {
          Box box;
          box.length = this->length + b.length;
@@ -135,11 +135,16 @@ class Distance {
       }
       
       // overloaded minus (-) operator
-      // d1 = -d
+      // d1 = -d; // d1 = d.operator-()
       Distance operator- () {
          feet = -feet;
          inches = -inches;
          return Distance(feet, inches);
+         //----------
+         Distance d;
+         d.feet = -feet;
+         d.inches = -inches;
+         return d;
          
       //   Distance d;
       //   d.feet = -feet;
@@ -396,7 +401,7 @@ class Time {
          cout << "H: " << hours << " M:" << minutes <<endl;
       }
       
-      // overloaded prefix ++ operator
+      // overloaded prefix ++ operator, ++t
       Time operator++ () {
          ++minutes;          // increment this object
          if(minutes >= 60) {
@@ -420,7 +425,6 @@ class Time {
             ++hours;
             minutes -= 60;
          }
-         
          // return old original value
          return T; 
       }
