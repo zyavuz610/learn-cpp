@@ -64,5 +64,12 @@ int main() {
 }
 
 /*
+operator-() fonksiyonu, Distance sınıfının bir üyesi olarak tanımlanmıştır. Bu fonksiyon, Distance sınıfının bir nesnesini negatif yapar.
+örneğin, -D1; ifadesi, D1 nesnesini negatif yapar. Bu ifade, D1.operator-() fonksiyonunu çağırır.
 
+operator++(), operator--(), operator!() gibi diğer tekli operatörler de aynı şekilde tanımlanabilir.
+
+operator++ (), operator-- (), operator! (): prefix form, ++t, --t, !t
+operator++ (int), operator-- (int): postfix form, t++, t--, 
+    (int) ifadesi, sadece bir formalitedir ve fonksiyonun aşırı yüklenmesinde bir rol oynamaz.
 */

@@ -80,4 +80,19 @@ operator/(const Box& b) gibi fonksiyonlar, Box sınıfının iki nesnesini bölm
 
 operator*(const Box& b) gibi fonksiyonlar, Box sınıfının iki nesnesini çarpmak için aşırı yüklenebilir.
 örneğin, Box3 = Box1 * Box2; // Box1.operator*(Box2) gibi bir anlam taşır
+
+operator%(const Box& b) gibi fonksiyonlar, Box sınıfının iki nesnesini mod almak için aşırı yüklenebilir.
+örneğin, Box3 = Box1 % Box2; // Box1.operator%(Box2) gibi bir anlam taşır
+
+operator+=(const Box& b) gibi fonksiyonlar, Box sınıfının iki nesnesini toplayıp, sonucu ilk nesneye atamak için aşırı yüklenebilir.
+örneğin, Box1 += Box2; // Box1.operator+=(Box2) gibi bir anlam taşır
+
+operator-=(const Box& b) gibi fonksiyonlar, Box sınıfının iki nesnesini çıkarıp, sonucu ilk nesneye atamak için aşırı yüklenebilir.
+örneğin, Box1 -= Box2; // Box1.operator-=(Box2) gibi bir anlam taşır
+
+operator*=(const Box& b) gibi fonksiyonlar, Box sınıfının iki nesnesini çarparak, sonucu ilk nesneye atamak için aşırı yüklenebilir.
+örneğin, Box1 *= Box2; // Box1.operator*=(Box2) gibi bir anlam taşır
+
+operator/=(const Box& b) gibi fonksiyonlar, Box sınıfının iki nesnesini böler, sonucu ilk nesneye atamak için aşırı yüklenebilir.
+örneğin, Box1 /= Box2; // Box1.operator/=(Box2) gibi bir anlam taşır
 */
