@@ -66,3 +66,18 @@ int main() {
 
    return 0;
 }
+
+/*
+2 operand alan aritmetik operatorler de aynı şekilde aşırı yüklenebilir.
+operator+(const Box& b) fonksiyonu, Box sınıfının iki nesnesini toplamak için aşırı yüklenmiştir.
+Box3 = Box1 + Box2; // Box1.operator+(Box2) gibi bir anlam taşır
+
+operator-(const Box& b) gibi fonksiyonlar, Box sınıfının iki nesnesini çıkarmak için aşırı yüklenebilir.
+örneğin, Box3 = Box1 - Box2; // Box1.operator-(Box2) gibi bir anlam taşır
+
+operator/(const Box& b) gibi fonksiyonlar, Box sınıfının iki nesnesini bölmek için aşırı yüklenebilir.
+örneğin, Box3 = Box1 / Box2; // Box1.operator/(Box2) gibi bir anlam taşır
+
+operator*(const Box& b) gibi fonksiyonlar, Box sınıfının iki nesnesini çarpmak için aşırı yüklenebilir.
+örneğin, Box3 = Box1 * Box2; // Box1.operator*(Box2) gibi bir anlam taşır
+*/
