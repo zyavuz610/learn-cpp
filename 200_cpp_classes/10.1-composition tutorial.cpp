@@ -4,7 +4,6 @@
 	- inheritance "is a" ilişkisi
 */
 
-/*
 #include<iostream>
 #include<string>
 using namespace std;
@@ -202,7 +201,6 @@ void Event::printEventData()
       eventTime.printTime();
       cout << endl;
 }                       // composition sonu
-*/
 // ===============================================================================================================
 
 
