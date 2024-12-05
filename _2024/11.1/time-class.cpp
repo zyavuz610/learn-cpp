@@ -49,10 +49,21 @@ class Time {
          // return old original value
          return T; 
       }
+      bool operator<(Time T){
+          if(hours < T.hours){
+              return true;
+          }
+          else if(hours == T.hours){
+              if(minutes < T.minutes){
+                  return true;
+              }
+          }
+          return false;
+      }
 };
 
 int main() {
-   Time T1(11, 59), T2(10,40);
+   Time T1(9, 59), T2(10,40);
  
    ++T1;                    // increment T1
    T1.displayTime();        // display T1
