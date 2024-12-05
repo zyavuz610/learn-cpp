@@ -193,7 +193,6 @@ Event::Event(int hours, int minutes, int m, int d, int y, string name)
                    : eventDay(m, d, y), eventTime(hours, minutes)
 {
       eventName = name;
-      //586
       cout<<"Event constructor called"<<endl;
 }
 
