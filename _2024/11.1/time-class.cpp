@@ -21,7 +21,17 @@ class Time {
       void displayTime() {
          cout << "H: " << hours << " M:" << minutes <<endl;
       }
-      
+      friend ostream& operator<<(ostream& output, const Time& T){
+        if (T.hours < 10){
+            output << "0";
+        }
+        output << T.hours << ":";
+        if(T.minutes < 10){
+            output << "0";
+        }
+        output << T.minutes <<endl;
+        return output;
+      }
       // overloaded prefix ++ operator, ++t
       Time operator++ () {
          ++minutes;          // increment this object
@@ -67,12 +77,13 @@ int main() {
  
    ++T1;                    // increment T1
    T1.displayTime();        // display T1
-   ++T1;                    // increment T1 again
-   T1.displayTime();        // display T1
+   cout<<T1;
+   cout<<++T1;                    // increment T1 again
+   //T1.displayTime();        // display T1
  
-   T2++;                    // increment T2
+   cout<<T2++;                    // increment T2
    T2.displayTime();        // display T2
-   T2++;                    // increment T2 again
+   cout<<T2++;                    // increment T2 again
    T2.displayTime();        // display T2
 
    if(T1<T2){
