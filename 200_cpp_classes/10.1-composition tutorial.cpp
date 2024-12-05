@@ -12,6 +12,7 @@ class Time {     //Time class
 public:
       Time();
       Time(int, int);
+      ~Time(){cout<<"Time destructor called"<<endl;}	
       void setTime(int, int);
       void getTime(int&, int&);
       void printTime();
@@ -26,6 +27,7 @@ class Date {      //Date class
 public:
       Date();
       Date(int, int, int);
+      ~Date(){cout<<"Date destructor called"<<endl;}
       void setDate(int, int, int);
       void getDate(int&, int&, int&);
       void printDate();
@@ -35,21 +37,21 @@ private:
       int year;
 };
 
- 
-
 class Event {     //Event class
 public:
       Event(int hours = 0, int minutes = 0, int m = 1,
             int d = 1, int y = 1900, string name = "Christmas"); 
       void setEventData(int hours, int minutes, int m, int d, int y, string name);
      void printEventData();
+      ~Event(){cout<<"Event destructor called"<<endl;}
 private:
       string eventName;
-      Time eventTime;
       Date eventDay;
+      Time eventTime;
 };
 
 int main() {      //instantiate an object and set data for Christmas
+/*
       Event object;
       object.setEventData(6, 0, 12, 25, 2010, "Christmas");
       //print out the data for object
@@ -60,6 +62,8 @@ int main() {      //instantiate an object and set data for Christmas
       object2.setEventData(1, 15, 7, 4, 2010, "Fourth of July");
       //print out the data for the second object
       object2.printEventData();
+*/
+      Event e(12,44,12,5,2024,"C++ Dersi");
       return 0;
 }
 
@@ -67,6 +71,7 @@ Time::Time()
 {     //default constructor
       hr = 0;
       min = 0;
+      cout<<"Time constructor called"<<endl;
 }
  
 Time::Time(int hours=0, int minutes=0)
@@ -79,6 +84,7 @@ Time::Time(int hours=0, int minutes=0)
             min = minutes;
       else
             min = 0;
+      cout<<"Time constructor called"<<endl;
 }
 void Time::setTime(int hours, int minutes)
 {     //sets a valid time
@@ -130,6 +136,7 @@ Date::Date()
       month = 1;
       day = 1;
       year = 1900;
+      cout<<"Date constructor called"<<endl;
 }
 
 Date::Date(int m, int d, int y)
@@ -146,6 +153,7 @@ Date::Date(int m, int d, int y)
             year = y;
       else
             year = 1900;
+      cout<<"Date constructor called"<<endl;
 }
 void Date::setDate(int m, int d, int y)
 {//sets a valid date
@@ -182,9 +190,11 @@ void Date::printDate()
 }
 
 Event::Event(int hours, int minutes, int m, int d, int y, string name)
-                   : eventTime(hours, minutes), eventDay(m, d, y)
+                   : eventDay(m, d, y), eventTime(hours, minutes)
 {
       eventName = name;
+      //586
+      cout<<"Event constructor called"<<endl;
 }
 
 void Event::setEventData(int hours, int minutes, int m, int d, int y, string name)

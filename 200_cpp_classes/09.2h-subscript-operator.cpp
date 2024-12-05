@@ -3,7 +3,7 @@ Subscripting [] Operator Overloading in C++
    []
 */
 
-/*
+
 #include <iostream>
 using namespace std;
 const int SIZE = 10;
@@ -34,7 +34,7 @@ class safearay {
 int main() {
    safearay A;
 
-   cout << "Value of A[2] : " << A[2] <<endl;
+   cout << "Value of A[2] : " << A["2"] <<endl;
    cout << "Value of A[5] : " << A[5]<<endl;
    cout << "Value of A[12] : " << A[12]<<endl;
 
