@@ -36,7 +36,13 @@ int main(void) {
    Rect.setWidth(5);
    Rect.setHeight(7);
    // Print the area of the object.
-   cout << "Total area: " << Rect.getArea() << endl;
+   cout << "Total area of Rect: " << Rect.getArea() << endl;
+
+   Triangle Tri;
+    Tri.setWidth(5);
+    Tri.setHeight(7);
+    // Print the area of the object.
+    cout << "Total area of Tri: " << Tri.getArea() << endl;
 
    return 0;
 }
