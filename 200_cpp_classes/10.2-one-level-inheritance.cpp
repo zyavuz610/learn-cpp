@@ -134,7 +134,7 @@ int main(void) {
 
 //=================================================================================
 /*
-		Access Control and Inheritance
+		Access Control and Inheritance (Erişim Kontrolü ve Miras),
 		- derived class base class'ın private olmayan tüm üyeşerine erişebilir.
 		- derived class aşağıdaki üyeler hariç tüm methodları miras alır
 			* constructor, destructor, copy constructor
