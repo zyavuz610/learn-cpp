@@ -28,7 +28,6 @@ Polymorphizm by Virtual Functions
 #include <iostream> 
 using namespace std;
 
-// ŞEKİL ÇİZEREK İZAH EDELİM
 class Shape {
    protected:
       int width, height;
