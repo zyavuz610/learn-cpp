@@ -70,7 +70,6 @@ int main(void) {
    return 0;
 }
 
-
 /*
 Çıktı:
 Total area: 35
