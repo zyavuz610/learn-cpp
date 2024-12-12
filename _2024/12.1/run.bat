@@ -1,6 +1,6 @@
 @echo off
 echo C++ kodu derleniyor...
-g++ shape-rect_inheritance.cpp -o program.exe
+g++ 1.cpp -o program.exe
 if %errorlevel% neq 0 (
     echo Derleme hatasi...
     pause
