@@ -1,6 +1,6 @@
 @echo off
 echo C++ kodu derleniyor...
-g++ 1.cpp -o program.exe
+g++ 3.cpp -o program.exe
 if %errorlevel% neq 0 (
     echo Derleme hatasi...
     pause

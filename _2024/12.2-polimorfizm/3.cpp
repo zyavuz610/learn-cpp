@@ -6,11 +6,10 @@ public:
     Hayvan() {
         cout << "Hayvan cstor fonksiyonu" << endl;
     }
-    //virtual void sesCikar() { // Sanal fonksiyon
-    void sesCikar() { // Normal fonksiyon
-        cout << "Hayvan bir ses cikariyor." << endl;
+    virtual void sesCikar() { // Normal fonksiyon
+        cout << "Hayvan bir ses çıkarıyor." << endl;
     }
-    ~Hayvan() {
+    virtual ~Hayvan() {
         cout << "Hayvan dstor fonksiyonu" << endl;
     } // Sanal yıkıcı
 };
@@ -56,10 +55,5 @@ int main() {
 }
 
 /*
-problemli çıktı üretir, çünkü sesCikar() fonksiyonu sanal değil,
-sanal olmadığı için türetilmiş sınıfların sesCikar() fonksiyonları çağrılmaz.
-derleme zamanında hangi fonksiyonun çağrılacağı belli olduğu için
-polimorfizm sağlanamaz.
-
-çözüm: sesCikar() fonksiyonunu sanal yapmak
+yıkıcı metod zinciri düzgün çalıştı.
 */

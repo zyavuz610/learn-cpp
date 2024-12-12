@@ -6,9 +6,8 @@ public:
     Hayvan() {
         cout << "Hayvan cstor fonksiyonu" << endl;
     }
-    //virtual void sesCikar() { // Sanal fonksiyon
-    void sesCikar() { // Normal fonksiyon
-        cout << "Hayvan bir ses cikariyor." << endl;
+    virtual void sesCikar() { // Normal fonksiyon
+        cout << "Hayvan bir ses çıkarıyor." << endl;
     }
     ~Hayvan() {
         cout << "Hayvan dstor fonksiyonu" << endl;
@@ -56,10 +55,9 @@ int main() {
 }
 
 /*
-problemli çıktı üretir, çünkü sesCikar() fonksiyonu sanal değil,
-sanal olmadığı için türetilmiş sınıfların sesCikar() fonksiyonları çağrılmaz.
-derleme zamanında hangi fonksiyonun çağrılacağı belli olduğu için
-polimorfizm sağlanamaz.
-
-çözüm: sesCikar() fonksiyonunu sanal yapmak
+Eğer bir taban sınıfın yıkıcısı virtual olarak tanımlanmazsa 
+ve taban sınıf işaretçisi türetilmiş bir sınıf nesnesini işaret ediyorsa, 
+    yıkıcı zinciri düzgün çalışmaz. 
+    Bu, bellek sızıntılarına yol açabilir.
+    bir sonraki kodu inceleyelim
 */
