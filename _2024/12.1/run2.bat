@@ -7,5 +7,7 @@ if %errorlevel% neq 0 (
     exit /b %errorlevel%
 )
 echo Derleme tamamlandi. Program calisiyor...
+echo ------------------------------
 program.exe
-pause
+echo ------------------------------
+::pause
