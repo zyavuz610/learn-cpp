@@ -18,6 +18,9 @@ class Zafer: public Shape{
         Zafer(int a = 0, int b = 0):Shape(a, b) { }
         
         // burada pure virtual fonksiyonu implemente etmek zorundayız.
+        int area(){
+            return width*height;
+        }
 
     private:
 };
