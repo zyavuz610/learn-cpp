@@ -9,7 +9,16 @@ class Shape {
          width = a;
          height = b;
       }
-      virtual int area()=0;    
+      virtual int area()=0;
+      virtual ~Shape() {}    
+};
+
+class Zafer: public Shape{
+    public:
+        Zafer(int a = 0, int b = 0):Shape(a, b) { }
+        
+
+    private:
 };
 
 int main() {
