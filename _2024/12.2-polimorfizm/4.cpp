@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 class Shape {
    protected:
       int width, height;
@@ -7,7 +9,11 @@ class Shape {
          width = a;
          height = b;
       }
-      virtual int area()=0;
-     
-    
+      virtual int area()=0;    
 };
+
+int main() {
+   Shape *shape = new Zafer();
+   cout<<shape->area()<<endl;
+   return 0;
+}
