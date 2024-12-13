@@ -17,6 +17,7 @@ class Zafer: public Shape{
     public:
         Zafer(int a = 0, int b = 0):Shape(a, b) { }
         
+        // burada pure virtual fonksiyonu implemente etmek zorundayız.
 
     private:
 };
