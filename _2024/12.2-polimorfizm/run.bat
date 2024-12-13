@@ -8,4 +8,4 @@ if %errorlevel% neq 0 (
 )
 echo Derleme tamamlandi. Program calisiyor...
 program.exe
-pause
+:: pause
