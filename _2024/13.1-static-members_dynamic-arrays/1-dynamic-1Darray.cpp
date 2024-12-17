@@ -9,16 +9,15 @@ int main() {
     int n=5;
     p = new int[n];
 
-    // erişim
-    p[3] = 23;
-	*p = 35; // p[0] = 35 yapar
+    p[3] = 23; // erişim
+    *p = 35; // p[0] = 35 yapar
     for(int i=0;i<n;i++){
         cout<<i<<":"<<p[i]<<endl;
     }
     cout<<"-------------------------------------"<<endl;
     // öğrenci not ortalaması örneği
     notOrtalama();
-  return 0;
+    return 0;
 }
 
 void notOrtalama(){
