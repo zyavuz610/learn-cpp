@@ -2,7 +2,7 @@
 	- miras, OOP programlama için önemli bir kavramdır, 
 		* yeniden kullanılabilir kod yazmak ya da kodun bakımını yapmakta (kod değişikliğinde) büyük kolaylık sağlar, 
 		
-            * örn; kişi sınıfından oğrenci ve öğremetmen sınıfı miras alsın, kod kişi davranışı ile ilgili bir bakım gerektirse sadece kişi sınıfı değiştirilir, böylece öğrenci ve öğretmen bundan otomatik etkilenir, bunun tersi olsaydı, yani öğrenci ve öğretmen sınıfı ayrı yazılsaydı her 2 sınıf da değiştirilmek zorunda kalınacaktı (burada modelleme de önemli)
+            * örn; kişi sınıfından oğrenci ve öğretmen sınıfı miras alsın, kod kişi davranışı ile ilgili bir bakım gerektirse sadece kişi sınıfı değiştirilir, böylece öğrenci ve öğretmen bundan otomatik etkilenir, bunun tersi olsaydı, yani öğrenci ve öğretmen sınıfı ayrı yazılsaydı her 2 sınıf da değiştirilmek zorunda kalınacaktı (burada modelleme de önemli)
 		
             * bir kere kişi sınıfı tanımlandığında öğrenci sınıfı için kişi özellikleri (ad, soyad vb.) yeniden tanımlanmak zorunda değil
 
@@ -134,7 +134,7 @@ int main(void) {
 
 //=================================================================================
 /*
-		Access Control and Inheritance
+		Access Control and Inheritance (Erişim Kontrolü ve Miras),
 		- derived class base class'ın private olmayan tüm üyeşerine erişebilir.
 		- derived class aşağıdaki üyeler hariç tüm methodları miras alır
 			* constructor, destructor, copy constructor
