@@ -11,7 +11,7 @@ int main() {
 
     // erişim
     p[3] = 23;
-	*p = 35; // p[1] = 35 yapar
+	*p = 35; // p[0] = 35 yapar
     for(int i=0;i<n;i++){
         cout<<i<<":"<<p[i]<<endl;
     }
