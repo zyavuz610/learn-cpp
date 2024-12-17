@@ -19,14 +19,12 @@
 using namespace std;
 
 //-----------------------------------------------------------------
-/*
 // Fonksiyon için bir örnek
 template <typename T> 
-T isEqual(T a,T b){
+bool isEqual(T a,T b){
   if(a==b) return true;
   return false;
 }
-*/
 //------------------------------------------------------------------
 
 //    class için bir örnek
@@ -54,7 +52,7 @@ int main() {
   Complex<int> a1(10,5);
   cout<<a.toString()<<endl;
   cout<<a1.toString()<<endl;
-  cout << "Hello World!\n"<<isEqual(5.0, 5);
+  cout << "Hello World!\n"<<isEqual(5.0, 5.0);
   return 0;
 }
 
