@@ -28,7 +28,6 @@ bool isEqual(T a,T b){
 //------------------------------------------------------------------
 
 //    class için bir örnek
-
 template <class T> 
 class Complex {
   public:
