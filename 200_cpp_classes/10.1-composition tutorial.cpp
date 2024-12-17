@@ -48,20 +48,7 @@ private:
       Time eventTime;
       Date eventDay;
 };
-
-int main() {      //instantiate an object and set data for Christmas
-      Event object;
-      object.setEventData(6, 0, 12, 25, 2010, "Christmas");
-      //print out the data for object
-      object.printEventData();
-      //instantiate the second object and set date for the fourth of July
-      
-      Event object2;
-      object2.setEventData(1, 15, 7, 4, 2010, "Fourth of July");
-      //print out the data for the second object
-      object2.printEventData();
-      return 0;
-}
+// ===============================================================================================================
 
 Time::Time()
 {     //default constructor
@@ -204,5 +191,24 @@ void Event::printEventData()
 // ===============================================================================================================
 
 
+int main(){
+      Event object;
+      object.setEventData(6, 0, 12, 25, 2010, "Christmas");
+      object.printEventData();
+      Event object2;
+      object2.setEventData(1, 15, 7, 4, 2010, "Fourth of July");
+      object2.printEventData();
 
+      Time t1(10, 20);
+      t1.printTime();
+      t1.incrementHours();
+      t1.printTime();
+      t1.incrementMinutes();
+      t1.printTime();
+
+      Date d1(12, 25, 2010);
+      d1.printDate();
+
+      return 0;
+}
 
