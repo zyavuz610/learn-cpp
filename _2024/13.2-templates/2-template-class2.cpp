@@ -32,12 +32,10 @@ public:
 int main() {
     // int ve double türlerini içeren bir Pair nesnesi oluşturuyoruz
     Pair<int, double> p1(5, 3.14);
-
     p1.print();  // Çıktı: First: 5, Second: 3.14
 
     // string ve bool türlerini içeren bir Pair nesnesi oluşturuyoruz
     Pair<string, bool> p2("C++", true);
-
     p2.print();  // Çıktı: First: C++, Second: 1
 
     return 0;
