@@ -2,6 +2,7 @@
 echo C++ kodu derleniyor...
 ::g++ 1-template-functions.cpp -o program.exe
 ::g++ 1-template-functions2.cpp -o program.exe
+::g++ 1-template-functions3.cpp -o program.exe
 ::g++ 2-template-class.cpp -o program.exe
 ::g++ 3-stl-vector.cpp -o program.exe
 ::g++ 4-stl-list.cpp -o program.exe
