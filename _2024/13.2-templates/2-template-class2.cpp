@@ -1,3 +1,6 @@
+/*
+içeriğinde faklı veri türleri barındıran bir template sınıfı örneği...
+*/
 #include <iostream>
 using namespace std;
 
