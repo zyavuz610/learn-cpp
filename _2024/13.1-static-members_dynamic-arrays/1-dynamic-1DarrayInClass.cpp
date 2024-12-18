@@ -75,6 +75,13 @@ int main() {
     dynamicArray.printArray();
 
     cout << "-------------------------------------" << endl;
+    DynamicArray* dynamicArrayPtr = new DynamicArray(3);
+    dynamicArrayPtr->addValue(0, 10);
+    dynamicArrayPtr->addValue(1, 20);
+    dynamicArrayPtr->addValue(2, 30);
+    dynamicArrayPtr->printArray();
+
+    cout << "-------------------------------------" << endl;
 
     // Grade manager example
     int numberOfGrades;
