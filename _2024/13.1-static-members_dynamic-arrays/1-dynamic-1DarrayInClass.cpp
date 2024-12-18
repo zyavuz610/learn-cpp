@@ -39,7 +39,7 @@ private:
 
 public:
     // Constructor
-    DynamicArray(int arraySize) {
+    DynamicArray(int arraySize=10) {
         size = arraySize;
         array = new int[size];
     }
