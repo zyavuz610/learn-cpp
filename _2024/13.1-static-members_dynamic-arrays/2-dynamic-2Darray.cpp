@@ -10,7 +10,11 @@ int main() {
 
 	for(int i = 0; i < rowCount; ++i)
     	a[i] = new int[colCount];
-  
+    
+    cout<<"-------------------------------------"<<endl;
+    for(int i = 0; i < rowCount; ++i)
+        cout<<"a[i]:"<<a[i]<<endl;;
+    cout<<"-------------------------------------"<<endl;
     //erişim :   a[i][j] veya *(a+i*colCount + j) 
 	
 	// bellekten silinmesi
