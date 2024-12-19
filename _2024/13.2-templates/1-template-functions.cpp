@@ -20,11 +20,24 @@ using namespace std;
 
 //-----------------------------------------------------------------
 // Fonksiyon için bir örnek
-template <typename T> 
-bool isEqual(T a,T b){
+/*
+*/
+template <typename Tip> 
+bool isEqual(Tip a,Tip b){
   if(a==b) return true;
   return false;
 }
+/*
+bool isEqual(int a,int b){
+  if(a==b) return true;
+  return false;
+}
+
+bool isEqual(double a,double b){
+  if(a==b) return true;
+  return false;
+}
+*/
 
 int main() {
     // Integer türü için test
