@@ -32,6 +32,9 @@ class Box {
       static int getCount() {
          return objectCount;
       }
+      static void print(string msg){
+          cout<<msg<<endl;
+      }
       ~Box() {
          cout << "Destructor called." << endl;
          objectCount--;

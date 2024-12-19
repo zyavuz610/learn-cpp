@@ -31,6 +31,10 @@ class Box {
       double Volume() {
          return length * breadth * height;
       }
+      ~Box() {
+         cout << "Destructor called." << endl;
+         objectCount--;
+      }
       
    private:
       double length;     // Length of a box
@@ -44,10 +48,13 @@ int Box::objectCount = 0;
 int main(void) {
    Box Box1(3.3, 1.2, 1.5);    // Declare box1
    Box Box2(8.5, 6.0, 2.0);    // Declare box2
+   {
    Box Box3(1.0, 2.0, 3.0);    // Declare box3
+   cout << "Total objects (0): " << Box::objectCount << endl;
+   }
+   cout << "Total objects (1): " << Box::objectCount << endl;
+      
 
-   // Print total number of objects.
-   cout << "Total objects: " << Box::objectCount << endl;
 
    return 0;
 }
