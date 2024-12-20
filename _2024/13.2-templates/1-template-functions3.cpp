@@ -15,7 +15,7 @@ int main() {
     double y = 3.5;
 
     // x int, y double türünden
-    printSum(x, y);  // Çıktı: Sum: 8.5
+    printSum(x, (int)y);  // Çıktı: Sum: 8.5
 
     return 0;
 }

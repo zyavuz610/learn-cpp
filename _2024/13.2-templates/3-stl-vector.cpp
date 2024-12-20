@@ -6,6 +6,7 @@ using namespace std;
 int main() {
     vector<int> v; // Boş bir vektör
     vector<string> v2; // Boş bir string vektör
+    vector<vector<int>> v3; // Boş bir vektör vektörü
     v.push_back(10); // Vektöre 10 ekle
     v.push_back(20); // Vektöre 20 ekle
     v.push_back(30); // Vektöre 30 ekle

@@ -5,11 +5,16 @@ template <class T>
 class Stack {
 private:
     T* elems;        // dynamic array
-    size_t capacity; // size of the allocated array
-    size_t count;    // number of elements in the stack
+    int capacity; // size of the allocated array
+    int count;    // number of elements in the stack
 
 public:
-    Stack() : elems(nullptr), capacity(0), count(0) {}
+    Stack() : capacity(10), count(0) {
+        elems = new T[10];
+    }
+    Stack(int cap) : capacity(cap), count(0) {
+        elems = new T[capacity];
+    }
 
     ~Stack() {
         delete[] elems;
@@ -17,24 +22,18 @@ public:
 
     void push(T const& elem) {
         if (count == capacity) {
-            size_t newCapacity = (capacity == 0) ? 1 : capacity * 2;
-            T* newElems = new T[newCapacity];
-            for (size_t i = 0; i < count; ++i) {
-                newElems[i] = elems[i];
-            }
-            delete[] elems;
-            elems = newElems;
-            capacity = newCapacity;
+            cout<<",capacity is full"<<endl;
+            return;
         }
         elems[count++] = elem;
     }
 
-    void pop() {
+    T pop() {
         if (empty()) {
             cout << "Error: Stack<>::pop(): empty stack" << std::endl;
-            return;
+            return 0; // Default-constructed T
         }
-        --count;
+        return --count;
     }
 
     T top() {
@@ -52,10 +51,10 @@ public:
 
 
 int main() {
-    Stack<int> s;
+    Stack<int> s(30);
     
-    s.pop(); // Error: Stack<>::pop(): empty stack
-    cout << s.top() << std::endl; // Error: Stack<>::top(): empty stack
+    //s.pop(); // Error: Stack<>::pop(): empty stack
+    //cout << s.top() << std::endl; // Error: Stack<>::top(): empty stack
 
     s.push(10);
     s.push(20);
