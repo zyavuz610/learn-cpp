@@ -1,69 +1,67 @@
-//    Class Template
-#include <iostream>
-#include <vector>
-#include <cstdlib>
-#include <string>
-#include <stdexcept>
-
+#include <iostream> // for cout
 using namespace std;
 
 template <class T>
-class Stack { 
-   private: 
-      vector<T> elems;    // elements 
+class Stack {
+private:
+    T* elems;        // dynamic array
+    size_t capacity; // size of the allocated array
+    size_t count;    // number of elements in the stack
 
-   public: 
-      void push(T const&);  // push element 
-      void pop();               // pop element 
-      T top() const;            // return top element 
-      
-      bool empty() const {      // return true if empty.
-         return elems.empty(); 
-      } 
-}; 
+public:
+    Stack() : elems(nullptr), capacity(0), count(0) {}
 
-template <class T>
-void Stack<T>::push (T const& elem) { 
-   // append copy of passed element 
-   elems.push_back(elem);    
-} 
+    ~Stack() {
+        delete[] elems;
+    }
 
-template <class T>
-void Stack<T>::pop () { 
-   if (elems.empty()) { 
-      throw out_of_range("Stack<>::pop(): empty stack"); 
-   }
-   
-   // remove last element 
-   elems.pop_back();         
-} 
+    void push(T const& elem) {
+        if (count == capacity) {
+            size_t newCapacity = (capacity == 0) ? 1 : capacity * 2;
+            T* newElems = new T[newCapacity];
+            for (size_t i = 0; i < count; ++i) {
+                newElems[i] = elems[i];
+            }
+            delete[] elems;
+            elems = newElems;
+            capacity = newCapacity;
+        }
+        elems[count++] = elem;
+    }
 
-template <class T>
-T Stack<T>::top () const { 
-   if (elems.empty()) { 
-      throw out_of_range("Stack<>::top(): empty stack"); 
-   }
-   
-   // return copy of last element 
-   return elems.back();      
-} 
+    void pop() {
+        if (empty()) {
+            cout << "Error: Stack<>::pop(): empty stack" << std::endl;
+            return;
+        }
+        --count;
+    }
 
-int main() { 
-   try {
-      Stack<int>         intStack;  // stack of ints 
-      Stack<string> stringStack;    // stack of strings 
+    T top() {
+        if (empty()) {
+            cout << "Error: Stack<>::top(): empty stack" << std::endl;
+            return T(); // Default-constructed T
+        }
+        return elems[count - 1];
+    }
 
-      // manipulate int stack 
-      intStack.push(7); 
-      cout << intStack.top() <<endl; 
+    bool empty() {
+        return count == 0;
+    }
+};
 
-      // manipulate string stack 
-      stringStack.push("hello"); 
-      cout << stringStack.top() << std::endl; 
-      stringStack.pop(); 
-      stringStack.pop(); 
-   } catch (exception const& ex) { 
-      cerr << "Exception: " << ex.what() <<endl; 
-      return -1;
-   } 
-} 
+
+int main() {
+    Stack<int> s;
+    
+    s.pop(); // Error: Stack<>::pop(): empty stack
+    cout << s.top() << std::endl; // Error: Stack<>::top(): empty stack
+
+    s.push(10);
+    s.push(20);
+    cout << s.top() << std::endl; // 20
+    s.pop();
+    cout << s.top() << std::endl; // 10
+
+    return 0;
+}
