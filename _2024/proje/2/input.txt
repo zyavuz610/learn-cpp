@@ -1,0 +1,15 @@
+3 345
+Lisa Miller 890238 Y 4
+Mathematics MTH345 4 A
+Physics PHY357 3 B
+ComputerSci CSC478 3 B
+History HIS356 3 A
+Lisa2 Miller 890238 N 4
+Mathematics MTH345 4 A
+Physics PHY357 3 B
+ComputerSci CSC478 3 B
+History HIS356 3 A
+Lisa3 Miller 890238 N 3
+Mathematics MTH345 4 A
+Physics PHY357 3 B
+History HIS356 4 A

@@ -1,0 +1,20 @@
+Student Name: Lisa Miller
+Student ID: 890238
+Number of courses enrolled: 4
+Course No Course Name    Credits   Grade
+MTH345    Mathematics    4         A
+PHY357    Physics        3         B
+CSC478    ComputerSci    3         B
+HIS356    History        3         A
+Total number of credits: 13
+Mid-Semester GPA: 3.54
+
+Student Name: Lisa2 Miller
+Student ID: 890238
+Tuition not paid. Grades withheld.
+Total tuition due: $1380
+
+Student Name: Lisa3 Miller
+Student ID: 890238
+Tuition not paid. Grades withheld.
+Total tuition due: $1035
