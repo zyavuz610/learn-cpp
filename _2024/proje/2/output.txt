@@ -12,9 +12,9 @@ Mid-Semester GPA: 3.54
 Student Name: Lisa2 Miller
 Student ID: 890238
 Tuition not paid. Grades withheld.
-Total tuition due: $1380
+Total tuition due: $2600
 
 Student Name: Lisa3 Miller
 Student ID: 890238
 Tuition not paid. Grades withheld.
-Total tuition due: $1035
+Total tuition due: $2200
