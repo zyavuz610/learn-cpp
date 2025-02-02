@@ -10,7 +10,7 @@ int main() {
     cout << st.top() << endl; // 20
     st.pop();  // Yığından 20'yi çıkar
     cout << st.top() << endl; // 10
-    cout <<"pop:"<< st.pop() << endl; // 10
+    //cout <<"pop:" << st.pop() << endl; // 10
     cout << "----------------------------" << endl;
     stack<string> st2;
     st2.push("ali");
