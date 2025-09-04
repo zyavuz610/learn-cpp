@@ -5,53 +5,13 @@ using namespace std;
 
 int main() {
   double a,f,ort;
-  cout<<"Arasınav: ";
+  cout<<"Arasinav: ";
   cin>>a;
   cout<<"Final    :";
   cin>>f;
   ort=ARASINAV_K * a + FINAL_K * f;
-//--------------------------------------------------
+ 
 
- //  if-else ifadesi
- if( ort<40 ){       // koşul ifadesi
-    cout<<ort<<" -> Kaldı\n";
-  }
-  else {              // if deyimindeki koşul sağlanmazsa
-    cout<<ort<<" -> Geçti\n";
-  }
-
-//---------------------------------------------------
-// koşul operatörü kullanımı (sadece eşitleme durumunda)
-
- /* 
- string sonuc="";
-  sonuc=(ort<40)?"Kaldı":"Geçti";
-  cout<<ort<<" -> "<<sonuc<<"\n";   
-  */
-
-//-----------------------------------------------------
-
- /*
- // if, else if, else koşul merdiveni. örnek uyg: harfli not hebabı 
- if( ort<40 ){       // koşul ifadesi
-    cout<<ort<<" -> Kaldı\n";
-  }
-  else if (ort<55) {              
-    cout<<ort<<" -> Şartlı Geçti\n";
-  }
-  else{               // hiç bir koşul sağlanmazsa
-    cout<<ort<<" -> Şartlı Geçti\n";
-  }
-  */
-//--------------------------------------------------------
- /*
- // çoklu şartlarda koşul operatörü (nested)
-  string sonuc="";
-  sonuc=(ort<40)?"Kaldı":(ort<55)?"Şartlı Geçti":"Geçti";
-  cout<<ort<<" -> "<<sonuc<<"\n";
-*/
-//--------------------------------------------------------
-/*
   // nested (içiçe) koşul ifadeleri
   double kanaat = 3.5;
   if(ort<45){
@@ -60,7 +20,7 @@ int main() {
       cout<<ort<<" -> Şartlı Geçebilir"<<endl;
     }
   }
-*/
+
 //------------------------------------------------------
 /*
   kontrol edilecek koşul sadece eşitlik durumunu içeriyorsa switch-case kullanılması daha uygundur.
