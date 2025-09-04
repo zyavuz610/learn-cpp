@@ -5,7 +5,8 @@ int main() {
     /*
     */
     double d = 3.14;
-    int i = (int)d;  // C-Style Cast
+    int i = (int)d;                 // C-Style Cast
+    int i = static_cast<int>(d);    // C++ Style Cast
     cout << "C-Style Cast ile double'dan int'e dönüştürülen değer: " << i << std::endl;
     
 // -------------------------------------------------------
