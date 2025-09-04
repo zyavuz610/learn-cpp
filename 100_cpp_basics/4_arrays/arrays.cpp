@@ -29,6 +29,15 @@ using namespace std;
       int dizi[5] = {1, 2, 3, 4, 5};  // 5 elemanlı bir dizi, her eleman tanımlı
       int dizi[5] = {1, 2};  // İlk iki eleman 1 ve 2, geri kalanlar 0
       int dizi[] = {1, 2, 3, 4, 5};  // Boyut otomatik olarak 5 olur
+	  
+	  // C string tanımlama, karakter dizisi
+	  char str[] = "Merhaba";  // str dizisi 8 elemanlı olur, son eleman null karakterdir '\0'
+	  char str2[20] = "Dünya"; // str2 dizisi 20 elemanlı olur, ilk 6 eleman 'D','ü','n','y','a','\0', geri kalanlar ise 0 olur
+	  char ch[] = {'M', 'e', 'r', 'h', 'a', 'b', 'a', '\0'}; // ch dizisi de 8 elemanlı olur
+	  char ch2[10] = {'D', 'ü', 'n', 'y', 'a', '\0'}; // ch2 dizisi 10 elemanlı olur, ilk 6 eleman tanımlı, geri kalanlar 0 olur
+	  // char ch3[5] = "Merhaba"; // HATA! çünkü "Merhaba" ifadesi 8 karakterlidir, 5 karakterlik diziye sığmaz
+	  // char ch4[5] = {'M', 'e', 'r', 'h', 'a', 'b', 'a', '\0'}; // HATA! çünkü 8 karakterlik ifade 5 karakterlik diziye sığmaz
+	  char name[16] = {'J', 'o', 'h', 'n', '\0'};
 
 
 
@@ -53,7 +62,7 @@ using namespace std;
 //-------------------------------------------------------------
 /*
 illegal dizi işlemleri
- int x[5] = {1,2,3,4,5};
+ int x[5] = {1,2,3,4,5}; // array initialization
  int y[5] = {6,7,8,9,10};
  x = y;  // bu işlem yapılamaz
  cin>>x;  // bu işlem yapılamaz
