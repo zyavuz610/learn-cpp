@@ -11,9 +11,7 @@ using namespace std;
       . Bir fonksiyon bildirim (declaration) ve tanım (definition) olmak üzere iki kısımdan oluşur
         bildirim (declaration)
           - fonksiyon ismi:
-              kullan
-              
-              ıcı tanımlı, değişken isimlendirme kurallarına göre tanımlanır, mutlaka bir fonksiyonun ismi belirtilmelidir
+              kullanıcı tanımlı, değişken isimlendirme kurallarına göre tanımlanır, mutlaka bir fonksiyonun ismi belirtilmelidir
           - geri dönüş tipi:
               veri tiplerinden biri olmalıdır, geri dönüş değeri yoksa "void" kullanılmalıdır
           - paramtreler ve tipleri, sayısı ve tipleri belirtilir, birden çok parametre virgül ile ayrılır, paramtresi olmayan fonksiyonlar olabilir
@@ -56,6 +54,13 @@ using namespace std;
           a=topla(5,6);         // fonksiyon çağırma
           ...
         }
+
+        // Void Functions without Parameters Syntax Function Definition
+        void functionName(void) {
+          statements
+          ...
+        }
+
 
       . FONKSİYON PARAMETRELERİ
           - fonksiyon isiminden sonra virgül ile ayrılarak () içerisinde tanımlanırlar
