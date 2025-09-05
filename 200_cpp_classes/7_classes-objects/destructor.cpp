@@ -11,6 +11,9 @@ class Line {
     bir sınıfın sadece bir adet yıkıcı methodu olabilir
     sınıftan türetilen nesne ömrü bittiğinde çalıştırılır,
     sınıfla ilgili çalıştırılacak en son method dur.
+
+    Constructor (yapıcı metot) nesneyi kullanıma hazırlarken, destructor da nesneyi temizlemek ve kaynaklarını serbest bırakmak için kullanılır.
+      Destructor'lar genellikle dinamik olarak ayrılmış bellekleri serbest bırakmak, dosyaları kapatmak veya diğer temizleme işlemlerini gerçekleştirmek için kullanılır.
  */
    private:
       double length;

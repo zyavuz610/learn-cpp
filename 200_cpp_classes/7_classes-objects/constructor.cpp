@@ -1,4 +1,9 @@
 /*
+   Constructor, yani yapıcı metot, bir sınıftan yeni bir nesne oluşturulduğunda otomatik olarak çağrılan özel bir fonksiyondur. 
+   Temel görevi, nesnenin veri üyelerine (değişkenlerine) başlangıç değerlerini atayarak nesneyi kullanıma hazır hale getirmektir.
+   Tıpkı emirsel programlamada değişkenlerin ilk değer ataması gibi düşünülebilir.
+
+   
  2 türlü yapıcı fonk. vardır
   . parametresi olmayan (default)
   . parametreli
