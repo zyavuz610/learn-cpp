@@ -5,6 +5,9 @@
    * Örn; Complex c1,c2;
    * c1 = c1 + c2;  
    * saat bilgilerinin farkının için operator overloading gerekli
+      * cout<<myClock;
+      * myClock++;
+      * if(myClock == yourClock)
    * benzer şekilde
       * komplex sayı toplanması
       * saat karşılaştırma
