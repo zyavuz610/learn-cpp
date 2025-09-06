@@ -82,7 +82,7 @@ int main() {
    shape->area();
    
 
-   // burada polimorfizm yapabilmek için base class ın virtual olması gerekir
+   // burada polimorfizm yapabilmek için base class içinde virtual function olması gerekir
    return 0;
 }
 

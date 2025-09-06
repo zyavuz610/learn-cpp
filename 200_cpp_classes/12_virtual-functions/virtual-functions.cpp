@@ -25,36 +25,84 @@
 //---------------------------------------------------------------------------------------------------------
 
 #include <iostream>
-using namespace std;
-class dortgen
-{
-    public:
-      virtual int alan(int taban, int yukseklik){
-        return taban*yukseklik;
-      }
-      int cevre(int taban, int yukseklik){
-        return 2*(taban+yukseklik);
-      }
+#include <string>
+
+// Temel Sınıf (Base Class)
+class Hayvan {
+public:
+    // Sanal fonksiyon: 'virtual' anahtar kelimesi ile tanımlanır.
+    // Bu, derleyicinin hangi 'sesCikar' fonksiyonunu çağıracağına
+    // çalışma anında (runtime) karar vermesini sağlar.
+    virtual void sesCikar() {
+        std::cout << "Hayvan bir ses çıkarıyor." << std::endl;
+    }
+
+    // Sanal olmayan fonksiyon: Bu her zaman temel sınıfın fonksiyonunu çağırır.
+    void yemekYe() {
+        std::cout << "Hayvan yemek yiyor." << std::endl;
+    }
+
+    // Sanal Yıkıcı (Virtual Destructor): Miras hiyerarşisinde
+    // türemiş sınıfların yıkıcılarının doğru şekilde çağrılması için önemlidir.
+    virtual ~Hayvan() {
+        std::cout << "Hayvan yıkıcısı çalıştı." << std::endl;
+    }
 };
 
-class ucgen : public dortgen
-{
-    public:
-      int alan(int taban, int yukseklik){
-        return (taban*yukseklik)/2;
-      }
+// Türemiş Sınıf (Derived Class)
+class Kedi : public Hayvan {
+public:
+    // Sanal fonksiyonu geçersiz kılma (override).
+    // 'override' anahtar kelimesi opsiyoneldir ancak iyi bir pratik olup
+    // derleyicinin hata yapmamanızı sağlamasına yardımcı olur.
+    void sesCikar() override {
+        std::cout << "Miyav! Miyav!" << std::endl;
+    }
 
+    ~Kedi() {
+        std::cout << "Kedi yıkıcısı çalıştı." << std::endl;
+    }
 };
 
-int main()
-{
-    dortgen *ptr; // ptr temel sınıfa ait bir pointer
-    ucgen nesne1;   //nesne1'de türemiş sınıfa ait bir nesne
+// Türemiş Sınıf (Derived Class)
+class Kopek : public Hayvan {
+public:
+    void sesCikar() override {
+        std::cout << "Hav! Hav!" << std::endl;
+    }
 
-  ptr = &nesne1; // Temel sınıfa ait bir pointera türemiş sınıfın adresini atayabiliriz
-  cout<<ptr->alan(3,4)<<endl;   // Ekranda hangi şeklin alanı hesaplandı ? 
-  // alan() fonksiyonu virtual tanımlandığı için türemiş sınıfın fonksiyonu çağrıldı.
-  // alan() fonk. virtual olmasaydı, dortgen sınıfının alan() fonk. çağrılırdı - DENE!
+    ~Kopek() {
+        std::cout << "Köpek yıkıcısı çalıştı." << std::endl;
+    }
+};
 
-return 0;
+int main() {
+    // Hayvan tipinde bir pointer oluşturuyoruz.
+    Hayvan* hayvanPtr;
+
+    // 1. Kedi nesnesi oluşturup, pointer'ı bu nesneye atıyoruz.
+    Kedi kediObj;
+    hayvanPtr = &kediObj;
+    std::cout << "--- Pointer bir Kedi nesnesine işaret ediyor ---" << std::endl;
+
+    // Sanal Fonksiyon Çağrısı: Pointer 'Hayvan' tipinde olsa da,
+    // işaret ettiği nesnenin ('Kedi') 'sesCikar' fonksiyonunu çağırır.
+    hayvanPtr->sesCikar(); // Çıktı: Miyav! Miyav!
+
+    // Sanal Olmayan Fonksiyon Çağrısı: Bu, her zaman temel sınıfın
+    // 'yemekYe' fonksiyonunu çağırır.
+    hayvanPtr->yemekYe(); // Çıktı: Hayvan yemek yiyor.
+
+    std::cout << "\n";
+
+    // 2. Köpek nesnesi oluşturup, pointer'ı bu nesneye atıyoruz.
+    Kopek kopekObj;
+    hayvanPtr = &kopekObj;
+    std::cout << "--- Pointer bir Kopek nesnesine işaret ediyor ---" << std::endl;
+
+    // Sanal Fonksiyon Çağrısı: İşaret ettiği nesne 'Kopek' olduğu için
+    // 'Kopek' sınıfının 'sesCikar' fonksiyonunu çağırır.
+    hayvanPtr->sesCikar(); // Çıktı: Hav! Hav!
+
+    return 0;
 }

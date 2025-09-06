@@ -20,11 +20,7 @@ inline int Max(int x, int y) {
 }
 
 //---------------------------------------------------------
-<<<<<<< Updated upstream
-class Operation { 
-=======
 class operation { 
->>>>>>> Stashed changes
     int a,b,add,sub,mul; 
     float div; 
 public: 
