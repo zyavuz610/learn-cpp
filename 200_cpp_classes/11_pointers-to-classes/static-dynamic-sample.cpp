@@ -33,8 +33,10 @@ class myMatrix{
     int **data;
   private:
 };
-        int myMatrix::objCount  = 0;
-        int myMatrix::sumMemory = 0;
+
+
+int myMatrix::objCount  = 0;
+int myMatrix::sumMemory = 0;
 
 
 int main() {
