@@ -1,6 +1,7 @@
-# 2024-25 Güz Yarıyılı - Ders Planı
+# Object Oriented Programmin-A (Nesne Yönelimli Programlama-A)
+## 2025-26 Güz Yarıyılı - Ders Planı 
 
-## Haftalara Göre Ders İçerikleri
+### Haftalara Göre Ders İçerikleri
 * Hafta-1
   * [Giriş](100_cpp_basics/0_introduction/readme.md)
   * [Değişken ve Operatörler](100_cpp_basics/1_variables_and_operators/readme.md)
@@ -36,7 +37,7 @@
 
 --- 
 
-## Ders Programı 
+### Ders Programı 
 * 1 - Pazartesi, 15-17: D2, kendi bilgisayarlarınızı getirmenizi bekliyoruz.
 * 1 - Çarşamba, 15-17: D2, kendi bilgisayarlarınızı getirmenizi bekliyoruz.
 
