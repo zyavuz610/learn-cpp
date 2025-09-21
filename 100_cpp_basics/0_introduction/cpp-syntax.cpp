@@ -23,7 +23,8 @@
     g++ yerine gcc veya clang++ de kullanılabilir
 */
 //---------------------------------------------------------------------------------------------
-// 01.2-hello world
+// hello world.cpp
+//---------------------------------------------------------------------------------------------
 // c++ dilinde ilk program
 //      c++ dilinde yorumlar
 //      c++ dilinde ifade sonlandırma
