@@ -1,5 +1,5 @@
 HARDWARE INFO
-See CPU information:
+See CPU information: list all CPU information
 	cat /proc/cpuinfo
 Display free and used memory with:
 	free -h
