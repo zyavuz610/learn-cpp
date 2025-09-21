@@ -41,7 +41,7 @@
 * 1 - Pazartesi, 15-17: D2, kendi bilgisayarlarınızı getirmenizi bekliyoruz.
 * 1 - Çarşamba, 15-17: D2, kendi bilgisayarlarınızı getirmenizi bekliyoruz.
 
-[Sınıf İçi Kodlar](https://replit.com/@zaferyavuz3/learn-cpp)
+[Sınıf İçi Kodlar](https://replit.com/@ZaferYavuz2/learn-cpp)
 
 ---
 
