@@ -16,7 +16,8 @@ Bunların dışında;
 
 ## Haftalara Göre Ders Planları (Müfredat)
 Her gün değişen ve gelişen bilişim dünyasında KTÜ Bilgisayar Mühendisliğindeki "Nesne Yönelimli Programlama" isimli derste anlatılan C++ diline ilişkin ders notları, yazılan kodlar, verilen örnekler ve müfredat kısmi değişikliklere uğramaktadır.
-* [2024](2024-guz-ders-plan.md) - __Aktif Dönem__
+* [2025](2025-guz-ders-plan.md) - __Aktif Dönem__
+* [2024](2024-guz-ders-plan.md)
 * [2023](2023-guz-ders-plan.md)
 * [2019](2019-guz-ders-plan.md) - [Kaynak kodlar (Repl.it)](https://repl.it/@ZaferYavuz1)
 * [2018](2018-guz-ders-plan.md)
