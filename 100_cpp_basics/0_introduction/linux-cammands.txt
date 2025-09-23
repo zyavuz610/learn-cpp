@@ -1,4 +1,4 @@
-__ linux komutları __
+__ linux commands __
 ---------------------
 FILE COMMANDS
 List files in the directory:
