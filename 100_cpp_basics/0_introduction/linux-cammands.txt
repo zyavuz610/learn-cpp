@@ -1,8 +1,35 @@
+__ linux komutları __
+
+cd "dizin"
+cd .. ; bir üst dizin
+cd / ; kök dizin ya da c:\
+
+mkdir "dizin"
+touch "dosya" ; dosya oluştur veya tarih değiştir
+
+rm "dosya" ; 
+rm "dosya" "dosya2" ... ; birden çok dosya sil
+rm -r "dizin" ; dizin içindekileri de sil
+rmdir "dizin" ; boş dizini siler
+
+cp "kaynak" "hedef"
+cp dosya1.txt dosya2.txt dosya3.txt yeni_dizin/
+cp -r dizin1 dizin2 ; alt dizinler dahil kopyalar
+cp -r * yedek/
+
+mv kaynak hedef
+mv dosyam.txt belgeler/
+mv eski_ad.txt yeni_ad.txt ; yeniden adlandır
+mv proje/ yedekler/; dizin taşıma
+mv dosya1.txt dosya2.txt dosya3.txt yeni_dizin/; birden çok dosya taşıma
+---------------------
 FILE COMMANDS
 List files in the directory:
 	ls
-List all files (shows hidden files):
-	ls -a
+Sample:
+	ls
+	ls -l
+	ls -a ; shows all files including hidden files 
 Show directory you are currently working in:
 	pwd
 Create a new directory:
