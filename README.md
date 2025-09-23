@@ -2,6 +2,14 @@ Bu depo KTÜ Bilgisayar Mühendisliğinde okutulan **Nesne Yönelimli Programlam
 
 Ders içeriği aşağıda verilen mantıksal sırada anlatılmaktadır. Konularla ilgili bilinmesi gereken temel konular kaynak kodların içerisinde açıklama satırları olarak eklenmiştir. Kaynak kodları verildiği sırada sırasıyla incelemek ve çalıştırmak konu bütünlüğünün korunması için önemlidir.
 
+## Haftalara Göre Ders Planları (Müfredat)
+Her gün değişen ve gelişen bilişim dünyasında KTÜ Bilgisayar Mühendisliğindeki "Nesne Yönelimli Programlama" isimli derste anlatılan C++ diline ilişkin ders notları, yazılan kodlar, verilen örnekler ve müfredat kısmi değişikliklere uğramaktadır.
+* [2025](2025-guz-ders-plan.md) - __Aktif Dönem__
+* [2024](2024-guz-ders-plan.md)
+* [2023](2023-guz-ders-plan.md)
+* [2019](2019-guz-ders-plan.md) - [Kaynak kodlar (Repl.it)](https://repl.it/@ZaferYavuz1)
+* [2018](2018-guz-ders-plan.md)
+
 Kaynak kodlar genel olarak 4 bölümden oluşur. 
 * **100_cpp_basics:** Temel C++ konularını içermektedir.
 * **200_cpp_classes:** c++ nesne yönelimli programlama kavramlarını içerir.
@@ -12,14 +20,6 @@ Bunların dışında;
 * **500_cpp_samples:** farklı kaynaklardan öğrencilerin kullanımı için paylaşılan tüm kodları içerir.
 * **600_docs**: farklı belgeler içerir.
 * **youtube**: [youtube oynatma listelerinde](https://www.youtube.com/playlist?list=PLqiHvxGteAQdk1kl7dnt_Cvy9veTYVPv9) anlatılan derslerin kaynak kodları
-
-## Haftalara Göre Ders Planları (Müfredat)
-Her gün değişen ve gelişen bilişim dünyasında KTÜ Bilgisayar Mühendisliğindeki "Nesne Yönelimli Programlama" isimli derste anlatılan C++ diline ilişkin ders notları, yazılan kodlar, verilen örnekler ve müfredat kısmi değişikliklere uğramaktadır.
-* [2025](2025-guz-ders-plan.md) - __Aktif Dönem__
-* [2024](2024-guz-ders-plan.md)
-* [2023](2023-guz-ders-plan.md)
-* [2019](2019-guz-ders-plan.md) - [Kaynak kodlar (Repl.it)](https://repl.it/@ZaferYavuz1)
-* [2018](2018-guz-ders-plan.md)
 
 # Ders İçeriği
 ## Temel C++ Konuları
