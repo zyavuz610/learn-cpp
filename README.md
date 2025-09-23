@@ -2,8 +2,6 @@ Bu depo KTÜ Bilgisayar Mühendisliğinde okutulan **Nesne Yönelimli Programlam
 
 Ders içeriği aşağıda verilen mantıksal sırada anlatılmaktadır. Konularla ilgili bilinmesi gereken temel konular kaynak kodların içerisinde açıklama satırları olarak eklenmiştir. Kaynak kodları verildiği sırada sırasıyla incelemek ve çalıştırmak konu bütünlüğünün korunması için önemlidir.
 
-Her kaynak dosyaların isimlendirmesi şu şekildedir: **XX.Y-abcd.cpp** , burada **XX**(konunun işleneceği haftayı), **Y**(konunun o haftadaki konu sırasını), ve **abcd**(kaynak dosyanın içeriğini) ifade etmektedir.
-
 Kaynak kodlar genel olarak 4 bölümden oluşur. 
 * **100_cpp_basics:** Temel C++ konularını içermektedir.
 * **200_cpp_classes:** c++ nesne yönelimli programlama kavramlarını içerir.
