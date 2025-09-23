@@ -1,32 +1,9 @@
 __ linux komutları __
-
-cd "dizin"
-cd .. ; bir üst dizin
-cd / ; kök dizin ya da c:\
-
-mkdir "dizin"
-touch "dosya" ; dosya oluştur veya tarih değiştir
-
-rm "dosya" ; 
-rm "dosya" "dosya2" ... ; birden çok dosya sil
-rm -r "dizin" ; dizin içindekileri de sil
-rmdir "dizin" ; boş dizini siler
-
-cp "kaynak" "hedef"
-cp dosya1.txt dosya2.txt dosya3.txt yeni_dizin/
-cp -r dizin1 dizin2 ; alt dizinler dahil kopyalar
-cp -r * yedek/
-
-mv kaynak hedef
-mv dosyam.txt belgeler/
-mv eski_ad.txt yeni_ad.txt ; yeniden adlandır
-mv proje/ yedekler/; dizin taşıma
-mv dosya1.txt dosya2.txt dosya3.txt yeni_dizin/; birden çok dosya taşıma
 ---------------------
 FILE COMMANDS
 List files in the directory:
 	ls
-Sample:
+	...
 	ls
 	ls -l
 	ls -a ; shows all files including hidden files 
@@ -34,8 +11,15 @@ Show directory you are currently working in:
 	pwd
 Create a new directory:
 	mkdir [directory]
+	...
+	mkdir "dizin"
 Remove a file:
 	rm [file_name] 
+	...
+	rm "dosya" ; 
+	rm "dosya" "dosya2" ... ; birden çok dosya sil
+	rm -r "dizin" ; dizin içindekileri de sil
+	rmdir "dizin" ; boş dizini siler
 Remove a directory recursively:
 	rm -r [directory_name]
 Recursively remove a directory without requiring confirmation:
@@ -44,12 +28,25 @@ Copy the contents of one file to another file:
 	cp [file_name1] [file_name2]
 Recursively copy the contents of one file to a second file:
 	cp -r [directory_name1] [directory_name2]
+	...
+	cp "kaynak" "hedef"
+	cp dosya1.txt dosya2.txt dosya3.txt yeni_dizin/
+	cp -r dizin1 dizin2 ; alt dizinler dahil kopyalar
+	cp -r * yedek/
 Rename [file_name1] to [file_name2] with the command:
 	mv [file_name1] [file_name2]
+	...
+	mv src dest
+	mv dosyam.txt belgeler/
+	mv eski_ad.txt yeni_ad.txt ; rename
+	mv proje/ yedekler/; move directory
+	mv dosya1.txt dosya2.txt dosya3.txt yeni_dizin/; moving multiple files
 Create a symbolic link to a file:
 	ln -s /path/to/[file_name] [link_name]
 Create a new file using touch:
 	touch [file_name]
+	...
+	touch "dosya" ; dosya oluştur veya tarih değiştir
 Show the contents of a file:
 	more [file_name]
 or use the cat command:
@@ -74,3 +71,7 @@ Change directory to $HOME:
 	cd
 Change location to a specified directory:
 	cd /chosen/directory
+Sample:
+	cd "dizin"
+	cd .. ; bir üst dizin
+	cd / ; kök dizin ya da c:\
