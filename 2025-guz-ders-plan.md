@@ -4,6 +4,13 @@
 ### Haftalara Göre Ders İçerikleri
 * Hafta-1
   * [Giriş](100_cpp_basics/0_introduction/readme.md)
+    * setup (local): 
+      * w64devkit - https://www.mingw-w64.org/downloads/
+      * vscode & setup path
+    * or online: [replit.com](https://replit.com)
+    * [hello-world.cpp](hello-world.cpp)
+    * [cpp-syntax.cpp](cpp-syntax.cpp)
+    * [linux-cammands.txt](linux-cammands.txt) - for compiling and running
   * [Değişken ve Operatörler](100_cpp_basics/1_variables_and_operators/readme.md)
 * Hafta-2
   * [if-else](100_cpp_basics/2.1_if-else/readme.md)
