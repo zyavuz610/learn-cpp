@@ -1,4 +1,4 @@
-# Object Oriented Programmin-A (Nesne Yönelimli Programlama-A)
+# Object Oriented Programming-A (Nesne Yönelimli Programlama-A)
 ## 2025-26 Güz Yarıyılı - Ders Planı 
 
 ### Haftalara Göre Ders İçerikleri
