@@ -12,6 +12,14 @@
     * [cpp-syntax.cpp](cpp-syntax.cpp)
     * [linux-cammands.txt](linux-cammands.txt) - for compiling and running
   * [Değişken ve Operatörler](100_cpp_basics/1_variables_and_operators/readme.md)
+    * [data-types.cpp](data-types.cpp)
+    * [variable-definition.cpp](variable-definition.cpp)
+    * [local-global-variables.cpp](local-global-variables.cpp)
+    * [constants-litterals.cpp](constants-litterals.cpp)
+    * [operators.cpp](operators.cpp)
+    * [type-convertion.cpp](type-convertion.cpp)
+    * [const_cast.cpp](const_cast.cpp)
+    * [reinterpret-cast.cpp](reinterpret-cast.cpp)
 * Hafta-2
   * [if-else](100_cpp_basics/2.1_if-else/readme.md)
   * [loops](100_cpp_basics/2.2_loops/readme.md)
