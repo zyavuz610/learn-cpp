@@ -1,6 +1,8 @@
 # Object Oriented Programming-A (Nesne Yönelimli Programlama-A)
 ## 2025-26 Güz Yarıyılı - Ders Planı 
 
+* [Yoklama](https://forms.gle/KK2FEQUsuXAU9oiR6)
+
 ### Haftalara Göre Ders İçerikleri
 * Hafta-1
   * [Giriş](100_cpp_basics/0_introduction/readme.md)
