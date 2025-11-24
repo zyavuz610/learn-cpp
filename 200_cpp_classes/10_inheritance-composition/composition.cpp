@@ -9,45 +9,45 @@
 using namespace std;
 
 class Time {     //Time class
-public:
-      Time();
-      Time(int, int);
-      ~Time(){cout<<"Time destructor called"<<endl;}	
-      void setTime(int, int);
-      void getTime(int&, int&);
-      void printTime();
-      void incrementHours();
-      void incrementMinutes();
-private:
-      int hr;
-      int min;
+      public:
+            Time();
+            Time(int, int);
+            ~Time(){cout<<"Time destructor called"<<endl;}	
+            void setTime(int, int);
+            void getTime(int&, int&);
+            void printTime();
+            void incrementHours();
+            void incrementMinutes();
+      private:
+            int hr;
+            int min;
 };
 
 class Date {      //Date class
-public:
-      Date();
-      Date(int, int, int);
-      ~Date(){cout<<"Date destructor called"<<endl;}
-      void setDate(int, int, int);
-      void getDate(int&, int&, int&);
-      void printDate();
-private:
-      int month;
-      int day;
-      int year;
+      public:
+            Date();
+            Date(int, int, int);
+            ~Date(){cout<<"Date destructor called"<<endl;}
+            void setDate(int, int, int);
+            void getDate(int&, int&, int&);
+            void printDate();
+      private:
+            int month;
+            int day;
+            int year;
 };
 
 class Event {     //Event class
-public:
-      Event(int hours = 0, int minutes = 0, int m = 1,
-            int d = 1, int y = 1900, string name = "Christmas"); 
-      void setEventData(int hours, int minutes, int m, int d, int y, string name);
-     void printEventData();
-      ~Event(){cout<<"Event destructor called"<<endl;}
-private:
-      string eventName;
-      Date eventDay;
-      Time eventTime;
+      public:
+            Event(int hours = 0, int minutes = 0, int m = 1,
+                  int d = 1, int y = 1900, string name = "Christmas"); 
+            void setEventData(int hours, int minutes, int m, int d, int y, string name);
+      void printEventData();
+            ~Event(){cout<<"Event destructor called"<<endl;}
+      private:
+            string eventName;
+            Date eventDay;
+            Time eventTime;
 };
 
 int main() {      //instantiate an object and set data for Christmas
@@ -67,15 +67,13 @@ int main() {      //instantiate an object and set data for Christmas
       return 0;
 }
 
-Time::Time()
-{     //default constructor
+Time::Time() {     //default constructor
       hr = 0;
       min = 0;
       cout<<"Time constructor called"<<endl;
 }
  
-Time::Time(int hours=0, int minutes=0)
-{     //class time constructor that accepts parameters
+Time::Time(int hours=0, int minutes=0) {     //class time constructor that accepts parameters
       if(0 <= hours && hours < 24)//makes sure hours are valid
             hr = hours;
       else
@@ -86,8 +84,7 @@ Time::Time(int hours=0, int minutes=0)
             min = 0;
       cout<<"Time constructor called"<<endl;
 }
-void Time::setTime(int hours, int minutes)
-{     //sets a valid time
+void Time::setTime(int hours, int minutes) {     //sets a valid time
       if(0 <= hours && hours < 24)
             hr = hours;
       else
@@ -98,15 +95,13 @@ void Time::setTime(int hours, int minutes)
             min = 0;
 }
 
-void Time::getTime(int& hours, int& minutes)
-{    
+void Time::getTime(int& hours, int& minutes) {    
 //returns the hours and minutes
       hr = hours;
       min = minutes;
 } 
 
-void Time::printTime()
-{    
+void Time::printTime() {    
 //displays the hours and minutes to the screen
       if(hr < 10)
             cout << "0";
@@ -115,14 +110,12 @@ void Time::printTime()
             cout << "0";
       cout << min << endl;
 }
-void Time::incrementHours()
-{     //increments hours by one
+void Time::incrementHours() {     //increments hours by one
       hr++;
       if(hr > 23)
             hr = 0;
 }
-void Time::incrementMinutes()
-{     //increments minutes by one
+void Time::incrementMinutes() {     //increments minutes by one
       min++;
       if(min > 59)
       {
@@ -131,16 +124,14 @@ void Time::incrementMinutes()
       }
 }
 
-Date::Date()
-{//default constructor
+Date::Date() {//default constructor
       month = 1;
       day = 1;
       year = 1900;
       cout<<"Date constructor called"<<endl;
 }
 
-Date::Date(int m, int d, int y)
-{//constructor that accepts parameters
+Date::Date(int m, int d, int y){ //constructor that accepts parameters
       if(m >= 1 && m <= 12)//makes sure month is valid
             month = m;
       else
@@ -155,8 +146,7 @@ Date::Date(int m, int d, int y)
             year = 1900;
       cout<<"Date constructor called"<<endl;
 }
-void Date::setDate(int m, int d, int y)
-{//sets a valid date
+void Date::setDate(int m, int d, int y){//sets a valid date
       if(m >= 1 && m <= 12)
             month = m;
       else
@@ -171,15 +161,13 @@ void Date::setDate(int m, int d, int y)
             year = 1900;
 }
 
-void Date::getDate(int& m, int& d, int& y)
-{//returns the month, day and year
+void Date::getDate(int& m, int& d, int& y){//returns the month, day and year
       month = m;
       day = d;
       year = y;
 }
 
-void Date::printDate()
-{//displays the month, day and year to the screen
+void Date::printDate(){//displays the month, day and year to the screen
       if(month < 10)
             cout << "0";
       cout << month << "/";
@@ -189,21 +177,18 @@ void Date::printDate()
       cout << year;
 }
 
-Event::Event(int hours, int minutes, int m, int d, int y, string name)
-                   : eventDay(m, d, y), eventTime(hours, minutes)
-{
+Event::Event(int hours, int minutes, int m, int d, int y, string name):
+       eventDay(m, d, y), eventTime(hours, minutes) {
       eventName = name;
       cout<<"Event constructor called"<<endl;
 }
 
-void Event::setEventData(int hours, int minutes, int m, int d, int y, string name)
-{
+void Event::setEventData(int hours, int minutes, int m, int d, int y, string name){
       eventTime.setTime(hours, minutes);
       eventDay.setDate(m, d, y);
       eventName = name;
 }
-void Event::printEventData()
-{
+void Event::printEventData(){
       cout << eventName << " occurs ";
       eventDay.printDate();
       cout << " at ";
