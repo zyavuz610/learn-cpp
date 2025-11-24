@@ -2,9 +2,10 @@
 
 //-------------------------------------------------------------------------------
 /*
+bu dosyada olan konular
 	parametrelere ilk değer atama
-	base class'ın "parametreli yapıcı fonksiyonunu çağırma"
-	çoklu miras
+	base class'ın "parametreli yapıcı fonksiyonunu çağırma, parametre gönderme
+	çoklu miras örneği
 */
 
 
