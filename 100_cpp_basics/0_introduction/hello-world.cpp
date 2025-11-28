@@ -1,8 +1,14 @@
+// iostream kütüphanesini dahil eder (giriş/çıkış işlemleri için gerekli)
 #include <iostream>
+
+// std namespace'ini kullanmak için std:: yazmamıza gerek kalmaması için
 using namespace std;
 
 int main() {
+  // Ekrana "Merhaba herkese" yazısını yazdırır
   cout << "Merhaba herkese\n";
+  
+  // Programı başarıyla bitirdiğini belirtir ve 0 değerini döndürür
   return 0;
 }
 
