@@ -8,7 +8,8 @@ STL kütüphanesi, C++ dilinin standart kütüphanesidir.
  std::vector, std::list, std::set, std::map gibi veri yapılarının her biri için ayrı iterator türleri bulunmaktadır.
 
  örneğin;
- #include <iostream>
+ */
+#include <iostream>
 #include <vector>
 
 int main() {
@@ -23,5 +24,3 @@ int main() {
 }
 
 
-*/
-*/
