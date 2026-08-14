@@ -1,53 +1,71 @@
-// iostream kütüphanesini dahil eder (giriş/çıkış işlemleri için gerekli)
+// Include iostream library for input/output operations
 #include <iostream>
 
-// std namespace'ini kullanmak için std:: yazmamıza gerek kalmaması için
+// Using namespace std to avoid writing std:: prefix repeatedly
 using namespace std;
 
 int main() {
-  // Ekrana "Merhaba herkese" yazısını yazdırır
-  cout << "Merhaba herkese\n";
+  // Display text to console using cout (console output)
+  cout << "Hello everyone\n";
   
-  // Programı başarıyla bitirdiğini belirtir ve 0 değerini döndürür
+  // Return 0 to indicate successful program termination
   return 0;
 }
 
 /*
-C ve C++ arasındaki benzerlikler nelerdir?
-- Her iki dilin de benzer bir sözdizimi vardır.
-- Her iki dilin de kod yapısı aynıdır.
-- Her iki dilin de derlemesi benzerdir. "gcc" derleyicisi C ve C++ için kullanılabilir.
-  gcc hello.c -o hello
-- Her iki dilin de temel sözdizimi aynıdır. C'nin neredeyse tüm operatörleri ve anahtar kelimeleri C++'da da mevcuttur ve aynı işi yapar.
-- C++'ın C'den biraz daha geniş bir grameri vardır, ancak temel grammer aynıdır.
-- Her iki dilin de temel bellek modeli donanıma çok yakındır. Yani C ve C++'ın bellek modeli donanıma çok yakındır.
-- Her iki dilde de yığın, yığın, dosya kapsamı ve statik değişkenlerin aynı kavramları vardır.
+============================================
+COMPARING C vs C++
+============================================
 
-C ve C++ arasındaki farklar nelerdir? C	vs C++
-=======================================
-- C 1969 yılında Dennis Ritchie TARAFINDAN AT&T Bell Labs'de geliştirilmeye başlandı. 1973 yılında C'nin ilk sürümü yayınlandı. "A System Programming Language" olarak adlandırıldı. Bir çok özelliğini daha önce kullanılan B programlama dilinden almıştır. Bu nedenle adına C verilmiştir.
-- C++ dili ise Bjarne Stroustrup tarafından 1979 yılında Bell Lab'ta geliştirildi. İlk başlarda dilin adı "C with Objects" olarak anılıyordu. 1983 yılında C++ olarak adlandırılmaya başlandı.
-- Dennis Ritchie 2011 yılında öldü. Bjarne Stroustrup hala hayattadır.
-=======================================
-- C dili polymorphism, encapsulation, inheritance gibi özellikleri desteklemez. Bu nedenle C nesne yönelimli programlamayı desteklemez.
-- C++ nesne yönelimli programlama dili olduğu için polymorphism, encapsulation, inheritance gibi özellikleri destekler.
-=======================================
-- C, C++'ın alt kümesidir.
-- C++ C'nin üst kümesidir.
-=======================================
-- C dili 32 anahtar kelime içerir.
-- C++ dili 52 anahtar kelime içerir.
-=======================================
-- C dili fonksiyonlarla çalışır. C'de fonksiyonlar ayrı ayrı çalışır. Procedurel bir dildir. Veri ve fonksiyonlar ayrıdır.
-- C++ dili nesne yönelimli programlama dili olduğu için veri ve fonksiyonlar bir arada çalışır. Ancak C gibi procedural bir dil olarak da kullanılabilir. Bu yüzden C++ hibrit bir dildir.
-=======================================
-- Veri ve fonksiyonlar C'de ayrıdır. Çünkü C procedural bir programlama dilidir.
-- Veri ve fonksiyonlar C++'da bir nesne şeklinde bir arada kapsüllenir.
-=======================================
-- C dili information hiding'i desteklemez. Information hiding veri gizleme demektir. Veri yapılarının ve operatörlerin amaçlandığı gibi kullanılmasını sağlamak için Encapsulation ile veri gizlenir. Information hiding veri gizleme demektir.
-- C++ dili information hiding'i destekler.
-=======================================
-- C dilinde builtin data types desteklenir.
+SIMILARITIES:
+- Both languages share similar syntax and structure
+- Both use 'gcc' compiler (C/C++ compatible)
+- Almost all C operators and keywords exist in C++
+- Both have similar memory models close to hardware
+- Both support stack, heap, scope, and static variables
+
+DIFFERENCES - OVERVIEW:
+- C: Developed by Dennis Ritchie (1973) at AT&T Bell Labs
+  Called "A System Programming Language"
+- C++: Developed by Bjarne Stroustrup (1979) at Bell Labs
+  Originally called "C with Objects"
+
+KEY DISTINCTIONS:
+- C does NOT support OOP (no inheritance, polymorphism, encapsulation)
+- C++ supports full Object-Oriented Programming features
+- C: Procedural - data and functions are separate
+- C++: Hybrid language - combines OOP with procedural approach
+- C has ~32 keywords; C++ has ~52 keywords
+- C++ supports information hiding (encapsulation)
+- C is a subset of C++ (mostly compatible)
+
+LANGUAGE PARADIGM:
+- C: Procedural programming language
+  * Focus on functions and procedures
+  * Data and operations separated
+- C++: Multi-paradigm language
+  * Object-Oriented Programming (OOP)
+  * Procedural programming (also supported)
+  * Data and functions encapsulated in objects
+
+ENCAPSULATION & DATA HIDING:
+- C: No built-in encapsulation or access control
+- C++: Supports private, public, protected members
+  * Protects data through access modifiers
+  * Implements information hiding principle
+
+WHEN TO USE WHICH:
+- Use C for: System programming, embedded systems, simplicity
+- Use C++ for: Large-scale applications, game development, complex projects
+- Many modern projects use C++ for its OOP advantages
+
+INTERESTING FACTS:
+- Dennis Ritchie (C creator): 1941-2011
+- Bjarne Stroustrup (C++ creator): Still active in 2024
+- C++ remains powerful for performance-critical applications
+- Understanding C helps learn C++ concepts
+*/
+/*
 - C++ dilinde builtin ve user-defined data types desteklenir (örn:string).
 =======================================
 - C dili function driven bir dildir. Çünkü C procedural bir programlama dilidir. Bir çok işlem fonksiyonlarla yapılır. Ekrana çıktı için printf() fonksiyonu kullanılır. - (ana bileşen:fonksiyon)

@@ -4,43 +4,51 @@ using namespace std;
 
 int main() {
 
-   // bool
-   bool dolu = true;    // true(1), false(0) 
-   cout << "Doluluk Durumu        : " << dolu << endl;
-   cout << "Boolean bellek boyutu : " << sizeof(bool) << endl;
-   cout << "İkili Gösterim: "<<bitset<8>(dolu)<<endl;
+   // BOOLEAN DATA TYPE
+   // Values: true (1) or false (0)
+   bool isEmpty = true;
+   cout << "Boolean Value        : " << isEmpty << endl;
+   cout << "Boolean Memory Size  : " << sizeof(bool) << " byte" << endl;
+   cout << "Binary Representation: " << bitset<8>(isEmpty) << endl;
 
 
 /*
-   // char
-   char ch='A'; // ch='b', ch=70
-   cout << "Karakter Icerigi      : " << ch << "(" << int(ch) << ")" << endl;
-   cout << "char bellek boyutu    : " << sizeof(char) << endl;
-  cout << "İkili Gösterim: "<<bitset<8>(ch)<<endl;
+   // CHARACTER DATA TYPE
+   // Stores single character: 'A', 'b', or ASCII value like 70
+   char ch = 'A';
+   cout << "Character Value      : " << ch << " (ASCII: " << int(ch) << ")" << endl;
+   cout << "Char Memory Size     : " << sizeof(char) << " byte" << endl;
+   cout << "Binary Representation: " << bitset<8>(ch) << endl;
 */
+
 /*
-   // int
-   int n=-500;
-   cout << "Tam Sayı İçeriği      : " << n << endl;
-   cout << "int bellek boyutu     : " << sizeof(int) << endl;
-   cout << "short int bellek boyutu : " << sizeof(short int) << endl;
-   cout << "long int bellek boyutu : " << sizeof(long int) << endl;
+   // INTEGER DATA TYPE
+   // Stores whole numbers (positive, negative, or zero)
+   int n = -500;
+   cout << "Integer Value        : " << n << endl;
+   cout << "Int Memory Size      : " << sizeof(int) << " bytes" << endl;
+   cout << "Short Int Memory     : " << sizeof(short int) << " bytes" << endl;
+   cout << "Long Int Memory      : " << sizeof(long int) << " bytes" << endl;
 */
    
 /*
-   short int i;           // signed, unsigned farkı
-   short unsigned int j;  
+   // SIGNED vs UNSIGNED DIFFERENCE
+   // Signed: can store negative numbers (uses one bit for sign)
+   // Unsigned: only positive numbers (uses all bits for value)
+   short int i;              // Signed: range is -32768 to 32767
+   short unsigned int j;     // Unsigned: range is 0 to 65535
    j = 50000;
-   i = j;  // i=65536-50000
+   i = j;                    // Overflow! i becomes negative: 65536 - 50000
    cout << i << " " << j;
-*/   
- /*  
+*/
 
-   // float, double
-   short int i;           // signed, unsigned farkı
-   short unsigned int j;  
+/*
+   // FLOATING-POINT DATA TYPES
+   // Short int signed/unsigned differences
+   short int i;              // Signed variable
+   short unsigned int j;     // Unsigned variable
    j = 50000;
-   i = j;  // i=65536-50000
+   i = j;                    // This causes overflow
    cout << i << " " << j;
 */
 
@@ -49,58 +57,111 @@ int main() {
 }
 
 /*
-        ******** Temel Veri Tipleri ***************
-        bool            Boolean: doğru ya da yanlış
-        char            Karakter
-        int             Tam Sayı
-        float           float    
-        double          double
-        void            değer içermeyen
-        *********** Veri Tipi Düzenleyici Anahtar Kelimeleri *******************
-        signed                  hiç bir şey yazılmazsa "signed" olarak alınır
-        unsigned
-        short
-        long
-        ***********************************************************
-        char	                1byte	        -127 to 127 
-        unsigned char	        1byte	        0 to 255
-        signed char	        1byte	        -127 to 127
-        int	                4bytes	        -2147483648 to 2147483647
-        unsigned int	        4bytes	        0 to 4294967295
-        signed int	        4bytes	        -2147483648 to 2147483647
-        short int	        2bytes	        -32768 to 32767
-        unsigned short int	Range	        0 to 65,535
-        signed short int	Range	        -32768 to 32767
-        long int	        4bytes	        -2,147,483,648 to 2,147,483,647
-        signed long int	        4bytes	        same as long int
-        unsigned long int	4bytes	        0 to 4,294,967,295
-        
-        float	                4bytes	        +/- 3.4e +/- 38 (~7 digits)
-        double	                8bytes	        +/- 1.7e +/- 308 (~15 digits)
-        long double	        8bytes	        +/- 1.7e +/- 308 (~15 digits) (bazı derleyicilerde 16)
-        *********************************************************************
-        typedef Tanımlama
-                - c++ da typedef kullanarak var olan t,iplerden yeni bir tip tanımlanabilir
-                - örneğin;
-                        typedef float hacim;
-                        hacim hacim1;           // hacim anahtar kelimesi artık float olarak değerlendirilecek
-        *********************************************************************
-        enum
-                - değişkenler belli bilgileri tutmak için kullanılır ve belirli tiplerde tanımlanır
-                - değişkenler bellekte yer kaplar
-                - ileride yeniden ele alacağız
+============================================
+FUNDAMENTAL DATA TYPES IN C++
+============================================
 
-            //           0        1     ...
-            enum week { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday };
-            week today;
-            today = Wednesday;
-            cout << "Day " << today+1;
+BASIC TYPES:
+  bool              Boolean: true or false (1 byte)
+  char              Single character (1 byte)
+  int               Whole number/integer (4 bytes)
+  float             Floating-point number (4 bytes)
+  double            Double precision float (8 bytes)
+  void              No value (used in function returns)
 
-      bir diğer örnek
-         enum season {   
-            spring = 0, 
-            summer = 4, 
-            autumn = 8,
-            winter = 12
-         };
+DATA TYPE MODIFIERS:
+  signed            Can store negative values (default for char, int)
+  unsigned          Only positive values (extends positive range)
+  short             Reduces memory size
+  long              Increases range of values
+
+============================================
+COMPLETE DATA TYPE REFERENCE
+============================================
+
+TYPE | SIZE | RANGE
+-----|------|------
+char                     1 byte       -128 to 127
+unsigned char            1 byte       0 to 255
+signed char              1 byte       -128 to 127
+int                      4 bytes      -2,147,483,648 to 2,147,483,647
+unsigned int             4 bytes      0 to 4,294,967,295
+signed int               4 bytes      -2,147,483,648 to 2,147,483,647
+short int                2 bytes      -32,768 to 32,767
+unsigned short int       2 bytes      0 to 65,535
+signed short int         2 bytes      -32,768 to 32,767
+long int                 4 bytes      -2,147,483,648 to 2,147,483,647
+signed long int          4 bytes      Same as long int
+unsigned long int        4 bytes      0 to 4,294,967,295
+float                    4 bytes      +/- 3.4e +/- 38 (~7 digits precision)
+double                   8 bytes      +/- 1.7e +/- 308 (~15 digits precision)
+long double              8 bytes      +/- 1.7e +/- 308 (~15 digits precision)
+
+NOTES:
+- Smaller types (char, short) use less memory but have limited range
+- Larger types (long, double) use more memory but store larger values
+- Floating-point numbers have limited precision
+
+============================================
+TYPEDEF - CREATING TYPE ALIASES
+============================================
+
+Purpose: Create aliases for existing data types
+
+Syntax:
+  typedef existing_type new_name;
+
+Example:
+  typedef float Volume;
+  Volume vol1, vol2;      // vol1 and vol2 are float type
+  
+Benefits:
+  - Makes code more readable
+  - Easier to change types globally
+  - Better code documentation
+
+============================================
+ENUMERATION DATA TYPE (enum)
+============================================
+
+Purpose: Define set of named integer constants
+
+Features:
+  - Variables hold specific predetermined values
+  - Uses memory efficiently
+  - Makes code more readable
+
+Syntax:
+  enum TypeName { value1, value2, value3, ... };
+
+Example 1 - Days of Week:
+  enum DayOfWeek { 
+    Sunday = 0, 
+    Monday = 1, 
+    Tuesday = 2, 
+    Wednesday = 3, 
+    Thursday = 4, 
+    Friday = 5, 
+    Saturday = 6 
+  };
+  
+  DayOfWeek today = Wednesday;
+  cout << "Day: " << today;    // Output: 3
+
+Example 2 - Seasons:
+  enum Season { 
+    spring = 0, 
+    summer = 4, 
+    autumn = 8,
+    winter = 12
+  };
+  
+  Season current = summer;
+  cout << "Season value: " << current;  // Output: 4
+
+Advantages of enum:
+  - Improves code readability
+  - Prevents invalid values
+  - Easier to maintain
+  - Self-documenting code
 */

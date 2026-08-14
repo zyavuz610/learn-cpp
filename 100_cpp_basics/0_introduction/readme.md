@@ -1,9 +1,34 @@
-# introduction
+# 0. Introduction to C++
 
-* setup (local): 
-  * w64devkit - https://www.mingw-w64.org/downloads/
-  * vscode & setup path
-* or online: [replit.com](https://replit.com)
-* [hello-world.cpp](hello-world.cpp)
-* [cpp-syntax.cpp](cpp-syntax.cpp)
-* [linux-cammands.txt](linux-cammands.txt) - for compiling and running
+## Overview
+This section covers the fundamental setup and basic syntax required to start programming in C++.
+
+## Setup & Environment
+
+### Local Development
+* **w64devkit** - A lightweight and portable C/C++ development environment
+  * Download: https://www.mingw-w64.org/downloads/
+  * Setup VS Code with proper path configuration
+  * Alternative: MinGW, Dev-C++, or other C++ compilers
+
+### Online Development
+* **Replit.com** - Cloud-based IDE, no installation required
+  * Ideal for learning and quick prototyping
+  * Accessible from any device with a browser
+
+## Learning Materials
+
+* [hello-world.cpp](hello-world.cpp) - Your First C++ Program
+  * Basic program structure and the main() function
+  * Using cout to display output
+  * Program execution flow
+
+* [cpp-syntax.cpp](cpp-syntax.cpp) - C++ Language Fundamentals
+  * Program structure and syntax rules
+  * Comments in code (single-line // and multi-line /* */)\n  * Header files and namespaces
+  * Comparison between C and C++ languages
+
+* [linux-cammands.txt](linux-cammands.txt) - Compilation and Execution
+  * Compiling C++ files using gcc/g++ compiler
+  * Running compiled executable programs
+  * Common compiler flags and command-line options

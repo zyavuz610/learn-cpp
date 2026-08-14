@@ -1,95 +1,180 @@
+/*
+ARRAYS - LINEAR DATA STRUCTURE
+
+What are Arrays?
+- Collection of multiple data elements of the SAME data type
+- Fixed size determined at declaration
+- Elements stored CONTIGUOUSLY in memory
+- All elements same size
+- Accessed by index starting from 0
+
+ARRAY SYNTAX:
+  datatype arrayName[size];
+  
+EXAMPLES:
+  int numbers[100];        // 100-element integer array
+  double values[10];       // 10-element floating-point array
+  char name[50];           // 50-element character array
+
+WHY USE ARRAYS?
+Instead of: int num1, num2, num3, ..., num50;
+Use: int numbers[50];
+Access: numbers[0], numbers[1], ..., numbers[49]
+
+KEY CHARACTERISTICS:
+- Zero-indexed: first element is index 0
+- Linear: elements stored sequentially in memory
+- Fixed size: determined at compile time
+- Contiguous: elements next to each other in memory
+- Index determines: memory_address = base_address + (index * element_size)
+
+============================================
+ARRAY DECLARATION AND INITIALIZATION
+============================================
+
+1. DECLARATION ONLY (uninitialized):
+   int arr[5];              // 5 elements, values undefined
+
+2. ARRAY SIZE BY INITIALIZER:
+   int arr[] = {2, 3, 5, 6, 9};  // Size automatically = 5
+
+3. PARTIAL INITIALIZATION:
+   int arr[5] = {1, 2};     // First 2 elements: 1, 2; rest: 0
+
+4. COMPLETE INITIALIZATION:
+   int arr[5] = {1, 2, 3, 4, 5};
+
+5. ALL ZEROS:
+   int arr[5] = {0};        // All elements initialized to 0
+
+6. VARIABLE SIZE (C++11):
+   int n = 5;
+   double arr[n];           // NOT standard C++ (Variable Length Array)
+   // For standard C++, use vector or new instead
+
+============================================
+CHARACTER ARRAYS (C STRINGS)
+============================================
+
+A C string is a char array that ENDS with null character '\0':
+
+1. STRING LITERAL INITIALIZATION:
+   char str[] = "Hello";    // Size = 6 (includes '\0')
+   // str[0]='H', str[1]='e', str[2]='l', str[3]='l', str[4]='o', str[5]='\0'
+
+2. SIZED STRING:
+   char str[20] = "World";  // Size = 20, stores "World\0" + padding
+   // First 6 elements: 'W','o','r','l','d','\0'
+   // Remaining 14 elements: 0 (null bytes)
+
+3. CHARACTER ARRAY INITIALIZATION:
+   char str[] = {'H','e','l','l','o','\0'};  // Size = 6
+
+4. NAMED ARRAY:
+   char name[16] = {'J','o','h','n','\0'}; // "John" + null terminator
+
+IMPORTANT: Always ensure size is large enough for string + null terminator!
+// ERROR: char str[5] = "Hello";  // "Hello" is 6 chars (5 + '\0')
+// ERROR: char arr[5] = {'H','e','l','l','o','\0'}; // 6 chars in 5-size array
+
+============================================
+ARRAY ACCESS AND OPERATIONS
+============================================
+
+READING ARRAY ELEMENTS:
+  cout << arr[0];           // Print first element
+  int x = arr[2];           // Get third element
+
+WRITING TO ARRAY ELEMENTS:
+  arr[0] = 10;              // Set first element to 10
+  cin >> arr[i];            // Read input into array[i]
+
+LOOPING THROUGH ARRAYS:
+  for (int i = 0; i < n; i++) {
+    cout << arr[i];         // Access each element
+  }
+
+KEY RESTRICTIONS:
+  int x[5] = {1,2,3,4,5};
+  int y[5] = {6,7,8,9,10};
+  
+  x = y;      // ERROR: Cannot assign entire arrays
+  cin >> x;   // ERROR: Cannot read entire array with >>
+  if (x == y) // ERROR: Cannot compare arrays with ==
+
+============================================
+COMMON ARRAY PROBLEMS
+============================================
+
+EXERCISE: Given N numbers:
+1. Find sum of all elements
+2. Find minimum and maximum elements
+3. Calculate average
+4. Find elements below average
+5. Find elements above average
+6. Find 2nd maximum element
+7. Find 2nd minimum element
+8. Calculate standard deviation
+
+============================================
+*/
+
 #include <iostream>
 #include <iomanip>
-#include <ctime>
 using namespace std;
-/*  DİZİLER - ARRAYS
-		. Aynı veri tipinden birden çok veri içeren yapılardır
-		. Belli bir boyutu vardır, yani kaç eleman içerdiği bellidir (dizinin boyutu)
-		. aynı türden bireysel değişkenleri 
-		sayi, sayi1, sayi2, ..., sayi50 vs tanımlamak yerine dizi tanımlanır ve dizinin adına sıra numarası (indis,index) verilerek o elemana erişilir.
-		. diziler lineer veri türüdür, yani elemanlar bellekte peşpeşe dizilirler ve tüm elemanlar aynı boyuttadırlar.
-		. sıra numarası (indis) c/c++ dilinde 0 dan başlar (bir çok programlama dilinde olduğu gibi; bu durum dizinin isminin aynı zamanda ilk elemanın başlangıç adresi olması ve sonraki elemanlara erişim için başlangıç adresi + indis in kullanılması ile de ilişkilidir.)
 
-		...
-		int sayi[100];	// 100 elemanlı int tipinde ve sayi isminde dizi
-		double r[10];
-		char s[100];	
-
-    int n = 5;
-    double dizi[n];  // C++ 11 standartlarına göre bu tanımlama yapılamaz
-    cout << "C++ version: " << __cplusplus << endl;
-		...
-		
-		. DİZİLERE İLK DEĞER VERME
-			int sayi[] = {2,3,5,6,9};	// 5 elemanlı dizi
-			sayi[0] = 10;				// ilk eleman 10 olarak ayarlanıyot
-			char s[] = {'B','i','l','g','i','s','a','y','a','r'};
-
-      int dizi[5] = {0};  // Tüm elemanlar 0 olur
-      int dizi[5] = {1, 2, 3, 4, 5};  // 5 elemanlı bir dizi, her eleman tanımlı
-      int dizi[5] = {1, 2};  // İlk iki eleman 1 ve 2, geri kalanlar 0
-      int dizi[] = {1, 2, 3, 4, 5};  // Boyut otomatik olarak 5 olur
-	  
-	  // C string tanımlama, karakter dizisi
-	  char str[] = "Merhaba";  // str dizisi 8 elemanlı olur, son eleman null karakterdir '\0'
-	  char str2[20] = "Dünya"; // str2 dizisi 20 elemanlı olur, ilk 6 eleman 'D','ü','n','y','a','\0', geri kalanlar ise 0 olur
-	  char ch[] = {'M', 'e', 'r', 'h', 'a', 'b', 'a', '\0'}; // ch dizisi de 8 elemanlı olur
-	  char ch2[10] = {'D', 'ü', 'n', 'y', 'a', '\0'}; // ch2 dizisi 10 elemanlı olur, ilk 6 eleman tanımlı, geri kalanlar 0 olur
-	  // char ch3[5] = "Merhaba"; // HATA! çünkü "Merhaba" ifadesi 8 karakterlidir, 5 karakterlik diziye sığmaz
-	  // char ch4[5] = {'M', 'e', 'r', 'h', 'a', 'b', 'a', '\0'}; // HATA! çünkü 8 karakterlik ifade 5 karakterlik diziye sığmaz
-	  char name[16] = {'J', 'o', 'h', 'n', '\0'};
-
-
-
-      konu olarak bilinmesi gerekeneler
-      - dizi oluşuma, ilk değer verme
-      - elemanlara erişim, işlem yapmak (okuma yazma)
-      - dikkat et (hatırla!)
-        - string için toplu erişim
-        - diğer dizilerde tek tek erişim.
-			
-      
-*/
-//-------------------------------------------------------------
-/*
-// örnek: 
-// sonsuz while döngüsü oluşturunuz, kullanıcıdan 10 elemanlı bir diziye elemanları girmesini isteyiniz, q girerse çıkış yapınız
-// kullanıcıdan ad, soyad, arasınav, final notlarını alınız
-// bu değerleleri bir diziye atınız, dizi indisleri id olarak düşünülebilir
-// ekrana tablo şeklinde id, ad, soyad, arasınav, final, ortalama, harf notu, geçti/kaldı yazdırınız.
-// setw(), setprecision(), fixed, setfill() fonksiyonlarını kullanınız
-*/
-//-------------------------------------------------------------
-/*
-illegal dizi işlemleri
- int x[5] = {1,2,3,4,5}; // array initialization
- int y[5] = {6,7,8,9,10};
- x = y;  // bu işlem yapılamaz
- cin>>x;  // bu işlem yapılamaz
- if(x==y)  // bu işlem yapılamaz
-*/
 int main() {
-
-//----------------------------------------------------------
-//	Dizi elemanlarına erişim
-
-	int n,SUTUN1=6,SUTUN2=7;
-  cout<<"N:";
-	cin>>n;
-	int sayi[100];
-	for(int i=0;i<n;i++){
-		cout<<i<<". sayi : ";
-		cin>>sayi[i];
-	}
-	cout<<setw(SUTUN1)<<"Sıra"<<setw(SUTUN2)<<"Deger"<<endl;
-	for(int i=0;i<n;i++){
-		cout<<setw(SUTUN1)<<i<<setw(SUTUN2)<<sayi[i]<<endl;
-	}
-  // Dizi elemanlarının toplamını bulunuz
-  // En küçük, en büyük elemanı, ortalama bulunuz
-  // Ortalamadan küçük elemanları, ortalamadan büyük elemanları bulunuz
-  // 2. max, ve 2. min elemanı bulunuz
-  // dizinin matematikteki formülüne göre standart sapmasını bulunuz
-
-  return 0;
+    //==================================================
+    // ARRAY ELEMENT ACCESS EXAMPLE
+    //==================================================
+    
+    int n;
+    const int COL1 = 6;      // Column width for formatting
+    const int COL2 = 7;      // Column width for formatting
+    
+    // Get array size from user
+    cout << "Enter number of elements (N): ";
+    cin >> n;
+    
+    if (n <= 0 || n > 100) {
+        cout << "Invalid array size!" << endl;
+        return 1;
+    }
+    
+    int numbers[100];        // Array to store numbers
+    
+    // READ: Input array elements
+    for (int i = 0; i < n; i++) {
+        cout << "Enter number[" << i << "]: ";
+        cin >> numbers[i];
+    }
+    
+    // WRITE: Display array with formatted output
+    cout << "\n";
+    cout << setw(COL1) << "Index" << setw(COL2) << "Value" << endl;
+    cout << "=====================" << endl;
+    
+    for (int i = 0; i < n; i++) {
+        cout << setw(COL1) << i << setw(COL2) << numbers[i] << endl;
+    }
+    
+    //==================================================
+    // EXERCISES TO PRACTICE
+    //==================================================
+    
+    // TODO: 1. Calculate sum of all elements
+    // TODO: 2. Find minimum element
+    // TODO: 3. Find maximum element
+    // TODO: 4. Calculate average
+    // TODO: 5. Find elements below average
+    // TODO: 6. Find elements above average
+    // TODO: 7. Find second maximum element
+    // TODO: 8. Find second minimum element
+    // TODO: 9. Calculate standard deviation
+    // TODO: 10. Sort array elements
+    
+    // HINT: Use setw(), setprecision(), fixed for formatting
+    // HINT: Create separate functions for each operation
+    
+    return 0;
 }
