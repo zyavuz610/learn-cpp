@@ -169,7 +169,7 @@ Example 1.1 - Using enum without values: day of week:
 
   DayOfWeek lastDay = Saturday;
   cout << "Last Day: " << lastDay; // Output: 6
-  DayOfWeek theDay = static_cast<DayOfWeek>(lastDay + 1); // Wraps around to 0 (Sunday)
+  DayOfWeek theDay = static_cast<DayOfWeek>(lastDay + 1); // doesn't wrap around (undefined behavior)
 
 Example 2 - Seasons:
   enum Season { 
