@@ -4,7 +4,8 @@ using namespace std;
 
 int main() {
 
-   // BOOLEAN DATA TYPE
+   // BOOLEAN DATA TYPE - new in C++ (C does not have a boolean type)
+   // Stores true or false values
    // Values: true (1) or false (0)
    bool isEmpty = true;
    cout << "Boolean Value        : " << isEmpty << endl;
@@ -13,7 +14,7 @@ int main() {
 
 
 /*
-   // CHARACTER DATA TYPE
+   // CHARACTER DATA TYPE - same in C and C++
    // Stores single character: 'A', 'b', or ASCII value like 70
    char ch = 'A';
    cout << "Character Value      : " << ch << " (ASCII: " << int(ch) << ")" << endl;
@@ -22,7 +23,7 @@ int main() {
 */
 
 /*
-   // INTEGER DATA TYPE
+   // INTEGER DATA TYPE - same in C and C++
    // Stores whole numbers (positive, negative, or zero)
    int n = -500;
    cout << "Integer Value        : " << n << endl;
@@ -32,7 +33,7 @@ int main() {
 */
    
 /*
-   // SIGNED vs UNSIGNED DIFFERENCE
+   // SIGNED vs UNSIGNED DIFFERENCE - same in C and C++
    // Signed: can store negative numbers (uses one bit for sign)
    // Unsigned: only positive numbers (uses all bits for value)
    short int i;              // Signed: range is -32768 to 32767
@@ -43,7 +44,7 @@ int main() {
 */
 
 /*
-   // FLOATING-POINT DATA TYPES
+   // FLOATING-POINT DATA TYPES - same in C and C++
    // Short int signed/unsigned differences
    short int i;              // Signed variable
    short unsigned int j;     // Unsigned variable
@@ -62,7 +63,7 @@ FUNDAMENTAL DATA TYPES IN C++
 ============================================
 
 BASIC TYPES:
-  bool              Boolean: true or false (1 byte)
+  bool              Boolean: true or false (1 byte) - C++ only
   char              Single character (1 byte)
   int               Whole number/integer (4 bytes)
   float             Floating-point number (4 bytes)
@@ -109,7 +110,11 @@ TYPEDEF - CREATING TYPE ALIASES
 Purpose: Create aliases for existing data types
 
 Syntax:
-  typedef existing_type new_name;
+  typedef existing_type new_name; // same as using new_name = existing_type; in C++11 and later
+    sample:
+      typedef int Age;
+      Age myAge = 25;
+      cout << "My age is: " << myAge << endl; // Output: My age is: 25
 
 Example:
   typedef float Volume;
@@ -121,7 +126,7 @@ Benefits:
   - Better code documentation
 
 ============================================
-ENUMERATION DATA TYPE (enum)
+ENUMERATION DATA TYPE (enum) - same in C and C++
 ============================================
 
 Purpose: Define set of named integer constants
@@ -144,9 +149,27 @@ Example 1 - Days of Week:
     Friday = 5, 
     Saturday = 6 
   };
+
+Example 1.1 - Using enum without values: day of week:
+  enum DayOfWeek { 
+    Sunday, // 0
+    Monday, // 1  
+    Tuesday, // 2
+    Wednesday, // 3
+    Thursday, // 4
+    Friday, // 5
+    Saturday // 6
+  };
   
   DayOfWeek today = Wednesday;
   cout << "Day: " << today;    // Output: 3
+
+  DayOfWeek tomorrow = static_cast<DayOfWeek>(today + 1);
+  cout << "Tomorrow: " << tomorrow; // Output: 4
+
+  DayOfWeek lastDay = Saturday;
+  cout << "Last Day: " << lastDay; // Output: 6
+  DayOfWeek theDay = static_cast<DayOfWeek>(lastDay + 1); // Wraps around to 0 (Sunday)
 
 Example 2 - Seasons:
   enum Season { 
