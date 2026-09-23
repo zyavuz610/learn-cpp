@@ -6,6 +6,7 @@ void printValue(const int* val) {
     int* modifiableVal = const_cast<int*>(val);  // const_cast kullanarak const'u kaldır
     //int* modifiableVal = val;  // böyle olsaydı HATA!
     *modifiableVal = 42;  // Değeri değiştirme
+    val = 42; // const const değişkenin değerini değiştiremezsin. Sadece adresini değiştirebilirsin.
 }
 
 int main() {
