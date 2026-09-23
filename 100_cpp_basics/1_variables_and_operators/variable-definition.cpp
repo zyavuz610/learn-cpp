@@ -14,7 +14,7 @@ int main() {
   cout << "Integer result: " << k << endl;
 
   // CHARACTER VARIABLES
-  // char stores a single byte that represents an ASCII code
+  // char stores a single byte that represents an ASCII code (homework:research ASCII table for character codes)
   // When printed, cout displays the character, not the ASCII value
   char c = 'A', ch;        // Declare two char variables
   ch = 65;                 // ASCII 65 = character 'A'
