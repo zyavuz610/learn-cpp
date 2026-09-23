@@ -28,6 +28,14 @@ This section covers the fundamental setup and basic syntax required to start pro
   * Comments in code (single-line // and multi-line /* */)\n  * Header files and namespaces
   * Comparison between C and C++ languages
 
+* [algorithms.cpp](algorithms.cpp) - Basic Programming Algorithms
+  * Array traversal and printing
+  * Summation and multiplication (accumulation)
+  * Average calculation with type casting
+  * Finding maximum and minimum elements
+  * Counting occurrences (frequency) and conditional counting
+  * Linear search algorithm
+
 * [linux-cammands.txt](linux-cammands.txt) - Compilation and Execution
   * Compiling C++ files using gcc/g++ compiler
   * Running compiled executable programs
