@@ -16,6 +16,7 @@ Bu dizin, [Project Euler](https://projecteuler.net/) platformunda yer alan matem
 | **1** | Multiples of 3 or 5 | [001-multiples of 3 or 5.cpp](001-multiples%20of%203%20or%205.cpp) | 1000'den küçük 3 veya 5'in katı olan sayıların toplamı (Döngüler, Mod Operatörü) | [Problem 1](https://projecteuler.net/problem=1) |
 | **2** | Even Fibonacci Numbers | [002_sum_of_even_fibonacci.cpp](002_sum_of_even_fibonacci.cpp) | 4 milyonu aşmayan çift Fibonacci sayılarının toplamı (Fibonacci Dizisi, Koşullu Döngü) | [Problem 2](https://projecteuler.net/problem=2) |
 | **3** | Largest Prime Factor | [003_largest_prime_factor.cpp](003_largest_prime_factor.cpp) | 600851475143 sayısının en büyük asal çarpanı (Asallık Kontrolü, Çarpanlara Ayırma) | [Problem 3](https://projecteuler.net/problem=3) |
+| **4** | Largest Palindrome Product | [004_palindrome.cpp](004_palindrome.cpp) | 3 basamaklı iki sayının çarpımıyla elde edilen en büyük palindrom sayı (Palindrom Kontrolü, Arama Optimizasyonu) | [Problem 4](https://projecteuler.net/problem=4) |
 
 ---
 
@@ -42,6 +43,13 @@ Bu dizin, [Project Euler](https://projecteuler.net/) platformunda yer alan matem
   * Sayı 2'den başlayarak küçük asal bölenlerine bölünerek basamak basamak küçültülür.
   * Tam bölünme kalmadığında elde edilen en son bölen, sayının en büyük asal çarpanını verir.
 
+### 4. [Problem 4: Largest Palindrome Product](004_palindrome.cpp)
+* **Problem Tanımı:** İki basamaklı iki sayının çarpımıyla elde edilen en büyük palindromik sayı $9009 = 91 \times 99$'dur. Üç basamaklı iki sayının çarpımıyla elde edilen en büyük palindromu bulunuz.
+* **Çözüm Yaklaşımı:**
+  * Sayının tersi aritmetik yöntemle (mod 10 ve bölme) elde edilerek `is_palindrome` fonksiyonu ile doğrulanır.
+  * İç içe iki döngü ile 999'dan 100'e geriye doğru tarama yapılır.
+  * $i \times j \le \text{max\_palindrome}$ olduğu anda iç döngü sonlandırılarak (erken kesme/pruning) arama uzayı büyük ölçüde optimize edilir.
+
 ---
 
 ## 🛠️ Nasıl Derlenir ve Çalıştırılır?
@@ -60,4 +68,8 @@ g++ 002_sum_of_even_fibonacci.cpp -o problem2
 # Problem 3:
 g++ 003_largest_prime_factor.cpp -o problem3
 ./problem3
+
+# Problem 4:
+g++ 004_palindrome.cpp -o problem4
+./problem4
 ```
