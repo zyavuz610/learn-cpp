@@ -1,9 +1,14 @@
 #include <iostream>
 using namespace std;
+/*
+C veya C++ dilinde kayıplı veya kayıpsız dönüşüm yapılabilir.
+Kayıplı dönüşümde verinin bir kısmı kaybolabilir. 
+Kayıpsız dönüşümde veri kaybı olmaz.
+Örnek olarak: int'den float'a dönüşüm kayıplı dönüşümdür.
+float int'den daha geniş bir değişken olduğu için veri kaybı olmaz.
 
+*/
 int main() {
-    /*
-    */
     double d = 3.14;
     int i = (int)d;                 // C-Style Cast
     int i = static_cast<int>(d);    // C++ Style Cast
