@@ -2,7 +2,7 @@
 ## 2025-26 Güz Yarıyılı - Ders Planı 
 
 * [Yoklama](https://forms.gle/KK2FEQUsuXAU9oiR6)
-* [Derste Yazılan Kodlar](https://replit.com/@oop17/CPlusPlus?v=1)
+* [Derste Yazılan Kodlar](https://replit.com/@zaferyavuz3/learn-cpp)
 
 ### Haftalara Göre Ders İçerikleri
 * Hafta-1

@@ -2,11 +2,12 @@
 ## 2025-26 Güz Yarıyılı - Ders Planı 
 
 * [Yoklama](https://forms.gle/KK2FEQUsuXAU9oiR6)
-* [Derste Yazılan Kodlar](https://replit.com/@oop17/CPlusPlus?v=1)
+* [Derste Yazılan Kodlar](https://replit.com/@zaferyavuz3/learn-cpp)
 
 ### Haftalara Göre Ders İçerikleri
 * Hafta-1
   * [Giriş](100_cpp_basics/0_introduction/readme.md)
+    * [replit.com](https://replit.com) (online)
     * setup (local): 
       * w64devkit - https://www.mingw-w64.org/downloads/
       * vscode & setup path
