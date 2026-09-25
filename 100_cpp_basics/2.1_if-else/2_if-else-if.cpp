@@ -1,5 +1,5 @@
 #include <iostream>
-#define ARASINAV_K .45
+#define ARASINAV_K .45  // preprocesser directive
 #define FINAL_K    .55
 using namespace std;
 
@@ -16,7 +16,7 @@ int main() {
     cout<<ort<<" -> Kaldı\n";
   }
   else if (ort<55) {              
-    cout<<ort<<" -> Şartlı Geçti\n";
+    cout<<ort<<" -> Şartlı Geçti\n";  // tek cout ile birden çok değer yazdırma
   }
   else{               // hiç bir koşul sağlanmazsa
     cout<<ort<<" -> Şartlı Geçti\n";
