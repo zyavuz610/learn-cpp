@@ -2,6 +2,7 @@
 ## Hafta 1-3: Project Euler Problem 1, 2, 3
 
 **Öğrenci:** Dersi alan öğrenciler
+
 **Kapsam:** Bu ödev, dönem boyunca yüz yüze katılım sağlanmayan ders içi çalışmaların (ödev/etkinlik) yerine geçen telafi çalışmasının ilk 3 haftalık parçasıdır. Sınav yerine geçmez.
 
 ---
