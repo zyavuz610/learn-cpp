@@ -18,17 +18,18 @@ This section covers the fundamental setup and basic syntax required to start pro
 
 ## Learning Materials
 
-* [hello-world.cpp](hello-world.cpp) - Your First C++ Program
+* [1_hello-world.cpp](1_hello-world.cpp) - Your First C++ Program
   * Basic program structure and the main() function
   * Using cout to display output
   * Program execution flow
 
-* [cpp-syntax.cpp](cpp-syntax.cpp) - C++ Language Fundamentals
+* [2_cpp-syntax.cpp](2_cpp-syntax.cpp) - C++ Language Fundamentals
   * Program structure and syntax rules
-  * Comments in code (single-line // and multi-line /* */)\n  * Header files and namespaces
+  * Comments in code (single-line // and multi-line /* */)
+  * Header files and namespaces
   * Comparison between C and C++ languages
 
-* [algorithms.cpp](algorithms.cpp) - Basic Programming Algorithms
+* [3_algorithms.cpp](3_algorithms.cpp) - Basic Programming Algorithms
   * Array traversal and printing
   * Summation and multiplication (accumulation)
   * Average calculation with type casting
@@ -36,7 +37,7 @@ This section covers the fundamental setup and basic syntax required to start pro
   * Counting occurrences (frequency) and conditional counting
   * Linear search algorithm
 
-* [linux-cammands.txt](linux-cammands.txt) - Compilation and Execution
+* [0_linux-cammands.txt](0_linux-cammands.txt) - Compilation and Execution
   * Compiling C++ files using gcc/g++ compiler
   * Running compiled executable programs
   * Common compiler flags and command-line options
