@@ -1,0 +1,100 @@
+========================================================
+      FORMATLI CIKTI VE MANIPULATOR ORNEKLERI          
+      (grades_output.txt Dosyasina Yazilmistir)        
+========================================================
+
+--- 1. setw() Kullanimi (Alan Genisligi Belirleme) ---
+Aciklama: setw(15) ile isim alani 15 karakter, setw(10) ile ortalama 10 karaktere ayarlandi.
+          AHMET      79.3
+           AYSE        93
+         MEHMET        46
+         ZEYNEP      89.4
+            ALI      37.2
+          FATMA      71.9
+            CAN        61
+           ELIF      96.8
+          BURAK        41
+          GAMZE      85.1
+
+--- 2. left ve right Kullanimi (Sola ve Saga Hizalama) ---
+Aciklama: Isimler sola dayali (left), ortalamalar saga dayali (right) yazdirildi.
+AHMET                79.3
+AYSE                   93
+MEHMET                 46
+ZEYNEP               89.4
+ALI                  37.2
+FATMA                71.9
+CAN                    61
+ELIF                 96.8
+BURAK                  41
+GAMZE                85.1
+
+--- 3. fixed ve setprecision(2) Kullanimi (Ondalik Basamak Kontrolu) ---
+Aciklama: fixed ve setprecision(2) ile notlar virgulden sonra 2 basamakla sabitlendi.
+AHMET          : 79.30
+AYSE           : 93.00
+MEHMET         : 46.00
+ZEYNEP         : 89.40
+ALI            : 37.20
+FATMA          : 71.90
+CAN            : 61.00
+ELIF           : 96.80
+BURAK          : 41.00
+GAMZE          : 85.10
+
+--- 4. scientific Kullanimi (Bilimsel / Ustel Gosterim) ---
+Aciklama: Ortalamalar bilimsel (scientific) gosterim formatinda yazdirildi.
+AHMET          : 7.930e+01
+AYSE           : 9.300e+01
+MEHMET         : 4.600e+01
+ZEYNEP         : 8.940e+01
+ALI            : 3.720e+01
+FATMA          : 7.190e+01
+CAN            : 6.100e+01
+ELIF           : 9.680e+01
+BURAK          : 4.100e+01
+GAMZE          : 8.510e+01
+
+--- 5. outputFile.fill('.') ve setfill('-') Kullanimi (Dolgu Karakterleri) ---
+Aciklama: setw bosluklari nokta (fill('.')) ve cizgi (setfill('-')) karakterleri ile dolduruldu.
+
+>> outputFile.fill('.') ile Cikti:
+AHMET................79.3
+AYSE.................93.0
+MEHMET...............46.0
+ZEYNEP...............89.4
+ALI..................37.2
+FATMA................71.9
+CAN..................61.0
+ELIF.................96.8
+BURAK................41.0
+GAMZE................85.1
+
+>> setfill('-') ile Cikti:
+AHMET---------------79.30
+AYSE----------------93.00
+MEHMET--------------46.00
+ZEYNEP--------------89.40
+ALI-----------------37.20
+FATMA---------------71.90
+CAN-----------------61.00
+ELIF----------------96.80
+BURAK---------------41.00
+GAMZE---------------85.10
+
+========================================================
+           OZET SONUC TABLOSU (KOMPOZIT KULLANIM)       
+========================================================
+OGRENCI ADI        ORTALAMA          DURUM
+==========================================
+AHMET                 79.30        SUCCESS
+AYSE                  93.00        SUCCESS
+MEHMET                46.00        SUCCESS
+ZEYNEP                89.40        SUCCESS
+ALI                   37.20         FAILED
+FATMA                 71.90        SUCCESS
+CAN                   61.00        SUCCESS
+ELIF                  96.80        SUCCESS
+BURAK                 41.00         FAILED
+GAMZE                 85.10        SUCCESS
+==========================================

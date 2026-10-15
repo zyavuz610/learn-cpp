@@ -1,0 +1,10 @@
+Ahmet 70.0 85.5
+Ayse 90.0 95.0
+Mehmet 40.0 50.0
+Zeynep 85.5 92.0
+Ali 30.0 42.0
+Fatma 62.0 78.5
+Can 55.0 65.0
+Elif 95.0 98.0
+Burak 35.0 45.0
+Gamze 80.0 88.5
