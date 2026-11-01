@@ -15,8 +15,9 @@ Bu bölümde C++ dilinde fonksiyon aşırı yükleme (*function overloading*), m
 8. [Akış Giriş-Çıkış Operatörleri (<< ve >>)](#8-akış-giriş-çıkış-operatörleri--ve-)
 9. [Atama (=) ve İndis ([]) Operatörleri](#9-atama--ve-indis--operatörleri)
 10. [Ekstra: C++20 Uzay Gemisi Operatörü (<=>) ve Functor Yapısı (operator())](#10-ekstra-c20-uzay-gemisi-operatörü--ve-functor-yapısı-operator)
-11. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#11-pekiştirme-alıştırmaları-çözümlü-sorular)
-12. [Öğrenciler İçin Ev Ödevleri](#12-öğrenciler-için-ev-ödevleri)
+11. [Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)](#11-kodları-derleme-ve-çalıştırma-rehberi-komut-tablosu)
+12. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#12-pekiştirme-alıştırmaları-çözümlü-sorular)
+13. [Öğrenciler İçin Ev Ödevleri](#13-öğrenciler-için-ev-ödevleri)
 
 ---
 
@@ -334,7 +335,36 @@ public:
 
 ---
 
-## 11. Pekiştirme Alıştırmaları (Çözümlü Sorular)
+## 11. Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)
+
+Bu dizindeki operatör aşırı yükleme programlarını terminal üzerinden derlemek ve çalıştırmak için:
+
+```bash
+# Genel Şablon:
+g++ -std=c++17 -Wall dosya_adi.cpp -o app
+./app         # Linux / macOS / Git Bash
+.\app.exe     # Windows PowerShell / CMD
+```
+
+### Hızlı Başvuru Komut Tablosu
+
+| Kaynak Kod Dosyası | Açıklama | Hızlı Derleme ve Çalıştırma (Bash / Linux / Mac) | Hızlı Derleme ve Çalıştırma (Windows PowerShell) |
+| :--- | :--- | :--- | :--- |
+| `this-pointer.cpp` | `this` Göstericisi ve Zincirleme | `g++ -std=c++17 this-pointer.cpp -o app && ./app` | `g++ -std=c++17 this-pointer.cpp -o app; .\app.exe` |
+| `binary-operators.cpp` | İkili Operatörler (`+`, `-`, `*`) | `g++ -std=c++17 binary-operators.cpp -o app && ./app` | `g++ -std=c++17 binary-operators.cpp -o app; .\app.exe` |
+| `unary-operator.cpp` | Tekli Operatörler (`-`, `!`) | `g++ -std=c++17 unary-operator.cpp -o app && ./app` | `g++ -std=c++17 unary-operator.cpp -o app; .\app.exe` |
+| `increment-operator.cpp` | Ön/Son Artırma (`++`, `--`) | `g++ -std=c++17 increment-operator.cpp -o app && ./app` | `g++ -std=c++17 increment-operator.cpp -o app; .\app.exe` |
+| `relational-operators.cpp` | Karşılaştırma (`==`, `<`, `>`) | `g++ -std=c++17 relational-operators.cpp -o app && ./app` | `g++ -std=c++17 relational-operators.cpp -o app; .\app.exe` |
+| `iostream-operators.cpp` | Akış Giriş/Çıkış (`<<`, `>>`) | `g++ -std=c++17 iostream-operators.cpp -o app && ./app` | `g++ -std=c++17 iostream-operators.cpp -o app; .\app.exe` |
+| `assing-operator.cpp` | Atama Operatörü (`=`) | `g++ -std=c++17 assing-operator.cpp -o app && ./app` | `g++ -std=c++17 assing-operator.cpp -o app; .\app.exe` |
+| `subscript-operator.cpp` | İndis Operatörü (`[]`) | `g++ -std=c++17 subscript-operator.cpp -o app && ./app` | `g++ -std=c++17 subscript-operator.cpp -o app; .\app.exe` |
+| `friend-function.cpp` | Arkadaş (`friend`) Fonksiyonlar | `g++ -std=c++17 friend-function.cpp -o app && ./app` | `g++ -std=c++17 friend-function.cpp -o app; .\app.exe` |
+| `overload-with-friend.cpp` | `friend` ile Simetrik Aşırı Yükleme | `g++ -std=c++17 overload-with-friend.cpp -o app && ./app` | `g++ -std=c++17 overload-with-friend.cpp -o app; .\app.exe` |
+| `function-operator.cpp` | Fonksiyon Çağrı Operatörü `()` | `g++ -std=c++17 function-operator.cpp -o app && ./app` | `g++ -std=c++17 function-operator.cpp -o app; .\app.exe` |
+
+---
+
+## 12. Pekiştirme Alıştırmaları (Çözümlü Sorular)
 
 ### Soru 1: Ön ve Son Artırma Çıktı Analizi
 Aşağıdaki kodun çıktısı nedir?

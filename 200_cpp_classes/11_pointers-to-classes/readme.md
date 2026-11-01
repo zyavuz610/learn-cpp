@@ -15,8 +15,9 @@ Bu bölüm, C++ dilinde nesnelerin dinamik olarak öbekte (*heap*) oluşturulmas
 8. [Statik Sınıf Üyeleri: Statik Değişkenler ve Statik Metotlar](#8-statik-sınıf-üyeleri-statik-değişkenler-ve-statik-metotlar)
 9. [Fonksiyon Göstericileri (Function Pointers)](#9-fonksiyon-göstericileri-function-pointers)
 10. [Ekstra: Akıllı İşaretçilere Giriş (std::unique_ptr ve std::shared_ptr)](#10-ekstra-akıllı-işaretçilere-giriş-stdunique_ptr-ve-stdshared_ptr)
-11. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#11-pekiştirme-alıştırmaları-çözümlü-sorular)
-12. [Öğrenciler İçin Ev Ödevleri](#12-öğrenciler-için-ev-ödevleri)
+11. [Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)](#11-kodları-derleme-ve-çalıştırma-rehberi-komut-tablosu)
+12. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#12-pekiştirme-alıştırmaları-çözümlü-sorular)
+13. [Öğrenciler İçin Ev Ödevleri](#13-öğrenciler-için-ev-ödevleri)
 
 ---
 
@@ -286,7 +287,37 @@ int main() {
 
 ---
 
-## 11. Pekiştirme Alıştırmaları (Çözümlü Sorular)
+## 11. Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)
+
+Bu dizindeki dinamik bellek ve gösterici programlarını terminal üzerinden derlemek ve çalıştırmak için:
+
+```bash
+# Standart Derleme:
+g++ -std=c++17 -Wall dosya_adi.cpp -o app
+./app         # Linux / macOS / Git Bash
+.\app.exe     # Windows PowerShell / CMD
+
+# Bellek Sızıntısı ve Sınır İhlallerini Yakalamak İçin (AddressSanitizer):
+# GCC / Clang altında -fsanitize=address bayrağı bellek hatalarını anında raporlar!
+g++ -std=c++17 -fsanitize=address dosya_adi.cpp -o app_sanitized
+```
+
+### Hızlı Başvuru Komut Tablosu
+
+| Kaynak Kod Dosyası | Açıklama | Hızlı Derleme ve Çalıştırma (Bash / Linux / Mac) | Hızlı Derleme ve Çalıştırma (Windows PowerShell) |
+| :--- | :--- | :--- | :--- |
+| `pointer-to-classes.cpp` | Sınıf Göstericileri ve `->` Operatörü | `g++ -std=c++17 pointer-to-classes.cpp -o app && ./app` | `g++ -std=c++17 pointer-to-classes.cpp -o app; .\app.exe` |
+| `new-delete.cpp` | Dinamik Bellek (`new`/`delete`) | `g++ -std=c++17 new-delete.cpp -o app && ./app` | `g++ -std=c++17 new-delete.cpp -o app; .\app.exe` |
+| `dynamic-arrays.cpp` | Dinamik Boyutlu Diziler (`new[]`) | `g++ -std=c++17 dynamic-arrays.cpp -o app && ./app` | `g++ -std=c++17 dynamic-arrays.cpp -o app; .\app.exe` |
+| `shallow-deep-copy.cpp` | Sığ ve Derin Kopyalama | `g++ -std=c++17 shallow-deep-copy.cpp -o app && ./app` | `g++ -std=c++17 shallow-deep-copy.cpp -o app; .\app.exe` |
+| `copy-constructor.cpp` | Kopyalama Kurucusu (Copy Ctor) | `g++ -std=c++17 copy-constructor.cpp -o app && ./app` | `g++ -std=c++17 copy-constructor.cpp -o app; .\app.exe` |
+| `static-members.cpp` | Statik Değişken ve Metotlar | `g++ -std=c++17 static-members.cpp -o app && ./app` | `g++ -std=c++17 static-members.cpp -o app; .\app.exe` |
+| `function-pointer.cpp` | Fonksiyon Göstericileri ve Callback | `g++ -std=c++17 function-pointer.cpp -o app && ./app` | `g++ -std=c++17 function-pointer.cpp -o app; .\app.exe` |
+| `full-example.cpp` | Kapsamlı Dinamik Sınıf Uygulaması | `g++ -std=c++17 full-example.cpp -o app && ./app` | `g++ -std=c++17 full-example.cpp -o app; .\app.exe` |
+
+---
+
+## 12. Pekiştirme Alıştırmaları (Çözümlü Sorular)
 
 ### Soru 1: Sığ Kopyalama Hata Tespiti
 Aşağıdaki kod parçasındaki hatayı bulunuz ve çözümünü açıklayınız:

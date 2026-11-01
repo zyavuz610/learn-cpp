@@ -14,8 +14,9 @@ Bu bölüm, veri tiplerinden bağımsız genel amaçlı algoritmalar ve sınıfl
 7. [Satır İçi Fonksiyonlar (inline) ve ODR Kuralı](#7-satır-içi-fonksiyonlar-inline-ve-odr-kuralı)
 8. [Komut Satırı Parametreleri (argc ve argv)](#8-komut-satırı-parametreleri-argc-ve-argv)
 9. [Ekstra: Tip Dışı Şablon Parametreleri (Non-type Parameters) ve Şablon Özelleştirmesi](#9-ekstra-tip-dışı-şablon-parametreleri-non-type-parameters-ve-şablon-özelleştirmesi)
-10. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#10-pekiştirme-alıştırmaları-çözümlü-sorular)
-11. [Öğrenciler İçin Ev Ödevleri](#11-öğrenciler-için-ev-ödevleri)
+10. [Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)](#10-kodları-derleme-ve-çalıştırma-rehberi-komut-tablosu)
+11. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#11-pekiştirme-alıştırmaları-çözümlü-sorular)
+12. [Öğrenciler İçin Ev Ödevleri](#12-öğrenciler-için-ev-ödevleri)
 
 ---
 

@@ -13,8 +13,9 @@ Bu bölümde Nesne Yönelimli Programlamanın en ileri düzeyi olan Çok Biçiml
 6. [Heterojen Koleksiyonlar (Base Class Pointer ile Nesne Yönetimi)](#6-heterojen-koleksiyonlar-base-class-pointer-ile-nesne-yönetimi)
 7. [Sanal Yıkıcılar (Virtual Destructors) ve Bellek Güvenliği](#7-sanal-yıkıcılar-virtual-destructors-ve-bellek-güvenliği)
 8. [Ekstra: VTable ve VPtr Mekanizması, C++11 override ve final Belirteçleri](#8-ekstra-vtable-ve-vptr-mekanizması-c11-override-ve-final-belirteçleri)
-9. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#9-pekiştirme-alıştırmaları-çözümlü-sorular)
-10. [Öğrenciler İçin Ev Ödevleri](#10-öğrenciler-için-ev-ödevleri)
+9. [Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)](#9-kodları-derleme-ve-çalıştırma-rehberi-komut-tablosu)
+10. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#10-pekiştirme-alıştırmaları-çözümlü-sorular)
+11. [Öğrenciler İçin Ev Ödevleri](#11-öğrenciler-için-ev-ödevleri)
 
 ---
 
@@ -207,7 +208,29 @@ class SonSinif final : public Base {}; // Artık SonSinif'tan miras alınamaz
 
 ---
 
-## 9. Pekiştirme Alıştırmaları (Çözümlü Sorular)
+## 9. Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)
+
+Bu dizindeki sanal fonksiyon ve çok biçimlilik programlarını terminal üzerinden derlemek ve çalıştırmak için:
+
+```bash
+# Genel Şablon:
+g++ -std=c++17 -Wall dosya_adi.cpp -o app
+./app         # Linux / macOS / Git Bash
+.\app.exe     # Windows PowerShell / CMD
+```
+
+### Hızlı Başvuru Komut Tablosu
+
+| Kaynak Kod Dosyası | Açıklama | Hızlı Derleme ve Çalıştırma (Bash / Linux / Mac) | Hızlı Derleme ve Çalıştırma (Windows PowerShell) |
+| :--- | :--- | :--- | :--- |
+| `virtual-functions.cpp` | Sanal Fonksiyonlar ve Geç Bağlama | `g++ -std=c++17 virtual-functions.cpp -o app && ./app` | `g++ -std=c++17 virtual-functions.cpp -o app; .\app.exe` |
+| `virtual-example.cpp` | Statik vs Dinamik Bağlama Karşılaştırması | `g++ -std=c++17 virtual-example.cpp -o app && ./app` | `g++ -std=c++17 virtual-example.cpp -o app; .\app.exe` |
+| `pure-virtual-functions.cpp` | Saf Sanal Fonksiyonlar ve Soyut Sınıf | `g++ -std=c++17 pure-virtual-functions.cpp -o app && ./app` | `g++ -std=c++17 pure-virtual-functions.cpp -o app; .\app.exe` |
+| `polymorphizm.cpp` | Heterojen Nesne Koleksiyonları | `g++ -std=c++17 polymorphizm.cpp -o app && ./app` | `g++ -std=c++17 polymorphizm.cpp -o app; .\app.exe` |
+
+---
+
+## 10. Pekiştirme Alıştırmaları (Çözümlü Sorular)
 
 ### Soru 1: Nesne Dilimleme (Object Slicing) Analizi
 Aşağıdaki kod parçasının konsol çıktısı ne olur? Neden?

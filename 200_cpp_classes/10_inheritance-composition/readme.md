@@ -14,8 +14,9 @@ Bu bölüm, Nesne Yönelimli Programlamanın en güçlü mekanizmalarından biri
 7. [Bileşim (Composition / "HAS-A" İlişkisi)](#7-bileşim-composition--has-a-ilişkisi)
 8. [Karşılaştırma: Kalıtım mı, Bileşim mi? ("Favor Composition")](#8-karşılaştırma-kalıtım-mı-bileşim-mi-favor-composition)
 9. [Ekstra: Çoklu Kalıtım (Multiple Inheritance) ve Elmas Problemi (Virtual Inheritance)](#9-ekstra-çoklu-kalıtım-multiple-inheritance-ve-elmas-problemi-virtual-inheritance)
-10. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#10-pekiştirme-alıştırmaları-çözümlü-sorular)
-11. [Öğrenciler İçin Ev Ödevleri](#11-öğrenciler-için-ev-ödevleri)
+10. [Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)](#10-kodları-derleme-ve-çalıştırma-rehberi-komut-tablosu)
+11. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#11-pekiştirme-alıştırmaları-çözümlü-sorular)
+12. [Öğrenciler İçin Ev Ödevleri](#12-öğrenciler-için-ev-ödevleri)
 
 ---
 
@@ -284,7 +285,30 @@ class D : public B, public C {}; // D artık tek bir A kopyasına sahiptir
 
 ---
 
-## 10. Pekiştirme Alıştırmaları (Çözümlü Sorular)
+## 10. Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)
+
+Bu dizindeki kalıtım ve bileşim programlarını terminal üzerinden derlemek ve çalıştırmak için:
+
+```bash
+# Genel Şablon:
+g++ -std=c++17 -Wall dosya_adi.cpp -o app
+./app         # Linux / macOS / Git Bash
+.\app.exe     # Windows PowerShell / CMD
+```
+
+### Hızlı Başvuru Komut Tablosu
+
+| Kaynak Kod Dosyası | Açıklama | Hızlı Derleme ve Çalıştırma (Bash / Linux / Mac) | Hızlı Derleme ve Çalıştırma (Windows PowerShell) |
+| :--- | :--- | :--- | :--- |
+| `inheritance.cpp` | Kalıtım Temelleri ("IS-A") | `g++ -std=c++17 inheritance.cpp -o app && ./app` | `g++ -std=c++17 inheritance.cpp -o app; .\app.exe` |
+| `inheritance_example.cpp` | Pratik Kalıtım Uygulaması | `g++ -std=c++17 inheritance_example.cpp -o app && ./app` | `g++ -std=c++17 inheritance_example.cpp -o app; .\app.exe` |
+| `one-level-inheritance.cpp` | Tek Seviyeli Miras (`Shape` -> `Rectangle`) | `g++ -std=c++17 one-level-inheritance.cpp -o app && ./app` | `g++ -std=c++17 one-level-inheritance.cpp -o app; .\app.exe` |
+| `multi-level-inheritance.cpp` | Çok Seviyeli Miras Zinciri | `g++ -std=c++17 multi-level-inheritance.cpp -o app && ./app` | `g++ -std=c++17 multi-level-inheritance.cpp -o app; .\app.exe` |
+| `composition.cpp` | Bileşim / Sahiplik ("HAS-A") | `g++ -std=c++17 composition.cpp -o app && ./app` | `g++ -std=c++17 composition.cpp -o app; .\app.exe` |
+
+---
+
+## 11. Pekiştirme Alıştırmaları (Çözümlü Sorular)
 
 ### Soru 1: Kurucu Çağrı Zinciri İncelemesi
 Aşağıdaki kod parçasının konsol çıktısını adım adım açıklayınız:
