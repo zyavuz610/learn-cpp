@@ -13,8 +13,9 @@ Bu bölümde C++ programlama dilinde belirli bir kod bloğunu tekrarlı olarak �
 6. [İç İçe Döngüler (Nested Loops) ve Matris/Kalıp Çizimi](#6-iç-içe-döngüler-nested-loops-ve-matriskalıp-çizimi)
 7. [Sonsuz Döngüler ve Bekçi Değerli Döngü (Sentinel-Controlled)](#7-sonsuz-döngüler-ve-bekçi-değerli-döngü-sentinel-controlled)
 8. [Ekstra: Range-based for (C++11) ve Döngü Hataları (Off-by-One, Floating-point)](#8-ekstra-range-based-for-c11-ve-döngü-hataları-off-by-one-floating-point)
-9. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#9-pekiştirme-alıştırmaları-çözümlü-sorular)
-10. [Öğrenciler İçin Ev Ödevleri](#10-öğrenciler-için-ev-ödevleri)
+9. [Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)](#9-kodları-derleme-ve-çalıştırma-rehberi-komut-tablosu)
+10. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#10-pekiştirme-alıştırmaları-çözümlü-sorular)
+11. [Öğrenciler İçin Ev Ödevleri](#11-öğrenciler-için-ev-ödevleri)
 
 ---
 
@@ -282,7 +283,35 @@ for (double d = 0.0; d != 1.0; d += 0.1) {
 
 ---
 
-## 9. Pekiştirme Alıştırmaları (Çözümlü Sorular)
+## 9. Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)
+
+Bu dizindeki döngü programlarını terminal üzerinden derlemek ve çalıştırmak için:
+
+```bash
+# Genel Şablon:
+g++ -std=c++17 -Wall dosya_adi.cpp -o app
+./app         # Linux / macOS / Git Bash
+.\app.exe     # Windows PowerShell / CMD
+```
+
+### Hızlı Başvuru Komut Tablosu
+
+| Kaynak Kod Dosyası | Açıklama | Hızlı Derleme ve Çalıştırma (Bash / Linux / Mac) | Hızlı Derleme ve Çalıştırma (Windows PowerShell) |
+| :--- | :--- | :--- | :--- |
+| `1_for_dongusu.cpp` | `for` Döngüsü Temelleri (0-9) | `g++ -std=c++17 1_for_dongusu.cpp -o app && ./app` | `g++ -std=c++17 1_for_dongusu.cpp -o app; .\app.exe` |
+| `2_for_toplam.cpp` | 1-N Arası Sayıları Toplama | `g++ -std=c++17 2_for_toplam.cpp -o app && ./app` | `g++ -std=c++17 2_for_toplam.cpp -o app; .\app.exe` |
+| `3_for_alternatif.cpp` | Alternatif `for` Kalıpları | `g++ -std=c++17 3_for_alternatif.cpp -o app && ./app` | `g++ -std=c++17 3_for_alternatif.cpp -o app; .\app.exe` |
+| `4_while-toplam.cpp` | `while` ile Toplam ve Basamak Hesabı | `g++ -std=c++17 4_while-toplam.cpp -o app && ./app` | `g++ -std=c++17 4_while-toplam.cpp -o app; .\app.exe` |
+| `5_do-while-toplam.cpp` | `do-while` ile Girdi Doğrulama | `g++ -std=c++17 5_do-while-toplam.cpp -o app && ./app` | `g++ -std=c++17 5_do-while-toplam.cpp -o app; .\app.exe` |
+| `6_break.cpp` | Döngüyü Erken Kırma (`break`) | `g++ -std=c++17 6_break.cpp -o app && ./app` | `g++ -std=c++17 6_break.cpp -o app; .\app.exe` |
+| `7_continue.cpp` | Adımı Atlama (`continue`) | `g++ -std=c++17 7_continue.cpp -o app && ./app` | `g++ -std=c++17 7_continue.cpp -o app; .\app.exe` |
+| `8_nested-loop.cpp` | İç İçe Döngüler (Çarpım Tablosu) | `g++ -std=c++17 8_nested-loop.cpp -o app && ./app` | `g++ -std=c++17 8_nested-loop.cpp -o app; .\app.exe` |
+| `9_sonsuz-dongu.cpp` | Sonsuz Döngü Biçimleri | `g++ -std=c++17 9_sonsuz-dongu.cpp -o app && ./app` | `g++ -std=c++17 9_sonsuz-dongu.cpp -o app; .\app.exe` |
+| `a_sonsuz-dongu-ornegi.cpp` | Bekçi Kontrollü Giriş (0 ile Çıkış) | `g++ -std=c++17 a_sonsuz-dongu-ornegi.cpp -o app && ./app` | `g++ -std=c++17 a_sonsuz-dongu-ornegi.cpp -o app; .\app.exe` |
+
+---
+
+## 10. Pekiştirme Alıştırmaları (Çözümlü Sorular)
 
 ### Soru 1: Asal Sayı Kontrolü
 Verilen pozitif bir tamsayının asal sayı olup olmadığını en verimli şekilde kontrol eden C++ fonksiyonunu yazınız.

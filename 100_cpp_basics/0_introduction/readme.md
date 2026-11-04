@@ -10,8 +10,9 @@ Bu bölüm, C++ programlama diline ilk adımı atacak öğrenciler için temel g
 3. [C++ Sözdizimi (Syntax) ve Dil Kuralları](#3-c-sözdizimi-syntax-ve-dil-kuralları)
 4. [Temel Programlama ve Dizi Algoritmaları](#4-temel-programlama-ve-dizi-algoritmaları)
 5. [Ekstra: C++ Derleme Süreci ve Derleyici Bayrakları](#5-ekstra-c-derleme-süreci-ve-derleyici-bayrakları)
-6. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#6-pekiştirme-alıştırmaları-çözümlü-sorular)
-7. [Öğrenciler İçin Ev Ödevleri](#7-öğrenciler-için-ev-ödevleri)
+6. [Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)](#6-kodları-derleme-ve-çalıştırma-rehberi-komut-tablosu)
+7. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#7-pekiştirme-alıştırmaları-çözümlü-sorular)
+8. [Öğrenciler İçin Ev Ödevleri](#8-öğrenciler-için-ev-ödevleri)
 
 ---
 
@@ -280,7 +281,29 @@ g++ -std=c++17 -Wall -Wextra -O2 main.cpp -o program
 
 ---
 
-## 6. Pekiştirme Alıştırmaları (Çözümlü Sorular)
+## 6. Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)
+
+Bu dizindeki C++ programlarını terminal üzerinden derlemek ve çalıştırmak için:
+
+```bash
+# Genel Şablon:
+g++ -std=c++17 -Wall dosya_adi.cpp -o app
+./app         # Linux / macOS / Git Bash
+.\app.exe     # Windows PowerShell / CMD
+```
+
+### Hızlı Başvuru Komut Tablosu
+
+| Kaynak Kod Dosyası | Açıklama | Hızlı Derleme ve Çalıştırma (Bash / Linux / Mac) | Hızlı Derleme ve Çalıştırma (Windows PowerShell) |
+| :--- | :--- | :--- | :--- |
+| `1_hello-world.cpp` | C++ Hello World ve Temel Çıktı | `g++ -std=c++17 1_hello-world.cpp -o app && ./app` | `g++ -std=c++17 1_hello-world.cpp -o app; .\app.exe` |
+| `2_cpp-syntax.cpp` | C++ Temel Sözdizimi ve Kuralları | `g++ -std=c++17 2_cpp-syntax.cpp -o app && ./app` | `g++ -std=c++17 2_cpp-syntax.cpp -o app; .\app.exe` |
+| `3_algorithms.cpp` | 9 Temel Dizi ve Arama Algoritması | `g++ -std=c++17 3_algorithms.cpp -o app && ./app` | `g++ -std=c++17 3_algorithms.cpp -o app; .\app.exe` |
+| `template.cpp` | C++ Başlangıç Kod Şablonu | `g++ -std=c++17 template.cpp -o app && ./app` | `g++ -std=c++17 template.cpp -o app; .\app.exe` |
+
+---
+
+## 7. Pekiştirme Alıştırmaları (Çözümlü Sorular)
 
 ### Soru 1: Çıktı Analizi
 Aşağıdaki C++ kodunun konsol çıktısı ne olur? Nedenini açıklayınız.
@@ -336,7 +359,7 @@ int main() {
 
 ---
 
-## 7. Öğrenciler İçin Ev Ödevleri
+## 8. Öğrenciler İçin Ev Ödevleri
 
 ### Ödev 1: İkinci En Büyük Elemanı Bulma (Second Maximum)
 - **Görev:** Kullanıcının girdiği $N$ elemanlı bir dizideki **en büyük ikinci** elemanı tek bir döngü içerisinde ($O(N)$ zaman karmaşıklığında) bulan fonksiyonu yazınız.

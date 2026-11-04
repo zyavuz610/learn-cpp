@@ -12,8 +12,9 @@ Bu bölümde C++ programlama dilinde program akışını belirli şartlara göre
 5. [Koşul (Ternary) Operatörü `?:` ve Zincirleme Kullanım](#5-koşul-ternary-operatörü--ve-zincirleme-kullanım)
 6. [Karşılaştırma: if-else vs switch-case (Derleyici Optimizasyonu)](#6-karşılaştırma-if-else-vs-switch-case-derleyici-optimizasyonu)
 7. [Ekstra: C++17 Başlatıcılı if (if with initializer) ve Kayan Nokta Karşılaştırma Tuzağı](#7-ekstra-c17-başlatıcılı-if-if-with-initializer-ve-kayan-nokta-karşılaştırma-tuzağı)
-8. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#8-pekiştirme-alıştırmaları-çözümlü-sorular)
-9. [Öğrenciler İçin Ev Ödevleri](#9-öğrenciler-için-ev-ödevleri)
+8. [Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)](#8-kodları-derleme-ve-çalıştırma-rehberi-komut-tablosu)
+9. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#9-pekiştirme-alıştırmaları-çözümlü-sorular)
+10. [Öğrenciler İçin Ev Ödevleri](#10-öğrenciler-için-ev-ödevleri)
 
 ---
 
@@ -269,7 +270,33 @@ if (std::abs(a - 0.3) < EPSILON) {
 
 ---
 
-## 8. Pekiştirme Alıştırmaları (Çözümlü Sorular)
+## 8. Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)
+
+Bu dizindeki koşul ve karar yapısı programlarını terminal üzerinden derlemek ve çalıştırmak için:
+
+```bash
+# Genel Şablon:
+g++ -std=c++17 -Wall dosya_adi.cpp -o app
+./app         # Linux / macOS / Git Bash
+.\app.exe     # Windows PowerShell / CMD
+```
+
+### Hızlı Başvuru Komut Tablosu
+
+| Kaynak Kod Dosyası | Açıklama | Hızlı Derleme ve Çalıştırma (Bash / Linux / Mac) | Hızlı Derleme ve Çalıştırma (Windows PowerShell) |
+| :--- | :--- | :--- | :--- |
+| `1_if-else.cpp` | Temel `if-else` Not Hesabı | `g++ -std=c++17 1_if-else.cpp -o app && ./app` | `g++ -std=c++17 1_if-else.cpp -o app; .\app.exe` |
+| `2_if-else-if.cpp` | Çoklu Şart Merdiveni | `g++ -std=c++17 2_if-else-if.cpp -o app && ./app` | `g++ -std=c++17 2_if-else-if.cpp -o app; .\app.exe` |
+| `3_nested-if.cpp` | İç İçe `if` Yapıları | `g++ -std=c++17 3_nested-if.cpp -o app && ./app` | `g++ -std=c++17 3_nested-if.cpp -o app; .\app.exe` |
+| `4_switch-case.cpp` | `switch-case` Temelleri | `g++ -std=c++17 4_switch-case.cpp -o app && ./app` | `g++ -std=c++17 4_switch-case.cpp -o app; .\app.exe` |
+| `5_nested-switch-case.cpp` | İç İçe `switch` | `g++ -std=c++17 5_nested-switch-case.cpp -o app && ./app` | `g++ -std=c++17 5_nested-switch-case.cpp -o app; .\app.exe` |
+| `6_switch-case-menu.cpp` | Konsol Menü Uygulaması | `g++ -std=c++17 6_switch-case-menu.cpp -o app && ./app` | `g++ -std=c++17 6_switch-case-menu.cpp -o app; .\app.exe` |
+| `7_conditional-operator.cpp` | Koşul Operatörü (`?:`) | `g++ -std=c++17 7_conditional-operator.cpp -o app && ./app` | `g++ -std=c++17 7_conditional-operator.cpp -o app; .\app.exe` |
+| `8_multi-conditional-operator.cpp` | Zincirleme Koşul Operatörü | `g++ -std=c++17 8_multi-conditional-operator.cpp -o app && ./app` | `g++ -std=c++17 8_multi-conditional-operator.cpp -o app; .\app.exe` |
+
+---
+
+## 9. Pekiştirme Alıştırmaları (Çözümlü Sorular)
 
 ### Soru 1: Artık Yıl (Leap Year) Hesabı
 Girilen bir yılın artık yıl olup olmadığını belirleyen C++ kodunu yazınız. (Kural: 4'e tam bölünen yıllar artık yıldır; ancak 100'e tam bölünenlerden sadece 400'e tam bölünenler artık yıldır).

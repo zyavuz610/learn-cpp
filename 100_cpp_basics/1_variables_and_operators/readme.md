@@ -13,8 +13,9 @@ Bu bölümde C++ programlama dilinin temel yapı taşları olan ilkel veri tiple
 6. [Tip Dönüşümleri (Type Conversion & Casting)](#6-tip-dönüşümleri-type-conversion--casting)
 7. [İleri Düzey C++ Cast Operatörleri (const_cast ve reinterpret_cast)](#7-ileri-düzey-c-cast-operatörleri-const_cast-ve-reinterpret_cast)
 8. [Ekstra: auto, constexpr ve Birörnek Başlatma (Uniform Initialization)](#8-ekstra-auto-constexpr-ve-birörnek-başlatma-uniform-initialization)
-9. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#9-pekiştirme-alıştırmaları-çözümlü-sorular)
-10. [Öğrenciler İçin Ev Ödevleri](#10-öğrenciler-için-ev-ödevleri)
+9. [Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)](#9-kodları-derleme-ve-çalıştırma-rehberi-komut-tablosu)
+10. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#10-pekiştirme-alıştırmaları-çözümlü-sorular)
+11. [Öğrenciler İçin Ev Ödevleri](#11-öğrenciler-için-ev-ödevleri)
 
 ---
 
@@ -289,7 +290,33 @@ int x = 3.14;   // C-tarzı: Derlenir, x = 3 olur (uyarı verebilir)
 
 ---
 
-## 9. Pekiştirme Alıştırmaları (Çözümlü Sorular)
+## 9. Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)
+
+Bu dizindeki değişken, operatör ve tip dönüşümü programlarını terminal üzerinden derlemek ve çalıştırmak için:
+
+```bash
+# Genel Şablon:
+g++ -std=c++17 -Wall dosya_adi.cpp -o app
+./app         # Linux / macOS / Git Bash
+.\app.exe     # Windows PowerShell / CMD
+```
+
+### Hızlı Başvuru Komut Tablosu
+
+| Kaynak Kod Dosyası | Açıklama | Hızlı Derleme ve Çalıştırma (Bash / Linux / Mac) | Hızlı Derleme ve Çalıştırma (Windows PowerShell) |
+| :--- | :--- | :--- | :--- |
+| `1_data-types.cpp` | Veri Tipleri ve Bellek Boyutları | `g++ -std=c++17 1_data-types.cpp -o app && ./app` | `g++ -std=c++17 1_data-types.cpp -o app; .\app.exe` |
+| `2_variable-definition.cpp` | Değişken Tanımlama ve Başlatma | `g++ -std=c++17 2_variable-definition.cpp -o app && ./app` | `g++ -std=c++17 2_variable-definition.cpp -o app; .\app.exe` |
+| `3_local-global-variables.cpp` | Yerel/Global Değişkenler ve `::` | `g++ -std=c++17 3_local-global-variables.cpp -o app && ./app` | `g++ -std=c++17 3_local-global-variables.cpp -o app; .\app.exe` |
+| `4_constants-litterals.cpp` | Sabitler (`const`, `#define`) | `g++ -std=c++17 4_constants-litterals.cpp -o app && ./app` | `g++ -std=c++17 4_constants-litterals.cpp -o app; .\app.exe` |
+| `5_operators.cpp` | Operatörler ve Bitsel İşlemler | `g++ -std=c++17 5_operators.cpp -o app && ./app` | `g++ -std=c++17 5_operators.cpp -o app; .\app.exe` |
+| `6_type-convertion.cpp` | Tip Dönüşümü ve `static_cast` | `g++ -std=c++17 6_type-convertion.cpp -o app && ./app` | `g++ -std=c++17 6_type-convertion.cpp -o app; .\app.exe` |
+| `7_const_cast.cpp` | `const_cast` Operatörü | `g++ -std=c++17 7_const_cast.cpp -o app && ./app` | `g++ -std=c++17 7_const_cast.cpp -o app; .\app.exe` |
+| `8_reinterpret-cast.cpp` | `reinterpret_cast` Operatörü | `g++ -std=c++17 8_reinterpret-cast.cpp -o app && ./app` | `g++ -std=c++17 8_reinterpret-cast.cpp -o app; .\app.exe` |
+
+---
+
+## 10. Pekiştirme Alıştırmaları (Çözümlü Sorular)
 
 ### Soru 1: Bitsel Operatör ile Tek/Çift Sayı ve 2'nin Kuvveti Kontrolü
 Mod operatörü (`%`) kullanmadan, bir sayının tek mi çift mi olduğunu ve bir sayının 2'nin üssü olup olmadığını bitsel operatörlerle kontrol eden fonksiyonları yazınız.

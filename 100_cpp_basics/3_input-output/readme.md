@@ -13,8 +13,9 @@ Bu bölüm, C++ dilinde konsol girdi ve çıktı akışlarının derinlemesine y
 6. [Rastgele Erişimli Dosyalar (seekg, seekp, tellg, tellp)](#6-rastgele-erişimli-dosyalar-seekg-seekp-tellg-tellp)
 7. [Örnek Uygulama: Öğrenci Not Dosyası Analizi](#7-örnek-uygulama-öğrenci-not-dosyası-analizi)
 8. [Ekstra: stringstream (Hafıza İçi Akışlar) ve İkili (Binary) Dosya I/O](#8-ekstra-stringstream-hafıza-içi-akışlar-ve-ikili-binary-dosya-io)
-9. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#9-pekiştirme-alıştırmaları-çözümlü-sorular)
-10. [Öğrenciler İçin Ev Ödevleri](#10-öğrenciler-için-ev-ödevleri)
+9. [Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)](#9-kodları-derleme-ve-çalıştırma-rehberi-komut-tablosu)
+10. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#10-pekiştirme-alıştırmaları-çözümlü-sorular)
+11. [Öğrenciler İçin Ev Ödevleri](#11-öğrenciler-için-ev-ödevleri)
 
 ---
 
@@ -333,7 +334,37 @@ in.close();
 
 ---
 
-## 9. Pekiştirme Alıştırmaları (Çözümlü Sorular)
+## 9. Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)
+
+Bu dizindeki giriş-çıkış akışları (`cin`, `cout`, `<iomanip>`) ve dosya işlemleri (`<fstream>`) programlarını terminal üzerinden derlemek ve çalıştırmak için:
+
+```bash
+# Genel Şablon:
+g++ -std=c++17 -Wall dosya_adi.cpp -o app
+./app         # Linux / macOS / Git Bash
+.\app.exe     # Windows PowerShell / CMD
+```
+
+### Hızlı Başvuru Komut Tablosu
+
+| Kaynak Kod Dosyası | Açıklama | Hızlı Derleme ve Çalıştırma (Bash / Linux / Mac) | Hızlı Derleme ve Çalıştırma (Windows PowerShell) |
+| :--- | :--- | :--- | :--- |
+| `1_cin-intro.cpp` | `cin` Giriş Akışı Temelleri | `g++ -std=c++17 1_cin-intro.cpp -o app && ./app` | `g++ -std=c++17 1_cin-intro.cpp -o app; .\app.exe` |
+| `3_cin-ignore.cpp` | Tampon Temizliği (`cin.ignore`) | `g++ -std=c++17 3_cin-ignore.cpp -o app && ./app` | `g++ -std=c++17 3_cin-ignore.cpp -o app; .\app.exe` |
+| `5_cin-peek.cpp` | Karakter Önizleme (`cin.peek`) | `g++ -std=c++17 5_cin-peek.cpp -o app && ./app` | `g++ -std=c++17 5_cin-peek.cpp -o app; .\app.exe` |
+| `7_cin-clear.cpp` | Hata Bayrağı Sıfırlama (`cin.clear`) | `g++ -std=c++17 7_cin-clear.cpp -o app && ./app` | `g++ -std=c++17 7_cin-clear.cpp -o app; .\app.exe` |
+| `8_cout-setprecision.cpp` | Ondalık Formatlama (`fixed`, `setprecision`) | `g++ -std=c++17 8_cout-setprecision.cpp -o app && ./app` | `g++ -std=c++17 8_cout-setprecision.cpp -o app; .\app.exe` |
+| `b_cout-setw.cpp` | Alan Genişliği (`setw`) | `g++ -std=c++17 b_cout-setw.cpp -o app && ./app` | `g++ -std=c++17 b_cout-setw.cpp -o app; .\app.exe` |
+| `c_cout-left-right.cpp` | Hizalama (`left`, `right`) | `g++ -std=c++17 c_cout-left-right.cpp -o app && ./app` | `g++ -std=c++17 c_cout-left-right.cpp -o app; .\app.exe` |
+| `e_file-open.cpp` | Dosyaya Yazma (`ofstream`) | `g++ -std=c++17 e_file-open.cpp -o app && ./app` | `g++ -std=c++17 e_file-open.cpp -o app; .\app.exe` |
+| `f_file-read.cpp` | Dosyadan Okuma (`ifstream`) | `g++ -std=c++17 f_file-read.cpp -o app && ./app` | `g++ -std=c++17 f_file-read.cpp -o app; .\app.exe` |
+| `g_ostream-modes.cpp` | Dosya Açma Modları (`ios::app`) | `g++ -std=c++17 g_ostream-modes.cpp -o app && ./app` | `g++ -std=c++17 g_ostream-modes.cpp -o app; .\app.exe` |
+| `h_random-access-files.cpp` | Rastgele Erişim (`seekg`, `tellg`) | `g++ -std=c++17 h_random-access-files.cpp -o app && ./app` | `g++ -std=c++17 h_random-access-files.cpp -o app; .\app.exe` |
+| `samples/grades.cpp` | Not Dosyası Analiz Uygulaması | `g++ -std=c++17 samples/grades.cpp -o app && ./app` | `g++ -std=c++17 samples/grades.cpp -o app; .\app.exe` |
+
+---
+
+## 10. Pekiştirme Alıştırmaları (Çözümlü Sorular)
 
 ### Soru 1: Dosyadaki Kelime, Karakter ve Satır Sayısını Bulan Program (wc Fonksiyonu)
 Verilen bir metin dosyasını açıp içindeki toplam satır, kelime ve karakter sayısını hesaplayan fonksiyonu yazınız.

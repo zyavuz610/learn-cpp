@@ -15,8 +15,9 @@ Bu bölüm, matris matematiği ve çok boyutlu veri tablolarını modellemek iç
 8. [Yapı Dizileri (Array of Structs)](#8-yapı-dizileri-array-of-structs)
 9. [Yapı Bileşimi / Kompozisyonu (Nested Structs)](#9-yapı-bileşimi--kompozisyonu-nested-structs)
 10. [Ekstra: struct vs class, Ok Operatörü (`->`) ve Bellek Hizalaması (Padding)](#10-ekstra-struct-vs-class-ok-operatörü---ve-bellek-hizalaması-padding)
-11. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#11-pekiştirme-alıştırmaları-çözümlü-sorular)
-12. [Öğrenciler İçin Ev Ödevleri](#12-öğrenciler-için-ev-ödevleri)
+11. [Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)](#11-kodları-derleme-ve-çalıştırma-rehberi-komut-tablosu)
+12. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#12-pekiştirme-alıştırmaları-çözümlü-sorular)
+13. [Öğrenciler İçin Ev Ödevleri](#13-öğrenciler-için-ev-ödevleri)
 
 ---
 
@@ -325,7 +326,36 @@ struct Ornek {
 
 ---
 
-## 11. Pekiştirme Alıştırmaları (Çözümlü Sorular)
+## 11. Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)
+
+Bu dizindeki çok boyutlu diziler, matrisler, `enum` ve `struct` programlarını terminal üzerinden derlemek ve çalıştırmak için:
+
+```bash
+# Genel Şablon:
+g++ -std=c++17 -Wall dosya_adi.cpp -o app
+./app         # Linux / macOS / Git Bash
+.\app.exe     # Windows PowerShell / CMD
+```
+
+### Hızlı Başvuru Komut Tablosu
+
+| Kaynak Kod Dosyası | Açıklama | Hızlı Derleme ve Çalıştırma (Bash / Linux / Mac) | Hızlı Derleme ve Çalıştırma (Windows PowerShell) |
+| :--- | :--- | :--- | :--- |
+| `1_2D-array-def.cpp` | İki Boyutlu Dizi Tanımı | `g++ -std=c++17 1_2D-array-def.cpp -o app && ./app` | `g++ -std=c++17 1_2D-array-def.cpp -o app; .\app.exe` |
+| `2_2D-array-init.cpp` | 2D Dizi Başlatma Biçimleri | `g++ -std=c++17 2_2D-array-init.cpp -o app && ./app` | `g++ -std=c++17 2_2D-array-init.cpp -o app; .\app.exe` |
+| `3_matrix-process.cpp` | Matris Transpozu ve Toplamı | `g++ -std=c++17 3_matrix-process.cpp -o app && ./app` | `g++ -std=c++17 3_matrix-process.cpp -o app; .\app.exe` |
+| `4_matrix-process2.cpp` | Matris Çarpımı | `g++ -std=c++17 4_matrix-process2.cpp -o app && ./app` | `g++ -std=c++17 4_matrix-process2.cpp -o app; .\app.exe` |
+| `5_functions-2D-arrays.cpp` | 2D Dizileri Fonksiyona Aktarma | `g++ -std=c++17 5_functions-2D-arrays.cpp -o app && ./app` | `g++ -std=c++17 5_functions-2D-arrays.cpp -o app; .\app.exe` |
+| `6_arrays-of-strings.cpp` | Metin Dizileri (2D char vs string) | `g++ -std=c++17 6_arrays-of-strings.cpp -o app && ./app` | `g++ -std=c++17 6_arrays-of-strings.cpp -o app; .\app.exe` |
+| `7_multi-dim-array.cpp` | Üç Boyutlu Dizi (Veri Küpü) | `g++ -std=c++17 7_multi-dim-array.cpp -o app && ./app` | `g++ -std=c++17 7_multi-dim-array.cpp -o app; .\app.exe` |
+| `8_enum.cpp` | Numaralandırma (`enum`) Temelleri | `g++ -std=c++17 8_enum.cpp -o app && ./app` | `g++ -std=c++17 8_enum.cpp -o app; .\app.exe` |
+| `b_structs.cpp` | Yapılar (`struct`) ve Üye Erişimi | `g++ -std=c++17 b_structs.cpp -o app && ./app` | `g++ -std=c++17 b_structs.cpp -o app; .\app.exe` |
+| `c_struct-array.cpp` | Yapı Dizileri (Array of Structs) | `g++ -std=c++17 c_struct-array.cpp -o app && ./app` | `g++ -std=c++17 c_struct-array.cpp -o app; .\app.exe` |
+| `d_struct-composition.cpp` | Yapı Kompozisyonu (Nested Structs) | `g++ -std=c++17 d_struct-composition.cpp -o app && ./app` | `g++ -std=c++17 d_struct-composition.cpp -o app; .\app.exe` |
+
+---
+
+## 12. Pekiştirme Alıştırmaları (Çözümlü Sorular)
 
 ### Soru 1: Bir Matrisin Simetrik Olup Olmadığını Kontrol Etme
 Kare bir matrisin ($N \times N$) devriğine (transpozuna) eşit olup olmadığını ($A[i][j] == A[j][i]$) kontrol eden fonksiyonu yazınız.

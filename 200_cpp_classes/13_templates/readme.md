@@ -300,7 +300,34 @@ public:
 
 ---
 
-## 10. Pekiştirme Alıştırmaları (Çözümlü Sorular)
+## 10. Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)
+
+Bu dizindeki şablon ve komut satırı programlarını terminal üzerinden derlemek ve çalıştırmak için:
+
+```bash
+# Standart Şablon Programlarını Derleme:
+g++ -std=c++17 -Wall dosya_adi.cpp -o app
+./app         # Linux / macOS / Git Bash
+.\app.exe     # Windows PowerShell / CMD
+
+# Komut Satırı Argümanı (argc/argv) Alan Programları Çalıştırma:
+g++ -std=c++17 -Wall command-line-params.cpp -o cmd_app
+./cmd_app girdi.txt           # Linux / macOS / Git Bash
+.\cmd_app.exe girdi.txt       # Windows PowerShell / CMD
+```
+
+### Hızlı Başvuru Komut Tablosu
+
+| Kaynak Kod Dosyası | Açıklama | Hızlı Derleme ve Çalıştırma (Bash / Linux / Mac) | Hızlı Derleme ve Çalıştırma (Windows PowerShell) |
+| :--- | :--- | :--- | :--- |
+| `templates.cpp` | Fonksiyon ve Sınıf Şablonları | `g++ -std=c++17 templates.cpp -o app && ./app` | `g++ -std=c++17 templates.cpp -o app; .\app.exe` |
+| `matrix-templates.cpp` | Jenerik Matris Sınıf Şablonu | `g++ -std=c++17 matrix-templates.cpp -o app && ./app` | `g++ -std=c++17 matrix-templates.cpp -o app; .\app.exe` |
+| `inline-function.cpp` | Satır İçi (`inline`) Fonksiyonlar | `g++ -std=c++17 inline-function.cpp -o app && ./app` | `g++ -std=c++17 inline-function.cpp -o app; .\app.exe` |
+| `command-line-params.cpp` | Komut Satırı Parametreleri (`argc`, `argv`) | `g++ -std=c++17 command-line-params.cpp -o app && ./app` | `g++ -std=c++17 command-line-params.cpp -o app; .\app.exe` |
+
+---
+
+## 11. Pekiştirme Alıştırmaları (Çözümlü Sorular)
 
 ### Soru 1: Jenerik Dizi Arama Şablonu
 Herhangi bir türdeki dizide aranan elemanın indeksini bulan doğrusal arama (`linearSearch`) şablon fonksiyonunu yazınız.

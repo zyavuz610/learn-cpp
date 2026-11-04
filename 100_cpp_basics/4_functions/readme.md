@@ -14,8 +14,9 @@ Bu bölümde C++ dilinde kodun modüler hale getirilmesini sağlayan fonksiyonla
 7. [Dizilerin Fonksiyonlara Aktarılması (Array Decay) ve const Korunumu](#7-dizilerin-fonksiyonlara-aktarılması-array-decay-ve-const-korunumu)
 8. [Statik Yerel Değişkenler (Static Variables) ve Bellek Ömrü](#8-statik-yerel-değişkenler-static-variables-ve-bellek-ömrü)
 9. [Ekstra: Fonksiyon Aşırı Yükleme (Overloading), Inline Fonksiyonlar ve Özyineleme (Recursion)](#9-ekstra-fonksiyon-aşırı-yükleme-overloading-inline-fonksiyonlar-ve-özyineleme-recursion)
-10. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#10-pekiştirme-alıştırmaları-çözümlü-sorular)
-11. [Öğrenciler İçin Ev Ödevleri](#11-öğrenciler-için-ev-ödevleri)
+10. [Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)](#10-kodları-derleme-ve-çalıştırma-rehberi-komut-tablosu)
+11. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#11-pekiştirme-alıştırmaları-çözümlü-sorular)
+12. [Öğrenciler İçin Ev Ödevleri](#12-öğrenciler-için-ev-ödevleri)
 
 ---
 
@@ -322,7 +323,32 @@ long long faktoriyel(int n) {
 
 ---
 
-## 10. Pekiştirme Alıştırmaları (Çözümlü Sorular)
+## 10. Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)
+
+Bu dizindeki fonksiyon, gösterici ve referans programlarını terminal üzerinden derlemek ve çalıştırmak için:
+
+```bash
+# Genel Şablon:
+g++ -std=c++17 -Wall dosya_adi.cpp -o app
+./app         # Linux / macOS / Git Bash
+.\app.exe     # Windows PowerShell / CMD
+```
+
+### Hızlı Başvuru Komut Tablosu
+
+| Kaynak Kod Dosyası | Açıklama | Hızlı Derleme ve Çalıştırma (Bash / Linux / Mac) | Hızlı Derleme ve Çalıştırma (Windows PowerShell) |
+| :--- | :--- | :--- | :--- |
+| `1_predefined-functions.cpp` | Hazır Kütüphane Fonksiyonları (`<cmath>`) | `g++ -std=c++17 1_predefined-functions.cpp -o app && ./app` | `g++ -std=c++17 1_predefined-functions.cpp -o app; .\app.exe` |
+| `2_functions-1.cpp` | Kullanıcı Tanımlı Fonksiyonlar | `g++ -std=c++17 2_functions-1.cpp -o app && ./app` | `g++ -std=c++17 2_functions-1.cpp -o app; .\app.exe` |
+| `3_default-parameters.cpp` | Varsayılan Argümanlar | `g++ -std=c++17 3_default-parameters.cpp -o app && ./app` | `g++ -std=c++17 3_default-parameters.cpp -o app; .\app.exe` |
+| `4_pointers.cpp` | Göstericiler (Pointers) Temelleri | `g++ -std=c++17 4_pointers.cpp -o app && ./app` | `g++ -std=c++17 4_pointers.cpp -o app; .\app.exe` |
+| `5_cpp-references.cpp` | Referanslar ve Takas (Swap) Metotları | `g++ -std=c++17 5_cpp-references.cpp -o app && ./app` | `g++ -std=c++17 5_cpp-references.cpp -o app; .\app.exe` |
+| `6_functions-and-arrays.cpp` | Dizilerin Fonksiyonlara Aktarılması | `g++ -std=c++17 6_functions-and-arrays.cpp -o app && ./app` | `g++ -std=c++17 6_functions-and-arrays.cpp -o app; .\app.exe` |
+| `7_static-vars.cpp` | Statik Yerel Değişkenler (`static`) | `g++ -std=c++17 7_static-vars.cpp -o app && ./app` | `g++ -std=c++17 7_static-vars.cpp -o app; .\app.exe` |
+
+---
+
+## 11. Pekiştirme Alıştırmaları (Çözümlü Sorular)
 
 ### Soru 1: İşaretçi Aritmetiği ile Dizi Elemanlarına Erişim
 Aşağıdaki kodun çıktısı ne olur? İşaretçi aritmetiğinin mantığını açıklayınız.

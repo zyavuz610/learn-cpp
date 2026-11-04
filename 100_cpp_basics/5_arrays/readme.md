@@ -13,8 +13,9 @@ Bu bölümde C++ dilinde aynı türden çok sayıda veriyi bellekte ardışık o
 6. [Modern C++ `std::string` Sınıfı ve Metotları](#6-modern-c-stdstring-sınıfı-ve-metotları)
 7. [İki Boyutlu Dizilere Giriş](#7-iki-boyutlu-dizilere-giriş)
 8. [Ekstra: Güvenli Diziler (`std::array`) ve Dinamik Diziye (`std::vector`) Bakış](#8-ekstra-güvenli-diziler-stdarray-ve-dinamik-diziye-stdvector-bakış)
-9. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#9-pekiştirme-alıştırmaları-çözümlü-sorular)
-10. [Öğrenciler İçin Ev Ödevleri](#10-öğrenciler-için-ev-ödevleri)
+9. [Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)](#9-kodları-derleme-ve-çalıştırma-rehberi-komut-tablosu)
+10. [Pekiştirme Alıştırmaları (Çözümlü Sorular)](#10-pekiştirme-alıştırmaları-çözümlü-sorular)
+11. [Öğrenciler İçin Ev Ödevleri](#11-öğrenciler-için-ev-ödevleri)
 
 ---
 
@@ -285,7 +286,33 @@ dinamik.push_back(200);
 
 ---
 
-## 9. Pekiştirme Alıştırmaları (Çözümlü Sorular)
+## 9. Kodları Derleme ve Çalıştırma Rehberi (Komut Tablosu)
+
+Bu dizindeki dizi, C-string ve `std::string` programlarını terminal üzerinden derlemek ve çalıştırmak için:
+
+```bash
+# Genel Şablon:
+g++ -std=c++17 -Wall dosya_adi.cpp -o app
+./app         # Linux / macOS / Git Bash
+.\app.exe     # Windows PowerShell / CMD
+```
+
+### Hızlı Başvuru Komut Tablosu
+
+| Kaynak Kod Dosyası | Açıklama | Hızlı Derleme ve Çalıştırma (Bash / Linux / Mac) | Hızlı Derleme ve Çalıştırma (Windows PowerShell) |
+| :--- | :--- | :--- | :--- |
+| `1_arrays.cpp` | Dizi Tanımlama ve Bellek Modeli | `g++ -std=c++17 1_arrays.cpp -o app && ./app` | `g++ -std=c++17 1_arrays.cpp -o app; .\app.exe` |
+| `2_array-example.cpp` | Dizi ile Not İstatistikleri | `g++ -std=c++17 2_array-example.cpp -o app && ./app` | `g++ -std=c++17 2_array-example.cpp -o app; .\app.exe` |
+| `3_array-as-funtion-param.cpp` | Fonksiyonlara Dizi Aktarımı | `g++ -std=c++17 3_array-as-funtion-param.cpp -o app && ./app` | `g++ -std=c++17 3_array-as-funtion-param.cpp -o app; .\app.exe` |
+| `4_enBuyukIndisBul.cpp` | En Büyük Elemanın İndisini Bulma | `g++ -std=c++17 4_enBuyukIndisBul.cpp -o app && ./app` | `g++ -std=c++17 4_enBuyukIndisBul.cpp -o app; .\app.exe` |
+| `5_array-deep-copy.cpp` | Derin ve Sığ Dizi Kopyalama | `g++ -std=c++17 5_array-deep-copy.cpp -o app && ./app` | `g++ -std=c++17 5_array-deep-copy.cpp -o app; .\app.exe` |
+| `6_char-array-functions.cpp` | C-String ve `<cstring>` Fonksiyonları | `g++ -std=c++17 6_char-array-functions.cpp -o app && ./app` | `g++ -std=c++17 6_char-array-functions.cpp -o app; .\app.exe` |
+| `7_cpp-strings.cpp` | Modern `std::string` Metotları | `g++ -std=c++17 7_cpp-strings.cpp -o app && ./app` | `g++ -std=c++17 7_cpp-strings.cpp -o app; .\app.exe` |
+| `8_2d-arrays.cpp` | İki Boyutlu Dizilere Giriş | `g++ -std=c++17 8_2d-arrays.cpp -o app && ./app` | `g++ -std=c++17 8_2d-arrays.cpp -o app; .\app.exe` |
+
+---
+
+## 10. Pekiştirme Alıştırmaları (Çözümlü Sorular)
 
 ### Soru 1: C-String Ters Çevirme (Yerinde - In-Place)
 Kullanıcıdan alınan bir `char str[]` dizisini ek bellek kullanmadan ters çeviren fonksiyonu yazınız.
