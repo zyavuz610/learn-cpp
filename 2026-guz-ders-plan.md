@@ -4,99 +4,25 @@
 * [Yoklama](https://forms.gle/HLwMRKJReqJgyvhD9)
 * [Sunumlar](https://drive.google.com/drive/folders/1rBaSxbJtHcLJGHVuzFADHgvJstyVC62r?usp=sharing) `Haftalık sunumlar buradadır. Konu ayrımlarında farklılıklar olabilir.`
 
-### Haftalara Göre Ders İçerikleri
-* Hafta-1
-  * [Giriş](100_cpp_basics/0_introduction/readme.md)
-    * [replit.com](https://replit.com) (online)
-    * setup (local): 
-      * w64devkit - https://www.mingw-w64.org/downloads/
-      * vscode & setup path - antigravity-ide
-    * or online: [replit.com](https://replit.com)
-    * [1_hello-world.cpp](100_cpp_basics/0_introduction/1_hello-world.cpp)
-    * [2_cpp-syntax.cpp](100_cpp_basics/0_introduction/2_cpp-syntax.cpp)
-    * [0_linux-cammands.txt](100_cpp_basics/0_introduction/0_linux-cammands.txt) - for compiling and running
-  * [Değişken ve Operatörler](100_cpp_basics/1_variables_and_operators/readme.md)
-    * [1_data-types.cpp](100_cpp_basics/1_variables_and_operators/1_data-types.cpp)
-    * [2_variable-definition.cpp](100_cpp_basics/1_variables_and_operators/2_variable-definition.cpp)
-    * [3_local-global-variables.cpp](100_cpp_basics/1_variables_and_operators/3_local-global-variables.cpp)
-    * [4_constants-litterals.cpp](100_cpp_basics/1_variables_and_operators/4_constants-litterals.cpp)
-    * [5_operators.cpp](100_cpp_basics/1_variables_and_operators/5_operators.cpp)
-    * [6_type-convertion.cpp](100_cpp_basics/1_variables_and_operators/6_type-convertion.cpp)
-    * [7_const_cast.cpp](100_cpp_basics/1_variables_and_operators/7_const_cast.cpp)
-    * [8_reinterpret-cast.cpp](100_cpp_basics/1_variables_and_operators/8_reinterpret-cast.cpp)
-* Hafta-2
-  * [if-else](100_cpp_basics/2.1_if-else/readme.md)
-    * [1_if-else.cpp](100_cpp_basics/2.1_if-else/1_if-else.cpp)
-    * [2_if-else-if.cpp](100_cpp_basics/2.1_if-else/2_if-else-if.cpp)
-    * [3_nested-if.cpp](100_cpp_basics/2.1_if-else/3_nested-if.cpp)
-    * [4_switch-case.cpp](100_cpp_basics/2.1_if-else/4_switch-case.cpp)
-    * [5_nested-switch-case.cpp](100_cpp_basics/2.1_if-else/5_nested-switch-case.cpp)
-    * [6_switch-case-menu.cpp](100_cpp_basics/2.1_if-else/6_switch-case-menu.cpp)
-    * [7_conditional-operator.cpp](100_cpp_basics/2.1_if-else/7_conditional-operator.cpp)
-    * [8_multi-conditional-operator.cpp](100_cpp_basics/2.1_if-else/8_multi-conditional-operator.cpp)
-  * [loops](100_cpp_basics/2.2_loops/readme.md)
-    * [1_for_dongusu.cpp](100_cpp_basics/2.2_loops/1_for_dongusu.cpp)
-    * [2_for_toplam.cpp](100_cpp_basics/2.2_loops/2_for_toplam.cpp)
-    * [3_for_alternatif.cpp](100_cpp_basics/2.2_loops/3_for_alternatif.cpp)
-    * [4_while-toplam.cpp](100_cpp_basics/2.2_loops/4_while-toplam.cpp)
-    * [5_do-while-toplam.cpp](100_cpp_basics/2.2_loops/5_do-while-toplam.cpp)
-    * [6_break.cpp](100_cpp_basics/2.2_loops/6_break.cpp)
-    * [7_continue.cpp](100_cpp_basics/2.2_loops/7_continue.cpp)
-    * [8_nested-loop.cpp](100_cpp_basics/2.2_loops/8_nested-loop.cpp)
-    * [9_sonsuz-dongu.cpp](100_cpp_basics/2.2_loops/9_sonsuz-dongu.cpp)
-    * [a_sonsuz-dongu-ornegi.cpp](100_cpp_basics/2.2_loops/a_sonsuz-dongu-ornegi.cpp)
-* Hafta-3
-  * [input-output, cin, cout](100_cpp_basics/3_input-output/readme.md)
-    * [1_cin-intro.cpp](100_cpp_basics/3_input-output/1_cin-intro.cpp)
-    * [2_cin-multiple-input.cpp](100_cpp_basics/3_input-output/2_cin-multiple-input.cpp)
-    * [3_cin-ignore.cpp](100_cpp_basics/3_input-output/3_cin-ignore.cpp)
-    * [4_cin-putback.cpp](100_cpp_basics/3_input-output/4_cin-putback.cpp)
-    * [5_cin-peek.cpp](100_cpp_basics/3_input-output/5_cin-peek.cpp)
-    * [6_cin-get.cpp](100_cpp_basics/3_input-output/6_cin-get.cpp)
-    * [7_cin-clear.cpp](100_cpp_basics/3_input-output/7_cin-clear.cpp)
-    ---
-    * [8_cout-setprecision.cpp](100_cpp_basics/3_input-output/8_cout-setprecision.cpp)
-    * [9_cout-unsetf.cpp](100_cpp_basics/3_input-output/9_cout-unsetf.cpp)
-    * [a_cout-showpoint.cpp](100_cpp_basics/3_input-output/a_cout-showpoint.cpp)
-    * [b_cout-setw.cpp](100_cpp_basics/3_input-output/b_cout-setw.cpp)
-    * [c_cout-left-right.cpp](100_cpp_basics/3_input-output/c_cout-left-right.cpp)
-    * [d_cout-fill.cpp](100_cpp_basics/3_input-output/d_cout-fill.cpp)
-    ---
-    * [e_file-open.cpp](100_cpp_basics/3_input-output/e_file-open.cpp)
-    * [f_file-read.cpp](100_cpp_basics/3_input-output/f_file-read.cpp)
-    * [g_ostream-modes.cpp](100_cpp_basics/3_input-output/g_ostream-modes.cpp)
-    * [h_random-access-files.cpp](100_cpp_basics/3_input-output/h_random-access-files.cpp)
-* Hafta-4
-  * [functions](100_cpp_basics/4_functions/readme.md)
-    * [1_predefined-functions.cpp](100_cpp_basics/4_functions/1_predefined-functions.cpp)
-    * [2_functions-1.cpp](100_cpp_basics/4_functions/2_functions-1.cpp)
-    * [3_default-parameters.cpp](100_cpp_basics/4_functions/3_default-parameters.cpp)
-    * [4_pointers.cpp](100_cpp_basics/4_functions/4_pointers.cpp)
-    * [5_cpp-references.cpp](100_cpp_basics/4_functions/5_cpp-references.cpp)
-    * [6_functions-and-arrays.cpp](100_cpp_basics/4_functions/6_functions-and-arrays.cpp)
-    * [7_static-vars.cpp](100_cpp_basics/4_functions/7_static-vars.cpp)
-* Hafta-5
-  * [arrays](100_cpp_basics/5_arrays/readme.md)
-* Hafta-6
-  * [2D array, struct, enum](100_cpp_basics/6_2Darray_struct_enum/readme.md)
-* Hafta-7
-  * [classes, objects](200_cpp_classes/07_classes-objects/readme.md)
-* Hafta-8
-  * [function overloading, operator overloading](200_cpp_classes/08_overloading/readme.md)
-* Hafta-9
-  * arasınav haftası
-* Hafta-10
-  * [inheritance](200_cpp_classes/10_inheritance-composition/readme.md)
-* Hafta-11
-  * [composition](200_cpp_classes/10_inheritance-composition/readme.md)
-* Hafta-12
-  * [pointers and classes](200_cpp_classes/11_pointers-to-classes/readme.md)
-* Hafta-13
-  * [virtual functions, polymorphizm](200_cpp_classes/12_virtual-functions/readme.md) 
-* Hafta-14
-  * [templates](200_cpp_classes/13_templates/readme.md)
-* Hafta-15
-  * telafi haftası, ödev kontrolleri
+### 📅 Haftalara Göre Ders İçerikleri (2026-27 Müfredat Planı)
+
+| Hafta | Konu Başlığı | Kapsam ve İşlenen Temel Kavramlar | Ders Notu | Öne Çıkan Kaynak Kodlar |
+| :---: | :--- | :--- | :---: | :--- |
+| **1** | **C++'a Giriş, Ortam Kurulumu, Değişkenler ve Operatörler** | • Yerel ve bulut geliştirme ortamları ([Replit](https://replit.com), [w64devkit](https://www.mingw-w64.org/downloads/), VS Code)<br>• Linux/Terminal derleme komutları (`g++`, `pwd`, `ls`, `cd`)<br>• C vs C++ felsefesi, `iostream`, `cout`, `namespace std`<br>• Temel veri tipleri (`int`, `float`, `double`, `char`, `bool`), boyutlar<br>• Değişken kapsamı (Yerel/Global, `::` operatörü)<br>• Sabitler (`const`, `constexpr`, `#define`), operatörler ve öncelikleri<br>• Tip dönüşümleri (`static_cast`, `const_cast`, `reinterpret_cast`) | [0_Giriş](100_cpp_basics/0_introduction/readme.md)<br><br>[1_Değişkenler](100_cpp_basics/1_variables_and_operators/readme.md) | • [`1_hello-world.cpp`](100_cpp_basics/0_introduction/1_hello-world.cpp)<br>• [`2_cpp-syntax.cpp`](100_cpp_basics/0_introduction/2_cpp-syntax.cpp)<br>• [`0_linux-cammands.txt`](100_cpp_basics/0_introduction/0_linux-cammands.txt)<br>• [`1_data-types.cpp`](100_cpp_basics/1_variables_and_operators/1_data-types.cpp)<br>• [`2_variable-definition.cpp`](100_cpp_basics/1_variables_and_operators/2_variable-definition.cpp)<br>• [`5_operators.cpp`](100_cpp_basics/1_variables_and_operators/5_operators.cpp)<br>• [`6_type-convertion.cpp`](100_cpp_basics/1_variables_and_operators/6_type-convertion.cpp) |
+| **2** | **Karar Yapıları ve Döngüler** | • `if`, `else if`, `else`, iç içe mantıksal koşullar<br>• `switch-case` ve sıçrama tablosu (jump table), menü tasarımı<br>• Koşul operatörü (`? :`), C++17 init-statement if<br>• Döngü yapıları: `for`, `while`, `do-while`<br>• Döngü kontrolü: `break`, `continue`, sonsuz döngüler<br>• Akümülatör ve sayaç mantığı, modern `range-based for` | [2.1_if-else](100_cpp_basics/2.1_if-else/readme.md)<br><br>[2.2_loops](100_cpp_basics/2.2_loops/readme.md) | • [`1_if-else.cpp`](100_cpp_basics/2.1_if-else/1_if-else.cpp)<br>• [`4_switch-case.cpp`](100_cpp_basics/2.1_if-else/4_switch-case.cpp)<br>• [`6_switch-case-menu.cpp`](100_cpp_basics/2.1_if-else/6_switch-case-menu.cpp)<br>• [`7_conditional-operator.cpp`](100_cpp_basics/2.1_if-else/7_conditional-operator.cpp)<br>• [`1_for_dongusu.cpp`](100_cpp_basics/2.2_loops/1_for_dongusu.cpp)<br>• [`4_while-toplam.cpp`](100_cpp_basics/2.2_loops/4_while-toplam.cpp)<br>• [`6_break.cpp`](100_cpp_basics/2.2_loops/6_break.cpp) |
+| **3** | **Giriş-Çıkış Akışları (I/O) ve Dosya Yönetimi** | • Standart giriş akışı (`cin`), birden çok veri okuma<br>• `cin` hata bayrakları ve akış metotları: `get`, `ignore`, `peek`, `putback`, `clear`<br>• `<iomanip>` biçimlendiricileri: `setprecision`, `setw`, `setfill`, `left`/`right`, `showpoint`<br>• `\n` ile `std::endl` arasındaki performans ve tampon (flush) farkı<br>• Dosya akışları: `ifstream`, `ofstream`, `fstream`<br>• Dosya açma modları (`ios::in`, `ios::out`, `ios::app`, `ios::binary`)<br>• Rastgele erişimli dosyalar (`seekg`, `seekp`, `tellg`, `tellp`) | [3_input-output](100_cpp_basics/3_input-output/readme.md) | • [`1_cin-intro.cpp`](100_cpp_basics/3_input-output/1_cin-intro.cpp)<br>• [`3_cin-ignore.cpp`](100_cpp_basics/3_input-output/3_cin-ignore.cpp)<br>• [`6_cin-get.cpp`](100_cpp_basics/3_input-output/6_cin-get.cpp)<br>• [`8_cout-setprecision.cpp`](100_cpp_basics/3_input-output/8_cout-setprecision.cpp)<br>• [`b_cout-setw.cpp`](100_cpp_basics/3_input-output/b_cout-setw.cpp)<br>• [`e_file-open.cpp`](100_cpp_basics/3_input-output/e_file-open.cpp)<br>• [`f_file-read.cpp`](100_cpp_basics/3_input-output/f_file-read.cpp)<br>• [`h_random-access-files.cpp`](100_cpp_basics/3_input-output/h_random-access-files.cpp) |
+| **4** | **Fonksiyonlar, İşaretçiler ve Referanslar** | • Fonksiyon tanımlama, prototip bildirimi, çağrı yığını (call stack)<br>• Değer ile aktarım (*pass-by-value*) ve varsayılan parametreler (*default arguments*)<br>• İşaretçiler (*pointers*): `&` (adres alma) ve `*` (dereference) operatörleri<br>• Referans değişkenleri (`&`) ve alias mekanizması<br>• Değer vs Gösterici vs Referans karşılaştırması<br>• Fonksiyonlara dizi aktarımı ve göstericiye bozunma (*array decay*)<br>• Statik yerel değişkenler (`static`) ve ömürleri | [4_functions](100_cpp_basics/4_functions/readme.md) | • [`1_predefined-functions.cpp`](100_cpp_basics/4_functions/1_predefined-functions.cpp)<br>• [`2_functions-1.cpp`](100_cpp_basics/4_functions/2_functions-1.cpp)<br>• [`3_default-parameters.cpp`](100_cpp_basics/4_functions/3_default-parameters.cpp)<br>• [`4_pointers.cpp`](100_cpp_basics/4_functions/4_pointers.cpp)<br>• [`5_cpp-references.cpp`](100_cpp_basics/4_functions/5_cpp-references.cpp)<br>• [`6_functions-and-arrays.cpp`](100_cpp_basics/4_functions/6_functions-and-arrays.cpp)<br>• [`7_static-vars.cpp`](100_cpp_basics/4_functions/7_static-vars.cpp) |
+| **5** | **Tek Boyutlu Diziler ve Karakter Dizileri (Strings)** | • 1B dizi tanımı, başlatma ve ardışık bellek yerleşimi<br>• Dizi indeksleme, sınır kontrolü eksikliği (*out of bounds*) riski<br>• Dizi kopyalama: Sığ (*shallow*) vs Derin (*deep*) kopyalama farkı<br>• C-tarzı karakter dizileri (`char[]`, null-terminator `\0`, `cstring`)<br>• Modern `std::string` sınıfı, metotları ve C-string ile karşılaştırması | [5_arrays](100_cpp_basics/5_arrays/readme.md) | • [`1_arrays.cpp`](100_cpp_basics/5_arrays/1_arrays.cpp)<br>• [`2_array-example.cpp`](100_cpp_basics/5_arrays/2_array-example.cpp)<br>• [`3_array-as-funtion-param.cpp`](100_cpp_basics/5_arrays/3_array-as-funtion-param.cpp)<br>• [`4_enBuyukIndisBul.cpp`](100_cpp_basics/5_arrays/4_enBuyukIndisBul.cpp)<br>• [`5_array-deep-copy.cpp`](100_cpp_basics/5_arrays/5_array-deep-copy.cpp)<br>• [`6_char-array-functions.cpp`](100_cpp_basics/5_arrays/6_char-array-functions.cpp)<br>• [`7_cpp-strings.cpp`](100_cpp_basics/5_arrays/7_cpp-strings.cpp) |
+| **6** | **İki Boyutlu Diziler, Struct ve Enum** | • 2B diziler, matris modelleri ve satır-öncelikli (*row-major*) bellek yerleşimi<br>• Fonksiyonlara 2B dizi parametresi geçirme kuralları<br>• Kullanıcı tanımlı veri tipleri: `struct` yapısı ve bellek hizalaması (*padding*)<br>• Struct dizileri, struct içinde kurucu ve fonksiyon tanımlama<br>• Struct kompozisyonu (iç içe yapılar)<br>• Klasik `enum` ve modern kapsamlı `enum class` (C++11) | [6_2Darray_struct_enum](100_cpp_basics/6_2Darray_struct_enum/readme.md) | • [`1_2D-array-def.cpp`](100_cpp_basics/6_2Darray_struct_enum/1_2D-array-def.cpp)<br>• [`3_matrix-process.cpp`](100_cpp_basics/6_2Darray_struct_enum/3_matrix-process.cpp)<br>• [`5_functions-2D-arrays.cpp`](100_cpp_basics/6_2Darray_struct_enum/5_functions-2D-arrays.cpp)<br>• [`8_enum.cpp`](100_cpp_basics/6_2Darray_struct_enum/8_enum.cpp)<br>• [`b_structs.cpp`](100_cpp_basics/6_2Darray_struct_enum/b_structs.cpp)<br>• [`c_struct-array.cpp`](100_cpp_basics/6_2Darray_struct_enum/c_struct-array.cpp)<br>• [`d_struct-composition.cpp`](100_cpp_basics/6_2Darray_struct_enum/d_struct-composition.cpp) |
+| **7** | **Sınıflar ve Nesnelere Giriş (Classes & Objects)** | • Nesne Yönelimli Programlama (OOP) ilkeleri ve sınıf anatomisi<br>• Kapsülleme (*encapsulation*), erişim belirteçleri (`public`, `private`, `protected`)<br>• Getter/Setter metotları ve veri gizleme (*information hiding*)<br>• Kurucular (*constructors*): Varsayılan, parametreli, üye başlatma listesi (*MIL*)<br>• Yıkıcılar (*destructors*) ve RAII prensibi<br>• **Yapıcı ve yıkıcıların çağrılma sırası:** Global, yerel, blok içi/dışı, `static` ve dinamik nesne ömürleri<br>• Çok dosyalı sınıf mimarisi (`.h` başlık ve `.cpp` gövde ayrımı: `clockType`) | [07_classes-objects](200_cpp_classes/07_classes-objects/readme.md) | • [`classes-objects.cpp`](200_cpp_classes/07_classes-objects/classes-objects.cpp)<br>• [`constructor.cpp`](200_cpp_classes/07_classes-objects/constructor.cpp)<br>• [`parametrized-constructor.cpp`](200_cpp_classes/07_classes-objects/parametrized-constructor.cpp)<br>• [`destructor.cpp`](200_cpp_classes/07_classes-objects/destructor.cpp)<br>• [`cstor-dtor-order.cpp`](200_cpp_classes/07_classes-objects/cstor-dtor-order.cpp)<br>• [`clockType.h`](200_cpp_classes/07_classes-objects/clockType.h)<br>• [`clockType.cpp`](200_cpp_classes/07_classes-objects/clockType.cpp) |
+| **8** | **Fonksiyon & Operatör Aşırı Yükleme ve `this` Göstericisi** | • Statik çok biçimlilik: Fonksiyon aşırı yükleme (*function overloading*) kuralları<br>• Name Mangling (İsim Süsleme) ve C uyumluluğu (`extern "C"`)<br>• `this` göstericisi: Felsefe, bellek modeli ve metot zincirleme (*method chaining*)<br>• Neden referans dönülmeli? (Değer vs referans zincirleme farkı)<br>• Operatör aşırı yükleme kuralları ve üye metot vs `friend` fonksiyon seçimi<br>• İkili operatörler (`+`, `-`, `*`), ilişkisel operatörler (`==`, `!=`, `<`)<br>• Ön/Son artırma (`++`, `--`), akış giriş/çıkış operatörleri (`<<`, `>>`)<br>• Atama (`=`) ve indis (`[]`) operatörleri, C++20 uzay gemisi (`<=>`) | [08_overloading](200_cpp_classes/08_overloading/readme.md) | • [`function-overloading.cpp`](200_cpp_classes/08_overloading/function-overloading.cpp)<br>• [`c-polymorphizm.c`](200_cpp_classes/08_overloading/c-polymorphizm.c)<br>• [`this-pointer.cpp`](200_cpp_classes/08_overloading/this-pointer.cpp)<br>• [`binary-operators.cpp`](200_cpp_classes/08_overloading/binary-operators.cpp)<br>• [`increment-operator.cpp`](200_cpp_classes/08_overloading/increment-operator.cpp)<br>• [`iostream-operators.cpp`](200_cpp_classes/08_overloading/iostream-operators.cpp)<br>• [`assing-operator.cpp`](200_cpp_classes/08_overloading/assing-operator.cpp)<br>• [`subscript-operator.cpp`](200_cpp_classes/08_overloading/subscript-operator.cpp) |
+| **9** | **Ara Sınav (Vize) Haftası** | • **1. - 8. hafta konularını kapsayan ara sınav değerlendirmesi**<br>• Teorik sorular ve pratik kodlama analizi | — | — |
+| **10** | **Kalıtım (Inheritance)** | • Kodun yeniden kullanımı ve "IS-A" (bir türüdür) ilişkisi<br>• Temel sınıf (*base*) ve türetilmiş sınıf (*derived*) kavramı<br>• Erişim belirteçlerinin kalıtımdaki rolü (`public`, `protected`, `private` türetme)<br>• Tek düzeyli (*single*) ve çok düzeyli (*multi-level*) kalıtım mimarisi<br>• Kalıtımda yapıcı ve yıkıcı metotların çalışma sırası (*ctor/dtor chaining*)<br>• Türetilmiş sınıf kurucusundan temel sınıf kurucusuna parametre aktarımı | [10_inheritance](200_cpp_classes/10_inheritance-composition/readme.md) | • [`inheritance.cpp`](200_cpp_classes/10_inheritance-composition/inheritance.cpp)<br>• [`one-level-inheritance.cpp`](200_cpp_classes/10_inheritance-composition/one-level-inheritance.cpp)<br>• [`multi-level-inheritance.cpp`](200_cpp_classes/10_inheritance-composition/multi-level-inheritance.cpp)<br>• [`inheritance_example.cpp`](200_cpp_classes/10_inheritance-composition/inheritance_example.cpp) |
+| **11** | **Kompozisyon (Composition) ve Çoklu Kalıtım** | • "HAS-A" (sahiptir) ilişkisi ve nesne kompozisyonu (*composition*)<br>• Kalıtım vs Kompozisyon tasarım kararları (*Design Principles*)<br>• Çoklu kalıtım (*multiple inheritance*) ve birden fazla sınıftan türetme<br>• Elmas Problemi (*Diamond Problem / Dead Dreaded Diamond*)<br>• Sanal temel sınıflar (*virtual base classes / virtual inheritance*) ile çözüm | [10_composition](200_cpp_classes/10_inheritance-composition/readme.md) | • [`composition.cpp`](200_cpp_classes/10_inheritance-composition/composition.cpp)<br>• [`inheritance.cpp`](200_cpp_classes/10_inheritance-composition/inheritance.cpp) |
+| **12** | **Sınıf Göstericileri ve Dinamik Bellek Yönetimi** | • Stack vs Heap bellek modelleri<br>• `new` ve `delete`, `new[]` ve `delete[]` dinamik bellek operatörleri<br>• Bellek sızıntıları (*memory leak*) ve sahipsiz göstericiler (*dangling pointer*)<br>• Sınıf göstericileri (`->`) ve dinamik nesne dizileri<br>• **Kopya Kurucu (Copy Constructor)** mantığı ve otomatik çağrılma durumları<br>• Sığ (*shallow*) kopyalama tehlikesi ve Derin (*deep*) kopyalama çözümü<br>• **Üçler Kuralı (Rule of Three):** Yıkıcı, Kopya Kurucu, Atama Operatörü uyumu<br>• Statik sınıf üyeleri (`static variable`, `static method`) ve fonksiyon göstericileri | [11_pointers-to-classes](200_cpp_classes/11_pointers-to-classes/readme.md) | • [`new-delete.cpp`](200_cpp_classes/11_pointers-to-classes/new-delete.cpp)<br>• [`pointer-to-classes.cpp`](200_cpp_classes/11_pointers-to-classes/pointer-to-classes.cpp)<br>• [`dynamic-arrays.cpp`](200_cpp_classes/11_pointers-to-classes/dynamic-arrays.cpp)<br>• [`copy-constructor.cpp`](200_cpp_classes/11_pointers-to-classes/copy-constructor.cpp)<br>• [`shallow-deep-copy.cpp`](200_cpp_classes/11_pointers-to-classes/shallow-deep-copy.cpp)<br>• [`static-members.cpp`](200_cpp_classes/11_pointers-to-classes/static-members.cpp)<br>• [`function-pointer.cpp`](200_cpp_classes/11_pointers-to-classes/function-pointer.cpp) |
+| **13** | **Sanal Fonksiyonlar ve Çok Biçimlilik (Polymorphism)** | • Dinamik çok biçimlilik (*runtime polymorphism*) kavramı<br>• Erken bağlama (*early/static binding*) vs Geç bağlama (*late/dynamic binding*)<br>• `virtual` fonksiyonlar ve `override` anahtar kelimesi (C++11)<br>• Saf sanal fonksiyonlar (`= 0`) ve Soyut Temel Sınıflar (*Abstract Base Classes*)<br>• Saf arayüz (*Interface*) tasarımı ve implementasyonu<br>• Sanal yıkıcılar (*virtual destructor*) ve bellek sızıntısını önleme<br>• **VTable (Virtual Method Table) ve VPtr (Virtual Table Pointer)** çalışma mekanizması | [12_virtual-functions](200_cpp_classes/12_virtual-functions/readme.md) | • [`virtual-functions.cpp`](200_cpp_classes/12_virtual-functions/virtual-functions.cpp)<br>• [`virtual-example.cpp`](200_cpp_classes/12_virtual-functions/virtual-example.cpp)<br>• [`pure-virtual-functions.cpp`](200_cpp_classes/12_virtual-functions/pure-virtual-functions.cpp)<br>• [`polymorphizm.cpp`](200_cpp_classes/12_virtual-functions/polymorphizm.cpp) |
+| **14** | **Şablonlar (Templates) ve Jenerik Programlama** | • Jenerik programlama felsefesi ve tip bağımsız kod tasarımı<br>• Fonksiyon şablonları (*function templates*) ve tip çıkarımı (*type deduction*)<br>• Sınıf şablonları (*class templates*) ve jenerik veri yapıları (Jenerik Matris/Vektör)<br>• Çoklu tip parametreleri (`template <typename T, typename U>`)<br>• Şablon uzmanlaşması (*template specialization*)<br>• Şablonların neden `.h` başlık dosyalarında tanımlanması gerektiği kuralı<br>• Komut satırı argümanları (`int argc, char* argv[]`) ve parametre işleme | [13_templates](200_cpp_classes/13_templates/readme.md) | • [`templates.cpp`](200_cpp_classes/13_templates/templates.cpp)<br>• [`matrix-templates.cpp`](200_cpp_classes/13_templates/matrix-templates.cpp)<br>• [`inline-function.cpp`](200_cpp_classes/13_templates/inline-function.cpp)<br>• [`command-line-params.cpp`](200_cpp_classes/13_templates/command-line-params.cpp) |
+| **15** | **Telafi Haftası, Ödev / Proje Değerlendirme & Genel Tekrar** | • Dönem içi ev ödevleri ve proje kodlarının değerlendirilmesi<br>• Kaçırılan veya eksik kalan laboratuvar/ders konularının telafisi<br>• Final sınavına hazırlık: Çıkmış sorular, soru-cevap ve dönem özeti | — | — |
 
 --- 
 
