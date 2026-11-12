@@ -2,7 +2,6 @@
 ## 2026-27 Güz Dönemi - Ders Planı 
 
 * [Yoklama](https://forms.gle/HLwMRKJReqJgyvhD9)
-* [Derste Yazılan Kodlar](https://replit.com/@zaferyavuz3/learn-cpp)
 * [Sunumlar](https://drive.google.com/drive/folders/1rBaSxbJtHcLJGHVuzFADHgvJstyVC62r?usp=sharing) `Haftalık sunumlar buradadır. Konu ayrımlarında farklılıklar olabilir.`
 
 ### Haftalara Göre Ders İçerikleri
