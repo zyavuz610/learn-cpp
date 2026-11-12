@@ -4,6 +4,14 @@ using namespace std;
 
 class Time {
   public:
+    Time(){
+      cout<<"cstor is working";
+      hour = 0;
+      min = 0;
+      sec = 0;
+      type = 24;
+      ampm = "PM";
+    }
     void setHour(int h){
       hour = h;
     }
@@ -54,13 +62,14 @@ class Time {
 
 int main(){
   Time t1, t2;
+  /*
   t1.setHour(12);
   t1.setMin(34);
   t1.setType("24");
   t2.setHour(22);
   t2.setMin(45);
   t2.setType("12");
-
+*/
   t1.print();
   t2.print(); // 10:45 PM
   "https://codeshare.io/5XE7JE";
