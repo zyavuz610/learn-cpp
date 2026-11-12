@@ -20,7 +20,7 @@ Bu bölüm, C++ programlama diline ilk adımı atacak öğrenciler için temel g
 
 C++ kodları metin dosyaları olarak yazılır (`.cpp`) ve doğrudan işlemci tarafından çalıştırılamaz. Bir **derleyici (compiler)** yardımıyla makine koduna (çalıştırılabilir ikili dosya - binary/executable) dönüştürülmelidir.
 
-İlgili kaynak dosya: [0_linux-cammands.txt](0_linux-cammands.txt)
+İlgili kaynak dosyalar: [0_linux-cammands.txt](0_linux-cammands.txt), Kapsamlı Linux & Derleyici Rehberi: [linux-commands.md](../../linux-commands.md)
 
 ### Önerilen Geliştirme Ortamları
 - **Yerel Ortam (Local):** 
