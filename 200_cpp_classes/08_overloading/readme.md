@@ -41,29 +41,29 @@ Derleyicinin iki fonksiyonu birbirinden ayırt etmek için kullandığı kimlik 
 3. **Parametre Veri Tipleri:** Örneğin `f(int)` ile `f(double)` farklı imzalardır.
 4. **Parametrelerin Sıralaması:** Örneğin `f(int, double)` ile `f(double, int)` farklı imzalardır.
 5. **Referans ve Gösterici Nitelikleri:** `f(int&)` ile `f(const int&)` veya `f(int*)` ile `f(const int*)` farklı imzalardır.
-6. **Üye Fonksiyonlarda `const` Niteleyicisi:** Bir sınıfın üye metodunda `void goster()` ile `void goster() const` iki ayrı fonksiyondur (nesne sabit ise `const` olan çağrılır).
+6. **Üye Fonksiyonlarda `const` Niteleyicisi:** Bir sınıfın üye metodunda `void display()` ile `void display() const` iki ayrı fonksiyondur (nesne sabit ise `const` olan çağrılır).
 
 #### İmzaya Kesinlikle Dahil OLMAYANLAR (Aşırı Yükleme İçin Yetersiz Durumlar):
 1. **Geri Dönüş Değeri (`Return Type`):**
    ```cpp
-   int hesapla(int x);
-   double hesapla(int x); // DERLEME HATASI! (call cannot be resolved by return type alone)
+   int calculate(int x);
+   double calculate(int x); // COMPILER ERROR! (call cannot be resolved by return type alone)
    ```
    > [!WARNING]
    > **Neden Dönüş Tipi İmzaya Dahil Değildir?**  
-   > Çünkü C++'ta bir fonksiyon `hesapla(10);` şeklinde dönüş değeri bir değişkene atanmadan (göz ardı edilerek) çağrılabilir. Bu durumda derleyici hangi fonksiyonun çalıştırılmak istendiğini asla bilemez!
-2. **Parametre İsimleri:** Prototipteki `void ciz(int genislik)` ile `void ciz(int g)` tamamen aynıdır.
+   > Çünkü C++'ta bir fonksiyon `calculate(10);` şeklinde dönüş değeri bir değişkene atanmadan (göz ardı edilerek) çağrılabilir. Bu durumda derleyici hangi fonksiyonun çalıştırılmak istendiğini asla bilemez!
+2. **Parametre İsimleri:** Prototipteki `void draw(int width)` ile `void draw(int w)` tamamen aynıdır.
 3. **Değer ile Aktarımda (`Pass-by-value`) `const` Niteleyicisi:**
    ```cpp
-   void yazdir(int x);
-   void yazdir(const int x); // DERLEME HATASI! (redefinition)
+   void print(int x);
+   void print(const int x); // COMPILER ERROR! (redefinition of 'void print(int)')
    ```
    Çünkü fonksiyon çağrılırken argüman zaten kopyalanır; çağıran taraf açısından parametrenin içeride sabit olması bir fark yaratmaz.
 4. **Tür Takma Adları (`typedef` / `using`):**
    ```cpp
-   typedef int Tamsayi;
+   typedef int Integer;
    void test(int x);
-   void test(Tamsayi x); // DERLEME HATASI! (Tamsayi ayrı bir tür değil, int'in takma adıdır)
+   void test(Integer x); // COMPILER ERROR! (Integer is not a distinct type, just an alias)
    ```
 
 ---
@@ -82,12 +82,140 @@ C++ derleyicisi, aşırı yüklenmiş fonksiyonları derlerken ve bağlarken (*l
 ```
 
 #### C ile C++ Kodlarını Birlikte Kullanma (`extern "C"`):
-C derleyicileri *name mangling* yapmaz; sembol tablosuna fonksiyonu doğrudan `print` adıyla yazar. Bu yüzden C dilinde yazılmış bir kütüphaneyi C++ projenize dahil ettiğinizde C++ derleyicisinin süslü isim arayıp `undefined reference` hatası vermesini engellemek için `extern "C"` kullanılır:
+
+C derleyicileri *name mangling* yapmaz; sembol tablosuna fonksiyonu doğrudan kaynak kodda yazılan adıyla (örneğin `c_add`) kaydeder. C++ derleyicisi ise aşırı yüklemeyi destekleyebilmek için fonksiyon isimlerini parametre tipleriyle süsler (örneğin `_Z5c_addii`).
+
+Bu durum, C dilinde önceden yazılmış ve derlenmiş bir kütüphaneyi veya `.c` dosyasını C++ projesine dahil ettiğinizde kritik bir bağlayıcı (*linker*) sorununa yol açar. C++ derleyicisi süslenmiş bir sembol ararken, C nesne dosyasında (`.o`) yalın C ismi yer alır. Bu uyumsuzluğu çözmek ve C++ derleyicisine **"Bu fonksiyon için isim süsleme yapma, C standart bağlantı kurallarını kullan"** demek için `extern "C"` blokları kullanılır.
+
+---
+
+##### 🔍 Sembol Tablosu Karşılaştırması
+
+| Dil & Derleyici | Kaynak Koddaki Tanım | Sembol Tablosundaki Adı (*Symbol Name*) |
+| :--- | :--- | :--- |
+| **C (`gcc`)** | `int c_add(int, int);` | `c_add` (Yalın, süslemesiz) |
+| **C++ (`g++`)** (Standart) | `int c_add(int, int);` | `_Z5c_addii` (Süslenmiş / Mangled) |
+| **C++ (`g++`)** (`extern "C"`) | `extern "C" int c_add(int, int);` | `c_add` (C ile tam uyumlu!) |
+
+---
+
+##### 💻 Örnek Senaryo: C Fonksiyonunu C++ İçerisinden Çağırma
+
+###### 1. Adım: C Kaynak Dosyası (`c_calculator.c`)
+C dilinde yazılmış basit bir matematik kütüphanesi:
+```c
+/* c_calculator.c - C source file */
+#include <stdio.h>
+
+int c_add(int a, int b) {
+    printf("[C Code] c_add executed: %d + %d\n", a, b);
+    return a + b;
+}
+
+int c_multiply(int a, int b) {
+    printf("[C Code] c_multiply executed: %d * %d\n", a, b);
+    return a * b;
+}
+```
+
+###### 2. Adım: Hem C Hem C++ Uyumlu Başlık Dosyası (`c_calculator.h`)
+> [!TIP]
+> **Endüstri Standardı (`__cplusplus` Makrosu):**  
+> `extern "C"` sözdizimi C diline ait değildir, C++'a özgüdür. Bu nedenle bir başlık dosyasının **hem saf C hem de C++ programları tarafından sorunsuz `#include` edilebilmesi** için `#ifdef __cplusplus` ön işlemci koşulu kullanılır. C++ derleyicisi `__cplusplus` makrosunu otomatik tanımlar; C derleyicisi ise bu satırları atlar.
+
+```c
+/* c_calculator.h - Common header compatible with C and C++ */
+#ifndef C_CALCULATOR_H
+#define C_CALCULATOR_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+// Function prototypes linked using C conventions
+int c_add(int a, int b);
+int c_multiply(int a, int b);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // C_CALCULATOR_H
+```
+
+###### 3. Adım: C++ Ana Programı (`main.cpp`)
+C++ kodumuz hem kendi aşırı yüklenmiş fonksiyonlarını kullanır hem de C dilinde yazılmış kütüphaneyi sorunsuz çağırır:
 
 ```cpp
-extern "C" {
-    int sum(int a, int b); // Derleyiciye bu fonksiyonu C kurallarıyla (süslenmeden) ara der
+/* main.cpp - Modern C++ source code */
+#include <iostream>
+#include <string>
+#include "c_calculator.h" // extern "C" protected header file
+
+using namespace std;
+
+// C++ overloaded functions:
+double add(double a, double b) {
+    cout << "[C++ Code] Overloaded add(double, double) executed\n";
+    return a + b;
 }
+
+string add(const string& a, const string& b) {
+    cout << "[C++ Code] Overloaded add(string, string) executed\n";
+    return a + " " + b;
+}
+
+int main() {
+    cout << "=== 1. Invoking Functions Written in C ===" << endl;
+    // Calling C functions seamlessly from C++:
+    int sumResult = c_add(15, 25);
+    cout << "c_add Result: " << sumResult << "\n\n";
+
+    int productResult = c_multiply(6, 7);
+    cout << "c_multiply Result: " << productResult << "\n\n";
+
+    cout << "=== 2. C++ Overloaded Functions ===" << endl;
+    cout << "Floating Point Sum: " << add(3.14, 2.71) << "\n\n";
+    cout << "String Concatenation: " << add(string("Computer"), string("Engineering")) << "\n";
+
+    return 0;
+}
+```
+
+---
+
+##### ⚠️ `extern "C"` Kullanılmazsa Ne Olur? (Hata Analizi)
+
+Eğer başlık dosyasında veya prototip bildiriminde `extern "C"` bloğunu kaldırır ve `main.cpp` dosyasını derlemeye çalışırsanız:
+
+1. Derleme aşaması (*compilation*) sözdizimsel olarak geçer (`.o` oluşur).
+2. Ancak **Bağlayıcı (Linker - `ld`)** aşamasında şu meşhur hata meydana gelir:
+
+```text
+undefined reference to `c_add(int, int)'
+undefined reference to `c_multiply(int, int)'
+collect2.exe: error: ld returned 1 exit status
+```
+
+**Hatanın Sebebi:**  
+C++ derleyicisi `main.cpp` içinde `_Z5c_addii` sembolünü aramıştır; ancak `c_calculator.o` dosyası C derleyicisi (`gcc`) ile derlendiği için sembol tablosunda sadece `c_add` vardır. İsimler uyuşmadığı için bağlayıcı aradığı fonksiyonu bulamaz ve bağlantıyı koparır. `extern "C"` bu süslemeyi kapatarak iki dünyanın birbiriyle konuşmasını sağlar.
+
+---
+
+##### 🔨 Bu Kodları Terminalden Derleme ve Bağlama Adımları
+
+C ve C++ dosyalarının birlikte derlenip tek bir çalıştırılabilir ikiliye dönüştürülmesi iki adımda gerçekleştirilir:
+
+```bash
+# Adım 1: C kaynak dosyasını gcc ile bağımsız nesne dosyasına (.o) derleyin:
+gcc -c c_calculator.c -o c_calculator.o
+
+# Adım 2: C++ ana programı ile C nesne dosyasını g++ ile birbirine bağlayın (Linking):
+g++ main.cpp c_calculator.o -o program
+
+# Adım 3: Çalıştırın:
+./program          # Linux / macOS / Git Bash
+.\program.exe      # Windows PowerShell / CMD
 ```
 
 ---
@@ -108,25 +236,25 @@ Birden fazla uygun fonksiyon aynı eşleşme seviyesinde kaldığında derleyici
 
 1. **Varsayılan Argüman (Default Argument) ile Çakışma:**
    ```cpp
-   void hesapla(int a);
-   void hesapla(int a, int b = 0);
+   void calculate(int a);
+   void calculate(int a, int b = 0);
 
-   hesapla(10); // HATA! Derleyici 1. fonksiyonu mu yoksa 2. fonksiyonun varsayılan halini mi çağıracağını bilemez!
+   calculate(10); // ERROR! Compiler cannot resolve which overload is intended!
    ```
 2. **Eşit Mesafeli Tip Dönüşümü:**
    ```cpp
-   void goster(long x);
-   void goster(double x);
+   void display(long x);
+   void display(double x);
 
-   goster(5); // HATA! 5 (int) türündedir. Hem int->long hem int->double standart dönüşümdür; öncelik farkı yoktur!
+   display(5); // ERROR! 5 is int. Both int->long and int->double have equal conversion rank!
    ```
 3. **Değer ile Referans Geçişi Arasındaki Belirsizlik:**
    ```cpp
-   void yaz(int x);
-   void yaz(int& x);
+   void print(int x);
+   void print(int& x);
 
-   int sayi = 20;
-   yaz(sayi); // HATA! 'sayi' hem değere kopyalanabilir hem de referansa bağlanabilir.
+   int number = 20;
+   print(number); // ERROR! 'number' can be passed by value or bound to reference!
    ```
 
 ---
@@ -139,58 +267,58 @@ Birden fazla uygun fonksiyon aynı eşleşme seviyesinde kaldığında derleyici
 
 using namespace std;
 
-// 1. Temel tipler için aşırı yükleme
-void ekranaYaz(int sayi) {
-    cout << "[int] Tamsayi degeri: " << sayi << endl;
+// 1. Overloading based on fundamental types
+void printValue(int value) {
+    cout << "[int] Integer value: " << value << endl;
 }
 
-void ekranaYaz(double sayi) {
-    cout << "[double] Ondalikli sayi degeri: " << sayi << endl;
+void printValue(double value) {
+    cout << "[double] Floating point value: " << value << endl;
 }
 
-void ekranaYaz(const string& metin) {
-    cout << "[string] Metin verisi: " << metin << endl;
+void printValue(const string& text) {
+    cout << "[string] Text data: " << text << endl;
 }
 
-// 2. Parametre sayısı ile aşırı yükleme
-void ekranaYaz(int sayi1, int sayi2) {
-    cout << "[int, int] Iki tamsayi: " << sayi1 << " ve " << sayi2 << endl;
+// 2. Overloading based on parameter count
+void printValue(int val1, int val2) {
+    cout << "[int, int] Two integers: " << val1 << " and " << val2 << endl;
 }
 
-// 3. Parametre sırası ile aşırı yükleme
-void personeliListele(string ad, int sicilNo) {
-    cout << "Personel: " << ad << " (Sicil No: " << sicilNo << ")" << endl;
+// 3. Overloading based on parameter ordering
+void listEmployee(const string& name, int id) {
+    cout << "Employee: " << name << " (ID: " << id << ")" << endl;
 }
 
-void personeliListele(int sicilNo, string ad) {
-    cout << "Sicil No: " << sicilNo << " -> Personel: " << ad << endl;
+void listEmployee(int id, const string& name) {
+    cout << "ID: " << id << " -> Employee: " << name << endl;
 }
 
-// 4. const referans vs referans (Aşırı yükleme ayrımı)
-void degerGuncelle(int& x) {
+// 4. Distinction between non-const reference and const reference
+void updateValue(int& x) {
     x += 10;
-    cout << "[int&] L-value referans uzerinden guncellendi: " << x << endl;
+    cout << "[int&] Modified via l-value reference: " << x << endl;
 }
 
-void degerGuncelle(const int& x) {
-    cout << "[const int&] Salt okunur veya gecici (r-value) deger: " << x << endl;
+void updateValue(const int& x) {
+    cout << "[const int&] Read-only or temporary (r-value) value: " << x << endl;
 }
 
 int main() {
-    cout << "--- 1. Tip Tabanli Asiri Yukleme ---" << endl;
-    ekranaYaz(42);               // [int] cagirilir
-    ekranaYaz(3.1415);           // [double] cagirilir
-    ekranaYaz(string("KTU C++"));// [string] cagirilir
+    cout << "--- 1. Type-Based Overloading ---" << endl;
+    printValue(42);                        // Calls [int]
+    printValue(3.1415);                    // Calls [double]
+    printValue(string("C++ Programming")); // Calls [string]
 
-    cout << "\n--- 2. Parametre Sayisi ve Siralamasi ---" << endl;
-    ekranaYaz(10, 20);           // [int, int] cagirilir
-    personeliListele("Ahmet", 101);
-    personeliListele(102, "Ayse");
+    cout << "\n--- 2. Parameter Count and Ordering ---" << endl;
+    printValue(10, 20);                    // Calls [int, int]
+    listEmployee("Alice", 101);
+    listEmployee(102, "Bob");
 
-    cout << "\n--- 3. Referans ve Const Referans Ayrimi ---" << endl;
+    cout << "\n--- 3. Reference vs Const Reference ---" << endl;
     int a = 5;
-    degerGuncelle(a);            // Degisken oldugu icin int& cagirilir (a = 15 olur)
-    degerGuncelle(100);          // 100 gecici r-value oldugu icin const int& cagirilir
+    updateValue(a);                        // Variable passed: calls int& (a becomes 15)
+    updateValue(100);                      // 100 is temporary r-value: calls const int&
 
     return 0;
 }
@@ -208,34 +336,34 @@ int main() {
 
 ### 2.1. `this` Göstericisinin Felsefesi ve Bellek Mimarisi
 
-Bir `Saat` sınıfından 100 adet nesne ürettiğimizi varsayalım:
+Bir `Clock` sınıfından 100 adet nesne ürettiğimizi varsayalım:
 ```cpp
-Saat s1, s2, s3, ..., s100;
+Clock c1, c2, c3, ..., c100;
 ```
 Bellekte ne olur?
-- Her bir nesnenin üye değişkenleri (`saat`, `dakika`, `saniye`) bellekte (Stack veya Heap) **ayrı ayrı yer tutar** (100 farklı bellek bloğu).
-- Ancak üye fonksiyonların makine kodları (`yazdir()`, `setZaman()`) belleğin **Kod Bölümünde (Code / Text Segment) SADECE TEK BİR KOPYA** olarak saklanır!
+- Her bir nesnenin üye değişkenleri (`hours`, `minutes`, `seconds`) bellekte (Stack veya Heap) **ayrı ayrı yer tutar** (100 farklı bellek bloğu).
+- Ancak üye fonksiyonların makine kodları (`print()`, `setTime()`) belleğin **Kod Bölümünde (Code / Text Segment) SADECE TEK BİR KOPYA** olarak saklanır!
 
-Peki, `s1.yazdir()` ve `s2.yazdir()` çağrıldığında çalışan aynı makine kodu, `s1`'in mi yoksa `s2`'nin mi değişkenlerini yazdıracağını nereden bilir?
+Peki, `c1.print()` ve `c2.print()` çağrıldığında çalışan aynı makine kodu, `c1`'in mi yoksa `c2`'nin mi değişkenlerini yazdıracağını nereden bilir?
 
 #### Gizli Parametre Mekanizması:
 Derleyici, siz farkında olmadan üye fonksiyon çağrılarını ve tanımlarını dönüştürür:
 
 ```cpp
 // 1. Bizim yazdigimiz cagri:
-benimSaat.setZaman(14, 45, 15);
+myClock.setTime(14, 45, 15);
 
 // 2. Derleyicinin arka planda urettigi gercek cagri:
-Saat::setZaman(&benimSaat, 14, 45, 15);
+Clock::setTime(&myClock, 14, 45, 15);
 ```
 
 Fonksiyonun arka plandaki prototipi ise şöyledir:
 ```cpp
 // Derleyici 'this' isaretcisini ilk parametre olarak gizlice ekler:
-void Saat::setZaman(Saat* const this, int saat, int dakika, int saniye) {
-    this->saat = saat;
-    this->dakika = dakika;
-    this->saniye = saniye;
+void Clock::setTime(Clock* const this, int hours, int minutes, int seconds) {
+    this->hours = hours;
+    this->minutes = minutes;
+    this->seconds = seconds;
 }
 ```
 
@@ -246,18 +374,18 @@ void Saat::setZaman(Saat* const this, int saat, int dakika, int saniye) {
 1. **Sabit Bir İşaretçidir (`T* const this`):**
    `this` bir r-value ifadedir. `this` göstericisinin işaret ettiği adres fonksiyon içinde değiştirilemez:
    ```cpp
-   this = &baskaNesne; // DERLEME HATASI! (l-value required as left operand of assignment)
+   this = &otherObject; // COMPILER ERROR! (l-value required as left operand of assignment)
    ```
 2. **`const` Üye Fonksiyonlarda Durumu (`const T* const this`):**
-   Bir üye fonksiyon `void yazdir() const` şeklinde bildirildiğinde, `this` göstericisinin tipi `const Saat* const this` haline gelir. Bu sayede o fonksiyon içinde hiçbir üye değişkenin değeri değiştirilemez:
+   Bir üye fonksiyon `void print() const` şeklinde bildirildiğinde, `this` göstericisinin tipi `const Clock* const this` haline gelir. Bu sayede o fonksiyon içinde hiçbir üye değişkenin değeri değiştirilemez:
    ```cpp
-   void Saat::yazdir() const {
-       // this->saat = 12; // DERLEME HATASI! const nesne alanina yazma yapilamaz
-       cout << this->saat << ":" << this->dakika << endl; // Gecerli (salt okunur)
+   void Clock::print() const {
+       // this->hours = 12; // COMPILER ERROR! Cannot modify member in const function
+       cout << this->hours << ":" << this->minutes << endl; // Valid (read-only)
    }
    ```
 3. **Neden `static` Üye Fonksiyonlarda `this` Göstericisi Yoktur?**
-   `static` fonksiyonlar nesnelere değil, doğrudan sınıfın kendisine aittir (`Saat::toplamNesneSayisi()`). Fonksiyon çağrılırken ortada bir nesne örneği veya nesne adresi bulunmaz. Bu nedenle:
+   `static` fonksiyonlar nesnelere değil, doğrudan sınıfın kendisine aittir (`Clock::getTotalClocks()`). Fonksiyon çağrılırken ortada bir nesne örneği veya nesne adresi bulunmaz. Bu nedenle:
    - `static` fonksiyonlar içinde `this` kullanılamaz.
    - `static` fonksiyonlar sınıfın statik olmayan üye değişkenlerine doğrudan erişemez.
 
@@ -267,34 +395,34 @@ void Saat::setZaman(Saat* const this, int saat, int dakika, int saniye) {
 
 | No | Kullanım Alanı | Açıklama | Tipik Örnek Kod |
 | :---: | :--- | :--- | :--- |
-| **1** | **İsim Gölgelemesini Önleme** (*Name Shadowing / Hiding*) | Parametre adı ile üye değişken adı aynı olduğunda karışıklığı giderir. | `this->saat = saat;` |
-| **2** | **Metot Zincirleme** (*Method Chaining / Fluent Interface*) | Fonksiyondan nesnenin kendisini (`return *this;`) referans döndürerek ardışık çağrılar sağlar. | `s.setSaat(10).setDakika(30).yazdir();` |
-| **3** | **Kendine Atama Kontrolü** (*Self-Assignment Check*) | Atama operatöründe (`operator=`) nesnenin kendisine atanmasını (`a = a;`) denetler. | `if (this == &diger) return *this;` |
-| **4** | **Kendini Dışarı Parametre Geçme** | Nesnenin kendisini başka bir sınıfa veya fonksiyona argüman olarak iletmesini sağlar. | `kayitSistemi.kaydet(*this);` veya `kaydet(this);` |
-| **5** | **Nesne Kimliği Karşılaştırması** | İki referansın aynı bellek adresindeki nesneyi gösterip göstermediğini doğrular. | `bool ayniMi = (this == &digerNesne);` |
+| **1** | **İsim Gölgelemesini Önleme** (*Name Shadowing / Hiding*) | Parametre adı ile üye değişken adı aynı olduğunda karışıklığı giderir. | `this->hours = hours;` |
+| **2** | **Metot Zincirleme** (*Method Chaining / Fluent Interface*) | Fonksiyondan nesnenin kendisini (`return *this;`) referans döndürerek ardışık çağrılar sağlar. | `c.setHours(10).setMinutes(30).print();` |
+| **3** | **Kendine Atama Kontrolü** (*Self-Assignment Check*) | Atama operatöründe (`operator=`) nesnenin kendisine atanmasını (`a = a;`) denetler. | `if (this == &other) return *this;` |
+| **4** | **Kendini Dışarı Parametre Geçme** | Nesnenin kendisini başka bir sınıfa veya fonksiyona argüman olarak iletmesini sağlar. | `logger.log(*this);` veya `log(this);` |
+| **5** | **Nesne Kimliği Karşılaştırması** | İki referansın aynı bellek adresindeki nesneyi gösterip göstermediğini doğrular. | `bool isSame = (this == &otherObject);` |
 
 ---
 
-### 2.4. Metot Zincirleme (Method Chaining): Neden Referans (`Saat&`) Dönülmelidir?
+### 2.4. Metot Zincirleme (Method Chaining): Neden Referans (`Clock&`) Dönülmelidir?
 
-Metot zincirleme yaparken dönüş tipini `Saat` (değer ile) mi yoksa `Saat&` (referans ile) mi belirlediğiniz hayati önem taşır:
+Metot zincirleme yaparken dönüş tipini `Clock` (değer ile) mi yoksa `Clock&` (referans ile) mi belirlediğiniz hayati önem taşır:
 
 ```cpp
-// HATALI YAKLAŞIM: Deger ile donme (Saat)
-Saat setSaat(int s) {
-    this->saat = s;
-    return *this; // DİKKAT: Nesnenin gecici bir KOPYASI olusturulur!
+// INCORRECT APPROACH: Returning by value (Clock)
+Clock setHours(int h) {
+    this->hours = h;
+    return *this; // WARNING: Creates a temporary COPY of the object!
 }
 
-// DOGRU YAKLASIM: Referans ile donme (Saat&)
-Saat& setSaat(int s) {
-    this->saat = s;
-    return *this; // Asil nesnenin kendisine referans dondurulur (Kopya yok!)
+// CORRECT APPROACH: Returning by reference (Clock&)
+Clock& setHours(int h) {
+    this->hours = h;
+    return *this; // Returns reference to the original object (No copy!)
 }
 ```
 
 > [!CAUTION]
-> Eğer `Saat` (değer) dönerseniz; her zincirleme adımında yeni ve geçici bir kopya oluşturulur. Bir sonraki fonksiyon bu geçici kopya üzerinde çalışır ve zincir bittiğinde kopyalar bellekten silinir. Sonuç olarak asıl nesneniz güncellenmemiş olur! Bu yüzden zincirleme çağrılarda her zaman **referans (`Sinif&`)** döndürülmelidir.
+> Eğer `Clock` (değer) dönerseniz; her zincirleme adımında yeni ve geçici bir kopya oluşturulur. Bir sonraki fonksiyon bu geçici kopya üzerinde çalışır ve zincir bittiğinde kopyalar bellekten silinir. Sonuç olarak asıl nesneniz güncellenmemiş olur! Bu yüzden zincirleme çağrılarda her zaman **referans (`Sinif&`)** döndürülmelidir.
 
 ---
 
@@ -306,82 +434,82 @@ Saat& setSaat(int s) {
 
 using namespace std;
 
-class Saat {
+class Clock {
 private:
-    int saat;
-    int dakika;
-    int saniye;
+    int hours;
+    int minutes;
+    int seconds;
 
 public:
-    // Yapici metotta baslatma ve varsayilan degerler
-    Saat(int saat = 0, int dakika = 0, int saniye = 0) {
-        // 1. Kullanim: Parametre ve uye degisken isimleri ayni oldugunda this-> zorunludur
-        this->saat = saat;
-        this->dakika = dakika;
-        this->saniye = saniye;
+    // Constructor with default parameter values
+    Clock(int hours = 0, int minutes = 0, int seconds = 0) {
+        // Use case 1: Resolving name hiding when parameter names match member variables
+        this->hours = hours;
+        this->minutes = minutes;
+        this->seconds = seconds;
     }
 
-    // 2. Kullanim: *this referansi donduren zincirleme (Fluent API) metotlari
-    Saat& saatAyarla(int saat) {
-        this->saat = (saat >= 0 && saat < 24) ? saat : 0;
-        return *this; // Mevcut nesnenin kendisini dondurur
+    // Use case 2: Method chaining returning *this reference (Fluent API)
+    Clock& setHours(int hours) {
+        this->hours = (hours >= 0 && hours < 24) ? hours : 0;
+        return *this; // Returns reference to the current object
     }
 
-    Saat& dakikaAyarla(int dakika) {
-        this->dakika = (dakika >= 0 && dakika < 60) ? dakika : 0;
+    Clock& setMinutes(int minutes) {
+        this->minutes = (minutes >= 0 && minutes < 60) ? minutes : 0;
         return *this;
     }
 
-    Saat& saniyeAyarla(int saniye) {
-        this->saniye = (saniye >= 0 && saniye < 60) ? saniye : 0;
+    Clock& setSeconds(int seconds) {
+        this->seconds = (seconds >= 0 && seconds < 60) ? seconds : 0;
         return *this;
     }
 
-    // Nesnenin bellek adresini ekrana yazdiran metot
-    void adresGoster() const {
-        cout << "Bu nesnenin bellekteki adresi (this): " << this << endl;
+    // Display memory address of the current object
+    void printAddress() const {
+        cout << "Memory address of this object (this): " << this << endl;
     }
 
-    // const uye metot: this isaretcisinin tipi 'const Saat* const this' olur
-    void yazdir() const {
-        cout << setfill('0') << setw(2) << this->saat << ":"
-             << setw(2) << this->dakika << ":"
-             << setw(2) << this->saniye << endl;
+    // const member function: type of this is 'const Clock* const this'
+    void print() const {
+        cout << setfill('0') << setw(2) << this->hours << ":"
+             << setw(2) << this->minutes << ":"
+             << setw(2) << this->seconds << endl;
     }
 
-    // 5. Kullanim: Nesne kimligi kontrolu
-    bool ayniNesneMi(const Saat& diger) const {
-        return this == &diger; // Adresler ayni ise ayni nesnedir
+    // Use case 5: Checking object identity via memory address
+    bool isSameObject(const Clock& other) const {
+        return this == &other; // Returns true if both references point to the same instance
     }
 };
 
 int main() {
-    cout << "=== 1. this Pointer ile Nesne Adresleri ===" << endl;
-    Saat saat1(9, 15, 30);
-    Saat saat2(12, 0, 0);
+    cout << "=== 1. Inspecting Object Addresses via this Pointer ===" << endl;
+    Clock clock1(9, 15, 30);
+    Clock clock2(12, 0, 0);
 
-    cout << "saat1 icin: ";
-    saat1.adresGoster();
-    cout << "saat1 adresi (&saat1): " << &saat1 << endl;
+    cout << "clock1: ";
+    clock1.printAddress();
+    cout << "clock1 address (&clock1): " << &clock1 << endl;
 
-    cout << "saat2 icin: ";
-    saat2.adresGoster();
-    cout << "saat2 adresi (&saat2): " << &saat2 << endl;
+    cout << "clock2: ";
+    clock2.printAddress();
+    cout << "clock2 address (&clock2): " << &clock2 << endl;
 
-    cout << "\n=== 2. *this ile Metot Zincirleme (Method Chaining) ===" << endl;
-    cout << "Zincirleme oncesi saat1: ";
-    saat1.yazdir();
+    cout << "\n=== 2. Method Chaining with *this ===" << endl;
+    cout << "clock1 before chaining: ";
+    clock1.print();
 
-    cout << "Zincirleme ile guncellenen saat1: ";
-    // Metot zincirleme cagrisi (Cascading)
-    saat1.saatAyarla(21).dakikaAyarla(45).saniyeAyarla(59).yazdir();
+    cout << "clock1 after cascading updates: ";
+    // Method chaining call (Cascading)
+    clock1.setHours(21).setMinutes(45).setSeconds(59).print();
 
-    cout << "\n=== 3. Nesne Kimligi Karsilastirmasi ===" << endl;
-    Saat& saatReferansi = saat1;
-    cout << "saat1 ile saatReferansi ayni nesne mi? " 
-         << (saat1.ayniNesneMi(saatReferansi) ? "EVET (Ayni Adres)" : "HAYIR") << endl;
-    cout << "saat1 ile saat2 ayni nesne mi? " 
-         << (saat1.ayniNesneMi(saat2) ? "EVET (Ayni Adres)" : "HAYIR (Farkli Adres)") << endl;
+    cout << "\n=== 3. Object Identity Comparison ===" << endl;
+    Clock& clockRef = clock1;
+    cout << "Are clock1 and clockRef the same object? " 
+         << (clock1.isSameObject(clockRef) ? "YES (Same Address)" : "NO") << endl;
+    cout << "Are clock1 and clock2 the same object? " 
+         << (clock1.isSameObject(clock2) ? "YES (Same Address)" : "NO (Different Address)") << endl;
 
     return 0;
 }
@@ -393,7 +521,7 @@ int main() {
 
 İlgili kaynak dosya: [operator-overloading.cpp](operator-overloading.cpp)
 
-Operatör aşırı yükleme, yerleşik operatörlerin (`+`, `-`, `==`, `<<` vb.) nesneler üzerinde doğal ve okunabilir bir şekilde çalışmasını sağlar (örn: `karmasik1 + karmasik2`).
+Operatör aşırı yükleme, yerleşik operatörlerin (`+`, `-`, `==`, `<<` vb.) nesneler üzerinde doğal ve okunabilir bir şekilde çalışmasını sağlar (örn: `c1 + c2`).
 
 ### Temel Kurallar:
 1. **Yeni operatör icat edilemez.** Yalnızca dilde zaten var olan operatörler aşırı yüklenebilir (`**` veya `<>` gibi yeni semboller üretilemez).
@@ -421,7 +549,7 @@ Bir operatör iki farklı şekilde aşırı yüklenebilir:
 `A + B` ifadesi `operator+(A, B)` olarak bağımsız bir fonksiyon gibi çağrılır. `friend` anahtar kelimesi sayesinde fonksiyon sınıfın `private` üyelerine doğrudan erişebilir.
 
 > [!IMPORTANT]
-> **Değişme Özelliği (Commutativity) Sorunu:** `karmasik + 5.0` işlemi üye fonksiyon ile çözülebilir (`karmasik.operator+(5.0)`). Ancak `5.0 + karmasik` yazıldığında sol taraf `double` olduğu için üye metot çağrılamaz! Bu tür simetrik durumlarda **`friend` fonksiyon kullanılması zorunludur**.
+> **Değişme Özelliği (Commutativity) Sorunu:** `c1 + 5.0` işlemi üye fonksiyon ile çözülebilir (`c1.operator+(5.0)`). Ancak `5.0 + c1` yazıldığında sol taraf `double` olduğu için üye metot çağrılamaz! Bu tür simetrik durumlarda **`friend` fonksiyon kullanılması zorunludur**.
 
 ---
 
@@ -435,38 +563,39 @@ Karmaşık sayı (*Complex Number*) sınıfı üzerinde `+` operatörünü incel
 #include <iostream>
 using namespace std;
 
-class Karmasik {
+class Complex {
 private:
-    double gercek, sanal;
+    double real;
+    double imag;
 
 public:
-    Karmasik(double g = 0, double s = 0) : gercek(g), sanal(s) {}
+    Complex(double r = 0.0, double i = 0.0) : real(r), imag(i) {}
 
-    // Üye fonksiyon ile + operatörünü aşırı yükleme
-    Karmasik operator+(const Karmasik& diger) const {
-        return Karmasik(this->gercek + diger.gercek, this->sanal + diger.sanal);
+    // Overload operator+ as a member function
+    Complex operator+(const Complex& other) const {
+        return Complex(this->real + other.real, this->imag + other.imag);
     }
 
-    void yazdir() const {
-        cout << gercek << " + " << sanal << "i" << endl;
+    void print() const {
+        cout << real << " + " << imag << "i" << endl;
     }
 
-    // friend fonksiyon prototipi (double + Karmasik için)
-    friend Karmasik operator+(double sayi, const Karmasik& k);
+    // friend function prototype for commutative addition (double + Complex)
+    friend Complex operator+(double scalar, const Complex& c);
 };
 
-// Sınıf dışı friend fonksiyon
-Karmasik operator+(double sayi, const Karmasik& k) {
-    return Karmasik(sayi + k.gercek, k.sanal);
+// Non-member friend function definition
+Complex operator+(double scalar, const Complex& c) {
+    return Complex(scalar + c.real, c.imag);
 }
 
 int main() {
-    Karmasik k1(2.5, 3.0), k2(1.5, 2.0);
-    Karmasik k3 = k1 + k2;    // k1.operator+(k2)
-    Karmasik k4 = 10.0 + k1;  // operator+(10.0, k1) - friend fonksiyon
+    Complex c1(2.5, 3.0), c2(1.5, 2.0);
+    Complex c3 = c1 + c2;    // Invokes c1.operator+(c2)
+    Complex c4 = 10.0 + c1;  // Invokes operator+(10.0, c1) - friend function
 
-    k3.yazdir(); // 4 + 5i
-    k4.yazdir(); // 12.5 + 3i
+    c3.print(); // 4 + 5i
+    c4.print(); // 12.5 + 3i
     return 0;
 }
 ```
@@ -480,21 +609,21 @@ int main() {
 İlişkisel operatörler iki nesneyi karşılaştırır ve geriye her zaman `bool` (`true`/`false`) döndürür:
 
 ```cpp
-class Zaman {
-    int toplamSaniye;
+class Time {
+    int totalSeconds;
 public:
-    Zaman(int s) : toplamSaniye(s) {}
+    Time(int s) : totalSeconds(s) {}
 
-    bool operator==(const Zaman& diger) const {
-        return this->toplamSaniye == diger.toplamSaniye;
+    bool operator==(const Time& other) const {
+        return this->totalSeconds == other.totalSeconds;
     }
 
-    bool operator<(const Zaman& diger) const {
-        return this->toplamSaniye < diger.toplamSaniye;
+    bool operator<(const Time& other) const {
+        return this->totalSeconds < other.totalSeconds;
     }
 
-    bool operator!=(const Zaman& diger) const {
-        return !(*this == diger); // == üzerinden tanımlama (Best practice)
+    bool operator!=(const Time& other) const {
+        return !(*this == other); // Implemented via operator== (Best practice)
     }
 };
 ```
@@ -512,26 +641,26 @@ C++ derleyicisi bu iki durumu birbirinden ayırmak için son artırma operatör�
 #include <iostream>
 using namespace std;
 
-class Sayac {
+class Counter {
 private:
-    int deger;
+    int value;
 public:
-    Sayac(int d = 0) : deger(d) {}
+    Counter(int v = 0) : value(v) {}
 
-    // 1. Ön Artırma (++obj): Değeri artır ve güncel nesneyi referansla dön
-    Sayac& operator++() {
-        ++deger;
+    // 1. Prefix Increment (++obj): Increment value and return reference to current object
+    Counter& operator++() {
+        ++value;
         return *this;
     }
 
-    // 2. Son Artırma (obj++): Eski değeri geçici nesnede sakla, artır, eskiyi kopyayla dön
-    Sayac operator++(int) { // Kukla 'int' parametresi son artırmayı belirtir
-        Sayac temp = *this;
-        deger++;
-        return temp; // Eski değer döner
+    // 2. Postfix Increment (obj++): Save old value, increment, return copy of old state
+    Counter operator++(int) { // Dummy 'int' parameter indicates postfix increment
+        Counter temp = *this;
+        value++;
+        return temp; // Return old state by value
     }
 
-    int getDeger() const { return deger; }
+    int getValue() const { return value; }
 };
 ```
 
@@ -547,29 +676,29 @@ public:
 #include <iostream>
 using namespace std;
 
-class Nokta {
+class Point {
 private:
     int x, y;
 public:
-    Nokta(int x = 0, int y = 0) : x(x), y(y) {}
+    Point(int x = 0, int y = 0) : x(x), y(y) {}
 
-    // Çıkış Akışı (<<): cout << n1 << n2 zincirleme çağrısı için ostream& dönmelidir
-    friend ostream& operator<<(ostream& os, const Nokta& n) {
-        os << "(" << n.x << ", " << n.y << ")";
+    // Stream Insertion (<<): Returns ostream& to support cascading calls (cout << p1 << p2)
+    friend ostream& operator<<(ostream& os, const Point& p) {
+        os << "(" << p.x << ", " << p.y << ")";
         return os;
     }
 
-    // Giriş Akışı (>>): cin >> n
-    friend istream& operator>>(istream& is, Nokta& n) {
-        cout << "X ve Y giriniz: ";
-        is >> n.x >> n.y;
+    // Stream Extraction (>>): cin >> p
+    friend istream& operator>>(istream& is, Point& p) {
+        cout << "Enter X and Y: ";
+        is >> p.x >> p.y;
         return is;
     }
 };
 
 int main() {
-    Nokta p(10, 20);
-    cout << "Nokta koordinatı: " << p << endl; // (10, 20)
+    Point p(10, 20);
+    cout << "Point coordinates: " << p << endl; // (10, 20)
     return 0;
 }
 ```
@@ -581,19 +710,19 @@ int main() {
 İlgili kaynak dosyalar: [assing-operator.cpp](assing-operator.cpp), [subscript-operator.cpp](subscript-operator.cpp)
 
 ### 1. Atama Operatörü (`operator=`)
-Nesneye başka bir nesne atandığında (`a = b;`) derin kopyalama yapılmasını sağlar. **Kendine atama kontrolü (`this == &diger`) hayati önem taşır:**
+Nesneye başka bir nesne atandığında (`a = b;`) derin kopyalama yapılmasını sağlar. **Kendine atama kontrolü (`this == &other`) hayati önem taşır:**
 ```cpp
-class DiziYonetici {
+class ArrayManager {
     int* data;
-    int boyut;
+    int size;
 public:
-    DiziYonetici& operator=(const DiziYonetici& diger) {
-        if (this == &diger) return *this; // Kendine atama kontrolü (Self-assignment check)
+    ArrayManager& operator=(const ArrayManager& other) {
+        if (this == &other) return *this; // Self-assignment check
 
-        delete[] data; // 1. Eski belleği temizle
-        boyut = diger.boyut;
-        data = new int[boyut]; // 2. Yeni bellek tahsis et
-        for (int i = 0; i < boyut; i++) data[i] = diger.data[i]; // 3. Derin kopyala
+        delete[] data; // 1. Deallocate old buffer
+        size = other.size;
+        data = new int[size]; // 2. Allocate new buffer
+        for (int i = 0; i < size; i++) data[i] = other.data[i]; // 3. Deep copy elements
 
         return *this;
     }
@@ -603,8 +732,8 @@ public:
 ### 2. İndis Operatörü (`operator[]`)
 Nesnenin dizi gibi `nesne[i]` şeklinde kullanılmasını sağlar. Hem okuma hem yazma yapılabilmesi için referans dönmelidir:
 ```cpp
-int& operator[](int indeks) {
-    return data[indeks];
+int& operator[](int index) {
+    return data[index];
 }
 ```
 
@@ -617,25 +746,25 @@ int& operator[](int indeks) {
 ### 1. Functor (Fonksiyon Çağrı Operatörü `operator()`)
 Bir sınıf nesnesinin fonksiyon gibi çağrılabilmesini sağlar:
 ```cpp
-class Carpici {
-    int katsayi;
+class Multiplier {
+    int factor;
 public:
-    Carpici(int k) : katsayi(k) {}
-    int operator()(int x) const { return x * katsayi; }
+    Multiplier(int f) : factor(f) {}
+    int operator()(int x) const { return x * factor; }
 };
 
-Carpici besIleCarp(5);
-cout << besIleCarp(10); // 50 yazar (Nesne fonksiyon gibi çağrıldı)
+Multiplier multiplyByFive(5);
+cout << multiplyByFive(10); // Outputs 50 (Object invoked like a function)
 ```
 
 ### 2. Üç Yönlü Karşılaştırma / Uzay Gemisi Operatörü (`<=>` - C++20)
 Tek bir operatörle `<, <=, ==, !=, >=, >` operatörlerinin tamamının derleyici tarafından otomatik üretilmesini sağlar:
 ```cpp
 #include <compare>
-class Skor {
-    int puan;
+class Score {
+    int points;
 public:
-    auto operator<=>(const Skor&) const = default; // Tüm karşılaştırmaları otomatik üretir!
+    auto operator<=>(const Score&) const = default; // Generates all comparisons automatically!
 };
 ```
 
@@ -680,27 +809,27 @@ Aşağıdaki kodun çıktısı nedir?
 #include <iostream>
 using namespace std;
 
-class Sayi {
+class Number {
     int n;
 public:
-    Sayi(int n) : n(n) {}
-    Sayi& operator++() { ++n; return *this; }
-    Sayi operator++(int) { Sayi t = *this; n++; return t; }
+    Number(int n) : n(n) {}
+    Number& operator++() { ++n; return *this; }
+    Number operator++(int) { Number t = *this; n++; return t; }
     int val() const { return n; }
 };
 
 int main() {
-    Sayi s(5);
-    Sayi a = ++s;
-    Sayi b = s++;
-    cout << "s:" << s.val() << " a:" << a.val() << " b:" << b.val() << endl;
+    Number num(5);
+    Number a = ++num;
+    Number b = num++;
+    cout << "num:" << num.val() << " a:" << a.val() << " b:" << b.val() << endl;
     return 0;
 }
 ```
 **Çözüm:**
-- `++s`: `s` 6 olur, referansı `a`'ya kopyalanır (`a = 6`).
-- `s++`: Eski değer (6) geçici nesnede saklanır, `s` 7 olur. `b`'ye eski değer atanır (`b = 6`).
-- Çıktı: `s:7 a:6 b:6`.
+- `++num`: `num` 6 olur, referansı `a`'ya kopyalanır (`a = 6`).
+- `num++`: Eski değer (6) geçici nesnede saklanır, `num` 7 olur. `b`'ye eski değer atanır (`b = 6`).
+- Çıktı: `num:7 a:6 b:6`.
 
 ---
 
@@ -710,70 +839,70 @@ Aşağıdaki C++ kodunun derleme durumunu ve olası hataları analiz ediniz:
 #include <iostream>
 using namespace std;
 
-void yaz(int x) { cout << "int: " << x << endl; }
-void yaz(double x) { cout << "double: " << x << endl; }
-void yaz(int x, int y = 5) { cout << "int, int: " << x << ", " << y << endl; }
+void print(int x) { cout << "int: " << x << endl; }
+void print(double x) { cout << "double: " << x << endl; }
+void print(int x, int y = 5) { cout << "int, int: " << x << ", " << y << endl; }
 
 int main() {
-    yaz(3.14);  // (A)
-    yaz('A');   // (B)
-    yaz(10);    // (C)
+    print(3.14);  // (A)
+    print('A');   // (B)
+    print(10);    // (C)
     return 0;
 }
 ```
 **Çözüm:**
-- `(A) yaz(3.14);`: Sorunsuz derlenir. `3.14` bir `double` literali olduğu için Seviye 1 (Exact Match - Tam Eşleşme) ile `yaz(double)` çağrılır. Çıktı: `double: 3.14`.
-- `(B) yaz('A');`: Sorunsuz derlenir. `'A'` bir `char` türündedir. C++ kurallarına göre `char`, integral yükseltme (*integral promotion*) ile `int` türüne terfi eder (Seviye 2). Bu nedenle `yaz(int)` çağrılır. Çıktı: `int: 65`.
-- `(C) yaz(10);`: **DERLEME HATASI VERİR! (Ambiguous call)**. `10` bir `int`'tir. Derleyici karşısında iki uygun fonksiyon görür: `void yaz(int)` ve ikinci parametresi varsayılan değere (`y = 5`) sahip olan `void yaz(int, int = 5)`. Her ikisi de tek bir `int` argüman ile çağrılabilir ve ikisi de tam eşleşmedir. Derleyici hangisinin kastedildiğini çözemez ve derleme hatası üretir.
+- `(A) print(3.14);`: Sorunsuz derlenir. `3.14` bir `double` literali olduğu için Seviye 1 (Exact Match - Tam Eşleşme) ile `print(double)` çağrılır. Çıktı: `double: 3.14`.
+- `(B) print('A');`: Sorunsuz derlenir. `'A'` bir `char` türündedir. C++ kurallarına göre `char`, integral yükseltme (*integral promotion*) ile `int` türüne terfi eder (Seviye 2). Bu nedenle `print(int)` çağrılır. Çıktı: `int: 65`.
+- `(C) print(10);`: **DERLEME HATASI VERİR! (Ambiguous call)**. `10` bir `int`'tir. Derleyici karşısında iki uygun fonksiyon görür: `void print(int)` ve ikinci parametresi varsayılan değere (`y = 5`) sahip olan `void print(int, int = 5)`. Her ikisi de tek bir `int` argüman ile çağrılabilir ve ikisi de tam eşleşmedir. Derleyici hangisinin kastedildiğini çözemez ve derleme hatası üretir.
 
 ---
 
 ### Soru 3: `this` Göstericisi ve Metot Zincirlemede Değer vs Referans Farkı
-Aşağıdaki sınıf tasarımında `topla` fonksiyonunun dönüş tipi `Sayac&` yerine `Sayac` olsaydı `main` içindeki zincirleme işleminin sonucunda `s.deger()` ne olurdu?
+Aşağıdaki sınıf tasarımında `add` fonksiyonunun dönüş tipi `Counter&` yerine `Counter` olsaydı `main` içindeki zincirleme işleminin sonucunda `c.getCount()` ne olurdu?
 ```cpp
 #include <iostream>
 using namespace std;
 
-class Sayac {
-    int sayi;
+class Counter {
+    int count;
 public:
-    Sayac(int s = 0) : sayi(s) {}
+    Counter(int c = 0) : count(c) {}
     
-    // Dikkat: Referans (Sayac&) yerine Deger (Sayac) donuyor!
-    Sayac topla(int x) {
-        sayi += x;
+    // Notice: Returns by value (Counter) instead of by reference (Counter&)
+    Counter add(int x) {
+        count += x;
         return *this;
     }
-    int deger() const { return sayi; }
+    int getCount() const { return count; }
 };
 
 int main() {
-    Sayac s(10);
-    s.topla(5).topla(20);
-    cout << "Sonuc: " << s.deger() << endl;
+    Counter c(10);
+    c.add(5).add(20);
+    cout << "Result: " << c.getCount() << endl;
     return 0;
 }
 ```
 **Çözüm:**
-- Konsola **Sonuc: 15** yazılır (Beklenen 35 değildir!).
-- **Nedeni:** `s.topla(5)` çağrıldığında `s.sayi` değeri 15 olur. Ancak fonksiyon `Sayac` (değer ile) döndüğü için `*this` ifadesi `s` nesnesinin bellekte **isimsiz, geçici bir kopyasını** (*temporary copy*) üretir.
-- Ardından gelen `.topla(20)` çağrısı `s` nesnesi üzerinde değil, bu **geçici kopya** üzerinde çalışır ve kopyanın değerini 35 yapar.
+- Konsola **Result: 15** yazılır (Beklenen 35 değildir!).
+- **Nedeni:** `c.add(5)` çağrıldığında `c.count` değeri 15 olur. Ancak fonksiyon `Counter` (değer ile) döndüğü için `*this` ifadesi `c` nesnesinin bellekte **isimsiz, geçici bir kopyasını** (*temporary copy*) üretir.
+- Ardından gelen `.add(20)` çağrısı `c` nesnesi üzerinde değil, bu **geçici kopya** üzerinde çalışır ve kopyanın değerini 35 yapar.
 - İfade satırı bittiğinde geçici kopya bellekten tamamen silinir.
-- Asıl `s` nesnesinin değeri ise ilk adımda kaldığı gibi `15` olarak kalır. Zincirleme çağrıların asıl nesneyi değiştirebilmesi için fonksiyonun mutlaka `Sayac&` (referans) döndürmesi şarttır!
+- Asıl `c` nesnesinin değeri ise ilk adımda kaldığı gibi `15` olarak kalır. Zincirleme çağrıların asıl nesneyi değiştirebilmesi için fonksiyonun mutlaka `Counter&` (referans) döndürmesi şarttır!
 
 ---
 
 ## 13. Öğrenciler İçin Ev Ödevleri
 
-### Ödev 1: Tam Kapsamlı Karmaşık Sayı Kütüphanesi
-- **Görev:** `Karmasik` sınıfı için `+`, `-`, `*`, `/`, `==`, `!=`, `+=`, `-=`, `<<`, `>>` operatörlerinin tamamını aşırı yükleyiniz. `(a + bi) / (c + di)` bölme kuralını formüle uygun olarak kodlayınız.
+### Ödev 1: Tam Kapsamlı Karmaşık Sayı Kütüphanesi (`Complex`)
+- **Görev:** `Complex` sınıfı için `+`, `-`, `*`, `/`, `==`, `!=`, `+=`, `-=`, `<<`, `>>` operatörlerinin tamamını aşırı yükleyiniz. `(a + bi) / (c + di)` bölme kuralını formüle uygun olarak kodlayınız.
 
-### Ödev 2: Dinamik Güvenli String Sınıfı (`Stringim`)
-- **Görev:** Kendi string sınıfınızı yazınız:
+### Ödev 2: Dinamik Güvenli String Sınıfı (`MyString`)
+- **Görev:** Kendi string sınıfınızı tasarlayınız:
   - `+` ile string birleştirme,
   - `==` ile metin eşitliği,
   - `[]` ile sınır kontrollü karaktere erişim (`at()`),
   - `=` operatöründe derin kopyalama ve bellek temizliği.
 
-### Ödev 3: Polinom Sınıfı ve Cebirsel İşlemler
-- **Görev:** $P(x) = a_n x^n + \dots + a_1 x + a_0$ biçimindeki polinomları temsil eden `Polinom` sınıfı tasarlayınız. İki polinomun toplanması (`+`), çarpılması (`*`) ve $x$ değeri verilerek polinomun hesaplanması (`operator()(double x)`) işlemlerini aşırı yükleyiniz.
+### Ödev 3: Polinom Sınıfı ve Cebirsel İşlemler (`Polynomial`)
+- **Görev:** $P(x) = a_n x^n + \dots + a_1 x + a_0$ biçimindeki polinomları temsil eden `Polynomial` sınıfı tasarlayınız. İki polinomun toplanması (`+`), çarpılması (`*`) ve $x$ değeri verilerek polinomun hesaplanması (`operator()(double x)`) işlemlerini aşırı yükleyiniz.
