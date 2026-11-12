@@ -887,3 +887,4 @@ Artık terminalden sadece şu komutu yazarak modern C++ standartlarında derleme
 ```bash
 cbuild main.cpp -o app && ./app
 ```
+
