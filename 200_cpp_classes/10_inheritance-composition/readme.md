@@ -515,6 +515,7 @@ g++ -std=c++17 -Wall dosya_adi.cpp -o app
 | `one-level-inheritance.cpp` | Tek Seviyeli Miras (`Shape` -> `Rectangle`) | `g++ -std=c++17 one-level-inheritance.cpp -o app && ./app` | `g++ -std=c++17 one-level-inheritance.cpp -o app; .\app.exe` |
 | `multi-level-inheritance.cpp` | Çok Seviyeli Miras Zinciri | `g++ -std=c++17 multi-level-inheritance.cpp -o app && ./app` | `g++ -std=c++17 multi-level-inheritance.cpp -o app; .\app.exe` |
 | `composition.cpp` | Bileşim / Sahiplik ("HAS-A") | `g++ -std=c++17 composition.cpp -o app && ./app` | `g++ -std=c++17 composition.cpp -o app; .\app.exe` |
+| `bank_account_example.cpp` | Kalıtım + Bileşim + Operatör Aşırı Yükleme (`BankAccount` / `IsYeri`) | `g++ -std=c++17 bank_account_example.cpp -o app && ./app` | `g++ -std=c++17 bank_account_example.cpp -o app; .\app.exe` |
 
 ---
 
