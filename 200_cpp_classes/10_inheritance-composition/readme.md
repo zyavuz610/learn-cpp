@@ -205,44 +205,250 @@ public:
 
 İlgili kaynak dosya: [composition.cpp](composition.cpp)
 
-Bileşim (Composition), bir sınıfın başka bir sınıfın nesnesini kendi içinde bir üye değişken olarak barındırmasıdır. Bu bir **"HAS-A" (sahiptir)** ilişkisidir:
+### 7.1. Bileşim Nedir? ("Parça-Bütün" ve "HAS-A" İlişkisi)
+
+**Bileşim (*Composition*)**, bir sınıfın başka sınıflara ait nesneleri kendi içinde **üye değişken (*member object*)** olarak barındırmasıyla karmaşık nesneler oluşturma tekniğidir. Kalıtımdaki **"IS-A" (bir türüdür)** ilişkisinden farklı olarak bileşim bir **"HAS-A" (sahiptir)** yani **Parça-Bütün (*Whole-Part*)** ilişkisidir:
+
 - Bir Araba bir Motora sahiptir (*Car HAS-A Engine*).
-- Bir Etkinlik bir Tarih ve Saate sahiptir (*Event HAS-A Date and Time*).
+- Bir Bilgisayar bir İşlemciye ve Belleğe sahiptir (*Computer HAS-A CPU and RAM*).
+- Bir Etkinlik bir Tarihe ve bir Saate sahiptir (*Event HAS-A Date and Time*).
+
+```
+┌──────────────────────────────────────────────┐
+│                 Event (Bütün)                │
+│ ──────────────────────────────────────────── │
+│  - eventName : string                        │
+│  - eventDay  : Date  ──▶ [month, day, year]  │
+│  - eventTime : Time  ──▶ [hr, min]           │
+└──────────────────────────────────────────────┘
+```
+
+Bileşim sayesinde küçük, tek bir göreve odaklanan ve bağımsız olarak test edilebilen sınıflar (`Date`, `Time`) tasarlanır; ardından daha büyük sınıflar (`Event`) bu yapı taşlarını birleştirerek oluşturulur.
+
+---
+
+### 7.2. `composition.cpp` İncelemesi: `Time`, `Date` ve `Event` Mimarisi
+
+[composition.cpp](composition.cpp) dosyasında bileşim kavramı üç sınıf üzerinden modellenmiştir:
+
+1. **`Time` Sınıfı (Bileşen / Parça):**
+   - `hr` ve `min` alanlarını `private` olarak kapsüller.
+   - `Time()` (varsayılan), `Time(int, int)` (parametreli) kurucuları, `~Time()` yıkıcısı ile `setTime()`, `getTime()`, `printTime()`, `incrementHours()` ve `incrementMinutes()` metotlarına sahiptir.
+   - Saat (`0 <= hours < 24`) ve dakika (`0 <= minutes < 60`) geçerlilik kontrollerini (*validation*) kendi içinde yapar.
+2. **`Date` Sınıfı (Bileşen / Parça):**
+   - `month`, `day` ve `year` alanlarını `private` olarak kapsüller.
+   - `Date()`, `Date(int, int, int)` kurucuları, `~Date()` yıkıcısı ile `setDate()`, `getDate()` ve `printDate()` metotlarını sunar.
+   - Ay (`1–12`), gün (`1–31`) ve yıl (`1900–2030`) doğrulamasını kendi içinde yürütür.
+3. **`Event` Sınıfı (Kapsayıcı / Bütün):**
+   - Kendi içinde `string eventName`, `Date eventDay` ve `Time eventTime` üyelerini barındırır.
+   - **Kapsülleme ve Yetki Devri (*Delegation*):** `Event` sınıfı, `Date` sınıfının `month/day/year` veya `Time` sınıfının `hr/min` `private` üyelerine doğrudan erişemez. Bunun yerine işi ilgili parçanın `public` arayüzüne devreder:
+     - Veri güncellerken: `eventTime.setTime(hours, minutes);` ve `eventDay.setDate(m, d, y);`
+     - Ekrana yazdırırken: `eventDay.printDate();` ve `eventTime.printTime();`
 
 ```cpp
 #include <iostream>
 #include <string>
 using namespace std;
 
-class Tarih {
+class Time {
+private:
+    int hr;
+    int min;
+
 public:
-    int gun, ay, yil;
-    Tarih(int g = 1, int a = 1, int y = 2026) : gun(g), ay(a), yil(y) {}
-    void yazdir() const { cout << gun << "/" << ay << "/" << yil; }
+    Time(int hours = 0, int minutes = 0) {
+        setTime(hours, minutes);
+        cout << "Time constructor called" << endl;
+    }
+
+    ~Time() {
+        cout << "Time destructor called" << endl;
+    }
+
+    void setTime(int hours, int minutes) {
+        hr  = (0 <= hours && hours < 24)   ? hours   : 0;
+        min = (0 <= minutes && minutes < 60) ? minutes : 0;
+    }
+
+    void getTime(int& hours, int& minutes) const {
+        hours = hr;
+        minutes = min;
+    }
+
+    void printTime() const {
+        if (hr < 10) cout << "0";
+        cout << hr << ":";
+        if (min < 10) cout << "0";
+        cout << min;
+    }
 };
 
-class Etkinlik {
+class Date {
 private:
-    string etkinlikAdi;
-    Tarih etkinlikGunu; // Bileşim (Composition): Etkinlik bir Tarih'e sahiptir!
+    int month;
+    int day;
+    int year;
 
 public:
-    Etkinlik(string ad, int g, int a, int y) 
-        : etkinlikAdi(ad), etkinlikGunu(g, a, y) {}
+    Date(int m = 1, int d = 1, int y = 1900) {
+        setDate(m, d, y);
+        cout << "Date constructor called" << endl;
+    }
 
-    void rapor() const {
-        cout << "Etkinlik: " << etkinlikAdi << " - Tarih: ";
-        etkinlikGunu.yazdir();
+    ~Date() {
+        cout << "Date destructor called" << endl;
+    }
+
+    void setDate(int m, int d, int y) {
+        month = (m >= 1 && m <= 12)      ? m : 1;
+        day   = (d >= 1 && d <= 31)      ? d : 1;
+        year  = (y >= 1900 && y <= 2030) ? y : 1900;
+    }
+
+    void getDate(int& m, int& d, int& y) const {
+        m = month;
+        d = day;
+        y = year;
+    }
+
+    void printDate() const {
+        if (month < 10) cout << "0";
+        cout << month << "/";
+        if (day < 10) cout << "0";
+        cout << day << "/" << year;
+    }
+};
+
+class Event {
+private:
+    string eventName;
+    Date eventDay;   // Bileşim (Composition): Event HAS-A Date
+    Time eventTime;  // Bileşim (Composition): Event HAS-A Time
+
+public:
+    // Üye başlatma listesi ile bileşen nesnelerin parametreli kurucuları çağrılır
+    Event(int hours = 0, int minutes = 0, int m = 1,
+          int d = 1, int y = 1900, string name = "Christmas")
+        : eventName(name), eventDay(m, d, y), eventTime(hours, minutes) {
+        cout << "Event constructor called" << endl;
+    }
+
+    ~Event() {
+        cout << "Event destructor called" << endl;
+    }
+
+    void setEventData(int hours, int minutes, int m, int d, int y, string name) {
+        eventTime.setTime(hours, minutes); // Yetki devri (Delegation)
+        eventDay.setDate(m, d, y);
+        eventName = name;
+    }
+
+    void printEventData() const {
+        cout << eventName << " occurs ";
+        eventDay.printDate();
+        cout << " at ";
+        eventTime.printTime();
         cout << endl;
     }
 };
 
 int main() {
-    Etkinlik e("OOP Ara Sınavı", 15, 11, 2026);
-    e.rapor();
+    Event e(12, 44, 12, 5, 2024, "C++ Dersi");
+    e.printEventData();
+
+    // Varsayılan argümanlarla oluşturma ve sonradan güncelleme:
+    Event e2;
+    e2.setEventData(10, 30, 5, 19, 2026, "OOP Semineri");
+    e2.printEventData();
+
     return 0;
 }
 ```
+
+---
+
+### 7.3. Üye Başlatma Listesi (Member Initializer List) ile Bileşen Başlatma
+
+[composition.cpp](composition.cpp) içerisindeki `Event` kurucusuna dikkat edildiğinde, bileşen nesnelere parametrelerin **üye başlatma listesi (*member initializer list*)** üzerinden aktarıldığı görülür:
+
+```cpp
+Event::Event(int hours, int minutes, int m, int d, int y, string name)
+    : eventDay(m, d, y), eventTime(hours, minutes) {
+    eventName = name;
+    cout << "Event constructor called" << endl;
+}
+```
+
+#### Neden Üye Başlatma Listesi Kullanmalıyız?
+1. **Gereksiz Çift İşlemi Önler:** Eğer başlatma listesi yerine kurucu gövdesinde `eventDay.setDate(m, d, y);` yazılsaydı, derleyici önce `Date()` varsayılan kurucusunu çalıştırır, ardından `setDate()` ile değerlerin üzerine tekrar yazardı. Başlatma listesinde ise doğrudan `Date(m, d, y)` çağrılır.
+2. **Parametresiz Kurucusu Olmayan Üyeler İçin Zorunludur:** Bir bileşen sınıfın varsayılan (*default*) kurucusu yoksa, o üye nesne **yalnızca** üye başlatma listesi ile başlatılabilir; aksi halde derleme hatası oluşur.
+3. **Varsayılan Argümanlarla Uyumluluk:** `composition.cpp`'de `Event` kurucusunun tüm parametreleri varsayılan değere sahiptir (`hours = 0, ..., name = "Christmas"`). Dolayısıyla `Event object;` şeklinde parametresiz çağrı yapılsa bile, başlatma listesi sayesinde `Date(1, 1, 1900)` ve `Time(0, 0)` parametreli kurucuları devreye girer.
+
+---
+
+### 7.4. Bileşimde Kurucu ve Yıkıcıların Çalışma Sırası (Kritik Kural!)
+
+Bileşim içeren bir nesne oluşturulduğunda ve kapsam dışına çıkıp yok edildiğinde kurucu ve yıkıcılar belirli, değişmez bir sırayla çalışır:
+
+1. **Kurucular (Parçadan Bütüne / İçten Dışa):** Önce bileşen nesnelerin kurucuları, en son kapsayıcı (`Event`) sınıfın kurucusu çalışır. Çünkü bütün, parçaları hazır olmadan kurulamaz.
+2. **Yıkıcılar (Bütünden Parçaya / Dıştan İçe):** Önce kapsayıcı (`Event`) sınıfın yıkıcısı, ardından bileşen nesnelerin yıkıcıları **oluşturulma sırasının tam tersinde** çalışır.
+
+> [!IMPORTANT]
+> **Bildirim Sırası Kuralı:** Üye nesnelerin kurucuları, **üye başlatma listesinde yazıldıkları sıraya göre değil, sınıf tanımı içerisinde bildirildikleri (*declared*) sıraya göre** çalışır!
+>
+> `composition.cpp`'deki `Event` sınıfında bildirim sırası `eventDay` $\rightarrow$ `eventTime` şeklindedir. Başlatma listesini `: eventTime(hours, minutes), eventDay(m, d, y)` şeklinde ters yazsanız bile önce `Date`, sonra `Time`, en son `Event` kurucusu çalışır.
+
+Buna göre [composition.cpp](composition.cpp) içerisindeki `Event e(12, 44, 12, 5, 2024, "C++ Dersi");` satırı çalıştırıldığında konsol çıktısı tam olarak şu şekilde olur:
+
+```text
+Date constructor called
+Time constructor called
+Event constructor called
+Event destructor called
+Time destructor called
+Date destructor called
+```
+
+> [!NOTE]
+> **Kalıtım ve Bileşim Birlikte Kullanıldığında Sıra:** Bir türetilmiş sınıf hem başka bir sınıftan miras alıyor hem de içinde üye nesneler barındırıyorsa kurucular şu sırayla çalışır:
+> 1. Temel sınıf (*Base Class*) kurucusu
+> 2. Üye nesnelerin (*Member Objects*) kurucuları (bildirim sırasına göre)
+> 3. Türetilmiş sınıfın (*Derived Class*) kendi kurucu gövdesi
+>
+> Yıkıcılar ise bu sıranın tam tersinde (**3 $\rightarrow$ 2 $\rightarrow$ 1**) çalışır.
+
+---
+
+### 7.5. Bileşim (Composition) vs Birleştirme (Aggregation)
+
+Her iki kavram da **"HAS-A"** ilişkisini ifade eder; ancak aralarındaki temel fark **yaşam döngüsü sahipliğidir (*ownership*)**:
+
+| Özellik | Bileşim (Composition) | Birleştirme (Aggregation) |
+| :--- | :--- | :--- |
+| **Sahiplik Türü** | **Güçlü Sahiplik (*Strong Ownership*)** | **Zayıf Sahiplik (*Weak Ownership*)** |
+| **Yaşam Döngüsü** | Kapsayıcı yok olunca parçalar da yok olur | Kapsayıcı yok olsa da parçalar yaşamaya devam eder |
+| **C++ Gösterimi** | Değer olarak üye nesne (`Date eventDay;`) | Dışarıdan alınan gösterici veya referans (`Ogrenci*`, `Ogrenci&`) |
+| **Örnek** | `Event` $\rightarrow$ `Date`, `Time` (`composition.cpp`) | `Bolum` $\rightarrow$ `Ogrenci` (Bölüm kapansa da öğrenci nesnesi varlığını sürdürebilir) |
+
+---
+
+### 7.6. `composition.cpp` Kod İnceleme Notları (Dikkat Edilmesi Gereken İnce Noktalar)
+
+[composition.cpp](composition.cpp) dosyasını incelerken eğitim açısından fark edilmesi önemli iki ince nokta bulunmaktadır:
+
+> [!WARNING]
+> **1. `getTime` ve `getDate` Metotlarındaki Atama Yönü Hatası:**
+> Dosyada `getTime` ve `getDate` fonksiyonları şu şekilde yazılmıştır:
+> ```cpp
+> void Time::getTime(int& hours, int& minutes) {
+>     hr = hours;   // HATALI YÖN: üye değişkeni dışarıdan gelen parametreyle eziyor!
+>     min = minutes;
+> }
+> ```
+> Referans parametreler aracılığıyla nesnenin değerlerini dışarıya aktarmak için atamanın yönü **`hours = hr; minutes = min;`** (ve `Date::getDate` için **`m = month; d = day; y = year;`**) şeklinde olmalıdır.
+>
+> **2. `Time()` ve `Time(int hours = 0, int minutes = 0)` Kurucu Çakışması:**
+> `Time` sınıfında hem parametresiz `Time()` kurucusu hem de sınıf dışında varsayılan argümanlı `Time::Time(int hours = 0, int minutes = 0)` kurucusu tanımlanmıştır. Doğrudan `Time t;` şeklinde bir nesne oluşturulmak istendiğinde derleyici hangi kurucuyu çağıracağına karar veremeyerek **belirsizlik (*ambiguous overload*)** hatası üretir. Çözüm olarak ya varsayılan argümanlı tek bir kurucu (`Time(int hours = 0, int minutes = 0)`) kullanılmalı ya da `Time(int, int)` tanımındaki `= 0` ifadeleri kaldırılmalıdır.
 
 ---
 
@@ -256,6 +462,10 @@ Yazılım tasarımında kabul gören temel prensiplerden biri şudur: **"Favor C
 | **Bağlantı Türü** | Sıkı Bağlı (Tight Coupling - Beyaz Kutu) | Gevşek Bağlı (Loose Coupling - Siyah Kutu) |
 | **Esneklik** | Derleme zamanında sabittir; dinamik değişemez | Çalışma zamanında nesneler değiştirilebilir |
 | **Kapsülleme** | Temel sınıfın iç yapısı alt sınıflara sızabilir (`protected`) | İç sınıfların detayları tamamen gizlidir |
+
+### Tasarım Testi: `Event` Neden `Date` ve `Time` Sınıflarından Miras Almamalı?
+- **"Event bir Tarihtir (*Event IS-A Date*)"** ifadesi mantıksal olarak **yanlıştır**; ayrıca bir etkinlik hem başlangıç hem bitiş tarihine ihtiyaç duyduğunda kalıtım tamamen yetersiz kalır.
+- **"Event bir Tarihe ve bir Saate sahiptir (*Event HAS-A Date and Time*)"** ifadesi **doğrudur**. `Event` ileride `Date startDate, endDate;` şeklinde kolayca genişletilebilir ve `Date`/`Time` sınıflarının iç implementasyonu değişse bile `Event` bozulmaz.
 
 ---
 
@@ -339,9 +549,171 @@ int main() {
 - `Derived d2(10);`: `Derived(10)` kurucusu başlatma listesinde `Base(x)` çağırdığı için `Base(10)` çalışır: `2 4 ` basılır.
 - Toplam Çıktı: `1 3 2 4 `.
 
+### Soru 2: Bileşimde (Composition) Bildirim Sırası ve Kurucu/Yıkıcı Çıktısı
+Aşağıdaki kod parçasının konsol çıktısını yazınız ve nedenini açıklayınız:
+```cpp
+#include <iostream>
+using namespace std;
+
+class Date {
+public:
+    Date() { cout << "Date() "; }
+    ~Date() { cout << "~Date() "; }
+};
+
+class Time {
+public:
+    Time() { cout << "Time() "; }
+    ~Time() { cout << "~Time() "; }
+};
+
+class Event {
+private:
+    Date eventDay;   // 1. bildirilen üye
+    Time eventTime;  // 2. bildirilen üye
+public:
+    // Başlatma listesinde eventTime önce yazılmış!
+    Event() : eventTime(), eventDay() { cout << "Event() "; }
+    ~Event() { cout << "~Event() "; }
+};
+
+int main() {
+    Event e;
+    return 0;
+}
+```
+**Çözüm:**
+- Üye nesnelerin kurucuları **üye başlatma listesindeki sıraya göre değil**, sınıf içerisindeki **bildirim sırasına göre** çalışır.
+- `Event` sınıfında önce `eventDay` (`Date`), sonra `eventTime` (`Time`) bildirildiği için önce `Date()`, sonra `Time()`, en son kapsayıcı sınıf olan `Event()` kurucusu çalışır.
+- `main()` fonksiyonu biterken yıkıcılar tam tersi sırada çağrılır: `~Event()`, `~Time()`, `~Date()`.
+- **Toplam Çıktı:** `Date() Time() Event() ~Event() ~Time() ~Date() `
+
+### Soru 3: Miras Erişim Belirleyicileri — Hangi Satırlar Derleme Hatası Verir?
+Aşağıdaki kodda `(1)` ile `(8)` arasında numaralandırılmış satırlardan hangilerinin geçerli olduğunu, hangilerinin derleme hatası vereceğini açıklayınız:
+```cpp
+class Temel {
+public:
+    int pub = 1;
+protected:
+    int prot = 2;
+private:
+    int priv = 3;
+};
+
+class AltPublic : public Temel {
+public:
+    void test() {
+        pub = 10;   // (1)
+        prot = 20;  // (2)
+        priv = 30;  // (3)
+    }
+};
+
+class AltProtected : protected Temel {
+public:
+    void test() {
+        pub = 10;   // (4)
+        prot = 20;  // (5)
+    }
+};
+
+int main() {
+    AltPublic a;
+    a.pub = 5;      // (6)
+    a.prot = 6;     // (7)
+
+    AltProtected b;
+    b.pub = 7;      // (8)
+    return 0;
+}
+```
+**Çözüm:**
+- **Geçerli satırlar:** `(1)`, `(2)`, `(4)`, `(5)`, `(6)`
+  - `AltPublic` sınıfında `public` miras alındığı için `pub` → `public`, `prot` → `protected` olarak kalır; ikisine de sınıf içinden erişilebilir `(1, 2)` ve `a.pub` dışarıdan (`main`) erişilebilir `(6)`.
+  - `AltProtected` sınıfında `protected` miras alındığı için `pub` ve `prot` türetilmiş sınıfta `protected` olur; sınıf içinden erişilebilir `(4, 5)`.
+- **Derleme hatası veren satırlar:**
+  - `(3)` `priv = 30;`: `Temel` sınıfındaki `private` üyelere türetilmiş sınıftan doğrudan **asla** erişilemez.
+  - `(7)` `a.prot = 6;`: `protected` üyelere sınıf dışından (`main`) erişilemez.
+  - `(8)` `b.pub = 7;`: `protected` miras nedeniyle `pub` artık `AltProtected` içinde `protected` düzeyine inmiştir; bu yüzden `main()` içerisinden erişilemez.
+
+### Soru 4: Kalıtım ve Bileşim Birlikte Kullanıldığında Kurucu ve Yıkıcı Sırası
+Aşağıdaki programda `Otomobil` sınıfı hem `Arac` sınıfından miras almakta (**IS-A**) hem de bir `Motor` nesnesini üye olarak barındırmaktadır (**HAS-A**). Konsol çıktısını adım adım belirleyiniz:
+```cpp
+#include <iostream>
+using namespace std;
+
+class Motor {
+public:
+    Motor()  { cout << "Motor() "; }
+    ~Motor() { cout << "~Motor() "; }
+};
+
+class Arac {
+public:
+    Arac()  { cout << "Arac() "; }
+    ~Arac() { cout << "~Arac() "; }
+};
+
+class Otomobil : public Arac {
+private:
+    Motor motor; // Bileşim (HAS-A)
+public:
+    Otomobil()  { cout << "Otomobil() "; }
+    ~Otomobil() { cout << "~Otomobil() "; }
+};
+
+int main() {
+    Otomobil oto;
+    return 0;
+}
+```
+**Çözüm:**
+- Bir nesne hem kalıtım hem bileşim içerdiğinde kurucular sırasıyla **1) Temel sınıf**, **2) Üye nesneler**, **3) Türetilmiş sınıf** şeklinde çalışır: `Arac()` → `Motor()` → `Otomobil()`.
+- `main()` sona ererken `oto` nesnesi yok edilir ve yıkıcılar tam tersi sırada çalışır: `~Otomobil()` → `~Motor()` → `~Arac()`.
+- **Toplam Çıktı:** `Arac() Motor() Otomobil() ~Otomobil() ~Motor() ~Arac() `
+
+### Soru 5: Parametresiz Kurucusu Olmayan Bileşen ile Bileşim (Hata Bulma ve Düzeltme)
+Aşağıdaki kod neden derleme hatası verir? Hatayı düzeltiniz:
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Adres {
+private:
+    string sehir;
+public:
+    // Varsayılan (parametresiz) kurucu tanımlı değil!
+    Adres(string s) : sehir(s) {}
+    string getSehir() const { return sehir; }
+};
+
+class Musteri {
+private:
+    string ad;
+    Adres adres; // Bileşim (Composition)
+public:
+    Musteri(string a, string s) { // DERLEME HATASI!
+        ad = a;
+        adres = Adres(s);
+    }
+
+    void yazdir() const {
+        cout << ad << " - " << adres.getSehir() << endl;
+    }
+};
+```
+**Çözüm:**
+- **Hatanın Nedeni:** `Adres` sınıfında parametreli bir kurucu (`Adres(string s)`) yazıldığı için derleyici otomatik olarak parametresiz `Adres()` kurucusunu üretmez. `Musteri` kurucusu gövdesine girmeden önce `adres` üyesini varsayılan kurucu ile oluşturmaya çalışır; `Adres()` bulunamadığı için derleme hatası (*no matching function for call to `Adres::Adres()`*) oluşur.
+- **Doğru Çözüm (Üye Başlatma Listesi Kullanımı):**
+  ```cpp
+  Musteri(string a, string s) : ad(a), adres(s) {}
+  ```
+  Üye başlatma listesi kullanıldığında `adres` doğrudan `Adres(s)` ile tek adımda başlatılır; hem derleme hatası giderilir hem de gereksiz geçici nesne oluşturma maliyeti ortadan kalkar.
+
 ---
 
-## 11. Öğrenciler İçin Ev Ödevleri
+## 12. Öğrenciler İçin Ev Ödevleri
 
 ### Ödev 1: Üniversite Personel ve Öğrenci Hiyerarşisi
 - **Görev:** En tepede `Kisi` sınıfı (`ad`, `soyad`, `tcNo`, `dogumYili`) tanımlayınız.
